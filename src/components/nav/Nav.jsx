@@ -2,8 +2,6 @@ import { useState } from 'react';
 import { Dialog } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
-
-
 const navigation = [
   { name: 'Services', href: '#services' },
   { name: 'How We Work', href: '#how' },
@@ -16,19 +14,15 @@ export default function Example() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <section className="absolute inset-x-0 top-0 z-50 lg:mx-28  ">
+    <section className="absolute inset-x-0 top-0 z-50">
       <nav
-        className="flex items-center justify-between p-6 lg:px-8"
+        className="flex items-center justify-between p-6 lg:px-0 lg:w-[90vw] lg:mx-auto max-w-[1700px] "
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
           <a href="#" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
-            <img
-              className="h-16 w-auto"
-              src="/imgs/logo.png"
-              alt=""
-            />
+            <img className="h-16 w-auto" src="/imgs/logo.png" alt="" />
           </a>
         </div>
         <div className="flex lg:hidden">
@@ -41,28 +35,44 @@ export default function Example() {
             <Bars3Icon className="h-10 w-10 text-bravo" aria-hidden="true" />
           </button>
         </div>
-        
-        <div className="hidden lg:flex lg:gap-x-12 ">
-          {navigation.map((item) => (
 
+        <div className="hidden lg:flex lg:gap-x-4 xl:gap-x-8 2xl:gap-x-10">
+          {navigation.map((item) => (
             <a
               key={item.name}
               href={item.href}
-              className="text-md font-regular text-white relative after:absolute after:bg-bravo after:-bottom-2 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 hover:after:origin-bottom-left hover:after:scale-x-100 after:transition-transform after:ease-in-out after:duration-300 "
+              className="lg:text-md font-regular text-white relative after:absolute after:bg-bravo after:-bottom-2 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 hover:after:origin-bottom-left hover:after:scale-x-100 after:transition-transform after:ease-in-out after:duration-300 "
             >
               {item.name}
             </a>
-        
           ))}
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end group cursor-pointer gap-2">
-          <a href="#" className="text-md font-regular text-white  group-hover:text-bravo transition ease-in-out duration-200">
-            Contact Us 
+          <a
+            href="#"
+            className="text-md font-regular text-white  group-hover:text-bravo transition ease-in-out duration-200"
+          >
+            Contact Us
           </a>
-          <span aria-hidden="true" class="translate-x-0 text-white group-hover:text-bravo group-hover:translate-x-1 transition-transform ease-in-out duration-200">
-             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-  <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
-</svg>        </span>
+          <span
+            aria-hidden="true"
+            class="translate-x-0 text-white group-hover:text-bravo group-hover:translate-x-1 transition-transform ease-in-out duration-200"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="w-6 h-6"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+              />
+            </svg>{' '}
+          </span>
         </div>
       </nav>
 
@@ -70,21 +80,16 @@ export default function Example() {
         as="div"
         className="lg:hidden"
         open={mobileMenuOpen}
-       onClose={setMobileMenuOpen}
+        onClose={setMobileMenuOpen}
       >
-
         <div className="fixed inset-0 z-50" />
         <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-alpha px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
-              <img
-              className="h-16 w-auto"
-              src="/imgs/logo.png"
-              alt=""
-            />
+              <img className="h-16 w-auto" src="/imgs/logo.png" alt="" />
             </a>
- 
+
             <button
               type="button"
               className="-m-2.5 rounded-md p-2.5 text-gray-700"
@@ -118,9 +123,7 @@ export default function Example() {
             </div>
           </div>
         </Dialog.Panel>
-   
       </Dialog>
-  
     </section>
   );
 }
