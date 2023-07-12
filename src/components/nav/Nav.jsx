@@ -14,9 +14,9 @@ export default function Example() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <section className="absolute inset-x-0 top-0 z-50">
+    <section className=" absolute inset-x-0 top-0 z-50">
       <nav
-        className="flex items-center justify-between p-6 lg:px-0 lg:w-[90vw] lg:mx-auto max-w-[1700px] "
+        className="flex max-w-[1700px] items-center justify-between p-6 lg:mx-auto lg:w-[90vw] lg:px-0 "
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
@@ -41,22 +41,22 @@ export default function Example() {
             <a
               key={item.name}
               href={item.href}
-              className="lg:text-md font-regular text-white relative after:absolute after:bg-bravo after:-bottom-2 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 hover:after:origin-bottom-left hover:after:scale-x-100 after:transition-transform after:ease-in-out after:duration-300 "
+              className="lg:text-md font-regular relative text-white after:absolute after:-bottom-2 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-bravo after:transition-transform after:duration-300 after:ease-in-out hover:after:origin-bottom-left hover:after:scale-x-100 "
             >
               {item.name}
             </a>
           ))}
         </div>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end group cursor-pointer gap-2">
+        <div className="group hidden cursor-pointer gap-2 lg:flex lg:flex-1 lg:justify-end">
           <a
             href="#"
-            className="text-md font-regular text-white  group-hover:text-bravo transition ease-in-out duration-200"
+            className="text-md font-regular text-white  transition duration-200 ease-in-out group-hover:text-bravo "
           >
             Contact Us
           </a>
           <span
             aria-hidden="true"
-            class="translate-x-0 text-white group-hover:text-bravo group-hover:translate-x-1 transition-transform ease-in-out duration-200"
+            className="translate-x-0 text-white transition-transform duration-200 ease-in-out group-hover:translate-x-1 group-hover:text-bravo"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -64,7 +64,7 @@ export default function Example() {
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="w-6 h-6"
+              className="h-6 w-6"
             >
               <path
                 strokeLinecap="round"
@@ -106,7 +106,7 @@ export default function Example() {
                   <a
                     key={item.name}
                     href={item.href}
-                    className="-mx-3 block rounded-lg px-3 py-2 text-4xl font-bold font-regular text-white hover:bg-gray-50 hover:text-alpha"
+                    className="font-regular -mx-3 block rounded-lg px-3 py-2 text-4xl font-bold text-white hover:bg-gray-50 hover:text-alpha"
                   >
                     {item.name}
                   </a>
@@ -115,7 +115,7 @@ export default function Example() {
               <div className="py-6">
                 <a
                   href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-4xl font-bold font-regular text-bravo hover:bg-gray-50"
+                  className="font-regular -mx-3 block rounded-lg px-3 py-2.5 text-4xl font-bold text-bravo hover:bg-gray-50"
                 >
                   Contact Us
                 </a>
