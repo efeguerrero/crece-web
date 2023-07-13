@@ -27,7 +27,7 @@ export default function Slider() {
 
   return (
     <>
-      <div className="flex lg:mx-auto lg:h-[60vh] lg:w-[80%] lg:bg-transparent">
+      <div className="flex lg:mx-auto lg:h-[50vh] lg:w-[80%] lg:bg-transparent">
         <Swiper
           navigation={true}
           modules={[Pagination, Navigation, Scrollbar]}
