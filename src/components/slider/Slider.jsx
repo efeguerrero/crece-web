@@ -36,7 +36,7 @@ export default function Slider() {
           {data.map((item) => (
             <SwiperSlide>
               <div className="flex h-full w-full gap-10 lg:bg-transparent">
-                <div className="flex h-full w-full flex-col bg-alpha px-6 py-14 pb-20  backdrop-blur-sm lg:w-[60%] lg:bg-transparent lg:p-0">
+                <div className="flex h-full w-full flex-col bg-alpha px-6 py-14 pb-20 lg:w-[60%] lg:bg-transparent lg:p-0">
                   <h2 className="mb-6 text-left text-4xl font-semibold tracking-widest text-white lg:text-5xl lg:font-bold lg:text-alpha">
                     {item.name}
                   </h2>
