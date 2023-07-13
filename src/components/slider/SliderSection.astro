@@ -3,11 +3,14 @@
 import Slider from './Slider.jsx';
 ---
 
-<section class="my-20 bg-white lg:mx-auto lg:w-[80vw]">
-  <h2
-    class="mb-20 bg-gradient-to-r from-bravo to-alpha bg-clip-text px-6 text-4xl font-bold leading-[3rem] text-transparent"
-  >
-    Top of mind of the companies in need of marketingn solutions.
-  </h2>
-  <Slider client:idle />
+<section class="bg-cover lg:bg-center lg:bg-no-repeat lg:backdrop-blur-md">
+  <section class="py-20 lg:mx-auto lg:w-[80vw]">
+    <h2
+      class="mb-20 bg-gradient-to-r from-bravo to-alpha bg-clip-text px-6 text-4xl font-bold leading-[3rem] text-transparent lg:w-full lg:px-0 lg:text-left lg:text-7xl lg:leading-[normal]"
+    >
+      Top of mind of the companies in need of marketing solutions.
+    </h2>
+    <Slider client:idle />
+  </section>
 </section>
+<!-- lg:bg-[url('/imgs/slider/sliderBack.svg')] -->
