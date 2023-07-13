@@ -6,80 +6,139 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 import './slider.css';
 
 // import required modules
-import { Pagination } from 'swiper/modules';
+import { Pagination, Navigation } from 'swiper/modules';
 
 export default function Slider() {
   const pagination = {
     clickable: true,
-    renderBullet: function (index, className) {
-      return '<span class="' + className + '">' + (index + 1) + '</span>';
+    renderBullet: function (index, className, name) {
+      return '<span class="' + className + '">' + 'sads' + '</span>';
     },
   };
 
   return (
     <>
       <Swiper
-        pagination={pagination}
-        modules={[Pagination]}
+        navigation={true}
+        modules={[Pagination, Navigation]}
         className="mySwiper"
       >
         <SwiperSlide>
-          <section className="  bg-[url('/imgs/mobileHeader3.jpg')] bg-cover bg-center bg-no-repeat px-6 py-20">
-            <div className="flex h-full  w-full flex-col gap-10 bg-alphaDark/60 p-8 backdrop-blur-sm">
-              <h2 className="text-left text-4xl font-semibold tracking-widest text-gray">
+          <div className="flex h-full ">
+            <div className="flex h-full w-full flex-col bg-alpha px-6 py-14 pb-20 pr-12 backdrop-blur-sm">
+              <h2 className="mb-6 text-left text-4xl font-semibold tracking-widest text-white">
                 Performance Campaigns
               </h2>
-              <h3 className="text-left text-lg leading-[2.1rem] text-gray ">
+              <h3 className="mb-10 text-left text-lg leading-[2.1rem] text-white ">
                 Through our Performance Web and App Campaigns we can drive your
                 audience to make specific actions such as leads, conversions and
                 installs on your website or app
               </h3>
-              <h3 class="font-regular relative ml-auto  break-normal text-right text-xl text-white opacity-90 before:absolute before:bottom-0 before:left-0 before:h-full before:w-full before:origin-bottom before:scale-y-[0.35] before:bg-bravo before:transition-transform before:duration-500 before:ease-in-out hover:before:scale-y-100 sm:w-auto">
+              <h3 class="font-regular relative mb-4 ml-auto  break-normal text-right text-xl text-white opacity-90 before:absolute before:bottom-0 before:left-0 before:h-full before:w-full before:origin-bottom before:scale-y-[0.35] before:bg-bravo before:transition-transform before:duration-500 before:ease-in-out hover:before:scale-y-100 sm:w-auto">
                 <span class="relative cursor-default">Contact Us</span>
               </h3>
-              {/* <div className="group flex cursor-pointer gap-2">
-                <a
-                  href="#"
-                  className="text-md font-regular text-white  transition duration-200 ease-in-out group-hover:text-bravo "
-                >
-                  Contact Us
-                </a>
-                <span
-                  aria-hidden="true"
-                  className="translate-x-0 text-white transition-transform duration-200 ease-in-out group-hover:translate-x-1 group-hover:text-bravo"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    className="h-6 w-6"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
-                    />
-                  </svg>
-                </span>
-              </div> */}
             </div>
-          </section>
+            <img
+              src="/public/imgs/mobileHeader.jpg"
+              class="hidden lg:inline-block lg:w-[50%] lg:object-cover"
+              alt=""
+            />
+          </div>
         </SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 8</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide>
+        <SwiperSlide>
+          <div className="flex h-full  w-full flex-col bg-charly px-6 py-14 pb-20 pr-12 backdrop-blur-sm">
+            <h2 className="mb-6 text-left text-4xl font-semibold tracking-widest text-white">
+              Design & Community Management
+            </h2>
+            <h3 className="mb-10 text-left text-lg leading-[2.1rem] text-white ">
+              Do you need specific brand designs? Or someone to manage your
+              social media portfolio? Let our team of experts design and manage
+              your social media according to your needs.
+            </h3>
+            <h3 class="font-regular relative mb-4 ml-auto  break-normal text-right text-xl text-white opacity-90 before:absolute before:bottom-0 before:left-0 before:h-full before:w-full before:origin-bottom before:scale-y-[0.35] before:bg-bravo before:transition-transform before:duration-500 before:ease-in-out hover:before:scale-y-100 sm:w-auto">
+              <span class="relative cursor-default">Contact Us</span>
+            </h3>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="flex h-full w-full flex-col bg-delta px-6 py-14 pb-20 pr-12 backdrop-blur-sm">
+            <h2 className="mb-6 text-left text-4xl font-semibold tracking-widest text-white">
+              Branding Campaigns
+            </h2>
+            <h3 className="mb-10 text-left text-lg leading-[2.1rem] text-white ">
+              Powerful brand awareness campaigns that reach your target audience
+              through Programmatic, Google Ads, Facebook Ads and more.
+            </h3>
+            <h3 class="font-regular relative mb-4 ml-auto  break-normal text-right text-xl text-white opacity-90 before:absolute before:bottom-0 before:left-0 before:h-full before:w-full before:origin-bottom before:scale-y-[0.35] before:bg-bravo before:transition-transform before:duration-500 before:ease-in-out hover:before:scale-y-100 sm:w-auto">
+              <span class="relative cursor-default">Contact Us</span>
+            </h3>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="flex h-full  w-full flex-col bg-alpha px-6 py-14 pb-20 pr-12 backdrop-blur-sm">
+            <h2 className="mb-6 text-left text-4xl font-semibold tracking-widest text-white">
+              Programmatic
+            </h2>
+            <h3 className="mb-10 text-left text-lg leading-[2.1rem] text-white ">
+              Our expert programmatic team will assist you to create powerful
+              programmatic campaigns — App promotion, CTV, Display, Video, Audio
+              and more. If you are a Publisher and you are interested in
+              monetizing your inventory reach out to us.
+            </h3>
+            <h3 class="font-regular relative mb-4 ml-auto  break-normal text-right text-xl text-white opacity-90 before:absolute before:bottom-0 before:left-0 before:h-full before:w-full before:origin-bottom before:scale-y-[0.35] before:bg-bravo before:transition-transform before:duration-500 before:ease-in-out hover:before:scale-y-100 sm:w-auto">
+              <span class="relative cursor-default">Contact Us</span>
+            </h3>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="pb-20pr-16 flex  h-full w-full flex-col bg-charly px-6 py-14 backdrop-blur-sm">
+            <h2 className="mb-6 text-left text-4xl font-semibold tracking-widest text-white">
+              SEM & SEO
+            </h2>
+            <h3 className="mb-10 text-left text-lg leading-[2.1rem] text-white ">
+              Position your business in the first SEO & SEM results.
+            </h3>
+            <h3 class="font-regular relative mb-4 ml-auto  break-normal text-right text-xl text-white opacity-90 before:absolute before:bottom-0 before:left-0 before:h-full before:w-full before:origin-bottom before:scale-y-[0.35] before:bg-bravo before:transition-transform before:duration-500 before:ease-in-out hover:before:scale-y-100 sm:w-auto">
+              <span class="relative cursor-default">Contact Us</span>
+            </h3>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="flex h-full  w-full flex-col bg-delta px-6 py-14 pb-20 pr-12 backdrop-blur-sm">
+            <h2 className="mb-6 text-left text-4xl font-semibold tracking-widest text-white">
+              Audio Campaigns
+            </h2>
+            <h3 className="mb-10 text-left text-lg leading-[2.1rem] text-white ">
+              Advertise your brand on the top US streaming services such as
+              Pandora, iHeartRadio, TuneIn and more.
+            </h3>
+            <h3 class="font-regular relative mb-4 ml-auto  break-normal text-right text-xl text-white opacity-90 before:absolute before:bottom-0 before:left-0 before:h-full before:w-full before:origin-bottom before:scale-y-[0.35] before:bg-bravo before:transition-transform before:duration-500 before:ease-in-out hover:before:scale-y-100 sm:w-auto">
+              <span class="relative cursor-default">Contact Us</span>
+            </h3>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="flex h-full  w-full flex-col bg-charly px-6 py-14 pb-20 pr-12 backdrop-blur-sm">
+            <h2 className="mb-6 text-left text-4xl font-semibold tracking-widest text-white">
+              Web & App Development
+            </h2>
+            <h3 className="mb-10 text-left text-lg leading-[2.1rem] text-white ">
+              Bring us your ideas and let our expert team craft an amazing web
+              site & app for you.
+            </h3>
+            <h3 class="font-regular relative mb-4 ml-auto  break-normal text-right text-xl text-white opacity-90 before:absolute before:bottom-0 before:left-0 before:h-full before:w-full before:origin-bottom before:scale-y-[0.35] before:bg-bravo before:transition-transform before:duration-500 before:ease-in-out hover:before:scale-y-100 sm:w-auto">
+              <span class="relative cursor-default">Contact Us</span>
+            </h3>
+          </div>
+        </SwiperSlide>
       </Swiper>
     </>
   );
 }
+
+// bg - [url('/imgs/mobileHeader3.jpg')];
