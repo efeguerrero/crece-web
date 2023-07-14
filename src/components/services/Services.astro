@@ -1,0 +1,52 @@
+---
+//data import
+import data from './data.json';
+---
+
+<section class="bg-gray lg:py-6 lg:pb-20">
+  <div class="mx-auto px-6 py-8 sm:py-16 lg:w-[90vw] lg:px-6 xl:w-[70vw]">
+    <div class="mb-8 max-w-screen-md lg:mb-16">
+      <h2 class="mb-4 text-4xl font-extrabold tracking-tight text-alpha">
+        Designed for business teams like yours
+      </h2>
+      <p class="text-alpha sm:text-xl">
+        Here at Flowbite we focus on markets where technology, innovation, and
+        capital can unlock long-term value and drive economic growth.
+      </p>
+    </div>
+    <div
+      class="space-y-8 md:grid md:grid-cols-2 md:gap-12 md:space-y-0 lg:grid-cols-3"
+    >
+      {
+        data.map((item) => (
+          <div>
+            <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-transparent lg:h-12 lg:w-12">
+              <img src={item.img} class="w-[50%]" alt="" />
+            </div>
+            <h3 class="mb-4 text-xl font-bold text-alpha">{item.title}</h3>
+
+            <ul class="flex w-full flex-col justify-start gap-4">
+              {item.features.map((feature) => (
+                <div class="flex items-start justify-start gap-5 text-alpha">
+                  <div class="w-[2rem]">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-6 w-6"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M18.9 8.1L9 18l-4.95-4.95l.71-.71L9 16.59l9.19-9.2l.71.71Z"
+                      />
+                    </svg>
+                  </div>
+                  <li class="text-alpha">{feature}</li>
+                </div>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
