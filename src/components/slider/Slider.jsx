@@ -43,13 +43,13 @@ export default function Slider() {
                   <h3 className="mb-10 text-left text-lg leading-[2.1rem] text-white lg:text-xl lg:font-semibold lg:leading-[2.3rem] lg:text-alpha ">
                     {item.text}
                   </h3>
-                  <h3 class="font-regular relative mb-4 ml-auto  break-normal text-right text-xl text-white opacity-90 before:absolute before:bottom-0 before:left-0 before:h-full before:w-full before:origin-bottom before:scale-y-[0.35] before:bg-bravo before:transition-transform before:duration-500 before:ease-in-out hover:before:scale-y-100 sm:w-auto lg:text-2xl lg:font-bold lg:text-alpha">
-                    <span class="relative cursor-default">Contact Us</span>
+                  <h3 className="font-regular relative mb-4 ml-auto  break-normal text-right text-xl text-white opacity-90 before:absolute before:bottom-0 before:left-0 before:h-full before:w-full before:origin-bottom before:scale-y-[0.35] before:bg-bravo before:transition-transform before:duration-500 before:ease-in-out hover:before:scale-y-100 sm:w-auto lg:text-2xl lg:font-bold lg:text-alpha">
+                    <span className="relative cursor-default">Contact Us</span>
                   </h3>
                 </div>
                 <img
                   src={item.img}
-                  class="hidden lg:block lg:w-[40%] lg:object-cover"
+                  className="hidden lg:block lg:w-[40%] lg:object-cover"
                   alt=""
                 />
               </div>
