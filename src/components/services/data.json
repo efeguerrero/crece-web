@@ -6,51 +6,62 @@
       "Video (Facebook, Google, Twitter, LinkedIn and Programmatic)",
       "Search(Google Ads)"
     ],
-    "img": "/imgs/features/rocket.svg"
+    "icon": "megaphone"
   },
   {
-    "title": "Branding Campaigns",
+    "title": "Performance Campaigns",
     "features": [
-      "ssssssssssssss",
-      "Video (Facebook, Google, Twitter, LinkedIn and Programmatic)",
-      "Search(Google Ads)"
+      "Web (Facebook, Google and Programmatic)",
+      "App promotion Campaigns (Facebook, Google and Programmatic)"
     ],
-    "img": "/imgs/features/seo.svg"
+    "icon": "rocket"
+  },
+  {
+    "title": "Programmatic Advertising",
+    "features": ["Display & Video", "Connected TV (CTV)", "Audio", "Native"],
+    "icon": "automated"
   },
   {
     "title": "SEM & SEO",
-    "features": [
-      "Display (Facebook, Google, Twitter, LinkedIn and Programmatic)",
-      "Video (Facebook, Google, Twitter, LinkedIn and Programmatic)",
-      "Search(Google Ads)"
-    ],
-    "img": "/imgs/features/rocket.svg"
+    "features": ["Keywords Creation", "Text Ads Creation"],
+    "icon": "seo"
   },
   {
-    "title": "Branding Campaigns",
+    "title": "Audio Campaigns ",
     "features": [
-      "Display (Facebook, Google, Twitter, LinkedIn and Programmatic)",
-      "Video (Facebook, Google, Twitter, LinkedIn and Programmatic)",
-      "Search(Google Ads)"
+      "Audio Ad Production",
+      "Top Streaming services (Pandora, iHeartRadio, Tune-In and More)",
+      "Local Online Radios",
+      "Geotargeted Campaigns",
+      "CPM or CPCL buying model "
     ],
-    "img": "/imgs/features/seo.svg"
+    "icon": "audio"
   },
   {
-    "title": "Branding Campaigns",
-    "features": [
-      "Display (Facebook, Google, Twitter, LinkedIn and Programmatic)",
-      "Video (Facebook, Google, Twitter, LinkedIn and Programmatic)",
-      "Search(Google Ads)"
-    ],
-    "img": "/imgs/features/rocket.svg"
+    "title": "Web & App Development",
+    "features": ["Institutional Sites", "E-Commerce Site"],
+    "icon": "program"
   },
   {
-    "title": "Branding Campaigns",
+    "title": "Design Management",
     "features": [
-      "Display (Facebook, Google, Twitter, LinkedIn and Programmatic)",
-      "Video (Facebook, Google, Twitter, LinkedIn and Programmatic)",
-      "Search(Google Ads)"
+      "Brand Concept",
+      "Logo creation",
+      "Slogan",
+      "Fan Page",
+      "Personalized Cards",
+      "Personalized Emails"
     ],
-    "img": "/imgs/features/seo.svg"
+    "icon": "design"
+  },
+  {
+    "title": "Community Management",
+    "features": [
+      "Audio Ad Creation",
+      "Display Banners (Desktop & Mobile)",
+      "Video Ad Creation",
+      "Community Management"
+    ],
+    "icon": "community"
   }
 ]
