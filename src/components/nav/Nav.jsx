@@ -107,6 +107,7 @@ export default function Example() {
                     key={item.name}
                     href={item.href}
                     className="font-regular hover:bg-gray-50 -mx-3 block rounded-lg px-3 py-2 text-4xl font-bold text-white hover:text-alpha"
+                    onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.name}
                   </a>
