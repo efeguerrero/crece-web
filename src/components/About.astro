@@ -1,0 +1,78 @@
+---
+const data = [
+  {
+    title: 'Our Mission',
+    text: 'We want a better world, and we know that digital tools are powerful. We can reach and help people who were previously impossible to reach using marketing solutions.',
+  },
+  {
+    title: 'Our Vision',
+    text: 'Be on the top of mind of the companies at the moment of needed marketing solutions.',
+  },
+  {
+    title: 'Our Values',
+    text: 'You are what you say and what you do. First the client, Second the client and lastly the client. Professionalism, Honesty and Hard Work',
+  },
+];
+---
+
+<section class="">
+  <div
+    id="about"
+    class="mx-auto flex px-6 py-8 sm:py-16 lg:w-[90vw] lg:px-6 xl:w-[70vw]"
+  >
+    <div class="mb-10 w-full overflow-hidden rounded-lg lg:mb-0 lg:w-1/2">
+      <div class="mb-8 max-w-screen-md lg:mb-16">
+        <h2 class="mb-4 text-4xl font-extrabold tracking-tight text-alpha">
+          About Us
+        </h2>
+        <p class="text-alpha sm:text-xl">
+          We are a group of designers, digital marketers, developers with the
+          desire of offering creative and quality solutions which can be adapted
+          to the requirements of each business.
+        </p>
+      </div>
+    </div>
+    <div
+      class="-mb-10 flex flex-col flex-wrap text-center lg:w-1/2 lg:pl-12 lg:text-left"
+    >
+      {
+        data.map((item) => {
+          return (
+            <div class="mb-10 flex items-start gap-4">
+              <div class="flex-grow">
+                <div class="flex items-center justify-start">
+                  <div class="inline-flex h-12 w-12 items-center justify-center rounded-full text-indigo-500">
+                    <svg
+                      class="h-10 w-10"
+                      viewBox="0 0 62 74"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M8.2998 73.2001V11.6001L61.5998 42.4001L8.2998 73.2001ZM11.3998 17.1001V67.8001L55.2998 42.4001L11.3998 17.1001Z"
+                        fill="#9D9D9D"
+                      />
+                      <path
+                        d="M0 61.5V0L53.3 30.8L0 61.5ZM3.09999 5.29999V56L47 30.6L3.09999 5.29999Z"
+                        fill="currentColor"
+                      />
+                      <path
+                        d="M0 61.5V0L53.3 30.8L0 61.5ZM3.09999 5.29999V56L47 30.6L3.09999 5.29999Z"
+                        fill="currentColor"
+                        fill-opacity="0.2"
+                      />
+                    </svg>
+                  </div>
+                  <h2 class="text-gray-900 title-font text-lg font-medium">
+                    {item.title}
+                  </h2>
+                </div>
+                <p class="pl-12 text-base leading-relaxed">{item.text}</p>
+              </div>
+            </div>
+          );
+        })
+      }
+    </div>
+  </div>
+</section>
