@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Dialog } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
@@ -12,9 +12,25 @@ const navigation = [
 
 export default function Example() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isSticky, setSticky] = useState(false);
+
+  const handleScroll = () => {
+    setSticky(window.scrollY >= 70);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
-    <section className=" absolute inset-x-0 top-0 z-50">
+    <section
+      className={`${
+        isSticky ? 'bg-white' : ''
+      } cubic-bezier(0.4, 0,  0.2, 1) fixed inset-x-0 top-0 z-50 transition-all duration-300`}
+    >
       <nav
         className="flex max-w-[1700px] items-center justify-between p-6 lg:mx-auto lg:w-[90vw] lg:px-0 "
         aria-label="Global"
