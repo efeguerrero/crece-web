@@ -11,6 +11,7 @@ module.exports = {
         black: '#000000',
         alpha: '#2A25CC',
         alphaDark: '#151366',
+        alphaLight: '#bfbef0',
         bravo: '#DB0BB2',
         bravoDark: '#6e0659',
         charly: '#8D1EE3',
