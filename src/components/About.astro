@@ -15,17 +15,21 @@ const data = [
 ];
 ---
 
-<section class="">
+<section
+  class="mt-10 bg-alpha py-20 [clip-path:polygon(0%_0%,100%_10rem,100%_100%,0%_100%)]"
+>
   <div
     id="about"
-    class="mx-auto flex px-6 py-8 sm:py-16 lg:w-[90vw] lg:px-6 xl:w-[70vw]"
+    class="mx-auto flex flex-col px-6 py-20 lg:w-[90vw] lg:flex-row lg:gap-6 lg:px-6 lg:py-36 xl:w-[70vw]"
   >
     <div class="mb-10 w-full overflow-hidden rounded-lg lg:mb-0 lg:w-1/2">
-      <div class="mb-8 max-w-screen-md lg:mb-16">
-        <h2 class="mb-4 text-4xl font-extrabold tracking-tight text-alpha">
+      <div class="mb-8 max-w-screen-md lg:mb-16 lg:pr-10">
+        <h2
+          class="mb-4 text-5xl font-extrabold uppercase leading-tight tracking-widest text-white"
+        >
           About Us
         </h2>
-        <p class="text-alpha sm:text-xl">
+        <p class="text-lg text-white">
           We are a group of designers, digital marketers, developers with the
           desire of offering creative and quality solutions which can be adapted
           to the requirements of each business.
@@ -33,7 +37,7 @@ const data = [
       </div>
     </div>
     <div
-      class="-mb-10 flex flex-col flex-wrap text-center lg:w-1/2 lg:pl-12 lg:text-left"
+      class="-mb-10 flex flex-col flex-wrap justify-evenly text-center lg:w-1/2 lg:text-left"
     >
       {
         data.map((item) => {
@@ -41,9 +45,9 @@ const data = [
             <div class="mb-10 flex items-start gap-4">
               <div class="flex-grow">
                 <div class="flex items-center justify-start">
-                  <div class="inline-flex h-12 w-12 items-center justify-center rounded-full text-indigo-500">
+                  <div class="mr-2 inline-flex h-12 w-12 items-center justify-center rounded-full text-bravo">
                     <svg
-                      class="h-10 w-10"
+                      class="h-12 w-12"
                       viewBox="0 0 62 74"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
@@ -63,11 +67,13 @@ const data = [
                       />
                     </svg>
                   </div>
-                  <h2 class="text-gray-900 title-font text-lg font-medium">
+                  <h2 class="text-gray-900 title-font text-2xl font-bold text-white">
                     {item.title}
                   </h2>
                 </div>
-                <p class="pl-12 text-base leading-relaxed">{item.text}</p>
+                <p class="pl-14 text-left text-base leading-relaxed text-white">
+                  {item.text}
+                </p>
               </div>
             </div>
           );
