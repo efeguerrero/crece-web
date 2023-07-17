@@ -6,7 +6,7 @@ import data from './data.json';
 import Icons from '../utils/Icons.astro';
 ---
 
-<section class="bg-gray lg:py-6 lg:pb-20">
+<section class="bg-gray py-12">
   <div
     id="services"
     class="mx-auto px-6 py-8 sm:py-16 lg:w-[90vw] lg:px-6 xl:w-[70vw]"
@@ -21,35 +21,36 @@ import Icons from '../utils/Icons.astro';
       </p>
     </div>
     <div
-      class="space-y-8 md:grid md:grid-cols-2 md:gap-12 md:space-y-0 lg:grid-cols-3"
+      class="space-y-10 md:grid md:grid-cols-2 md:gap-12 md:space-y-0 lg:grid-cols-4"
     >
       {
         data.map((item) => (
           <div>
-            <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-white  text-alpha lg:h-12 lg:w-12">
+            <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-alphaLight/30  text-alpha lg:h-12 lg:w-12">
               <Icons icon={item.icon} folder="features" />
             </div>
-            <h3 class="mb-4 text-xl font-bold text-alpha">{item.title}</h3>
+            <h3 class="mb-4 text-2xl font-bold text-alpha">{item.title}</h3>
 
-            <ul class="flex w-full flex-col justify-start gap-4">
+            <dl class="flex w-full flex-col justify-start gap-2 lg:gap-4">
               {item.features.map((feature) => (
-                <div class="flex items-start justify-start text-alpha">
-                  <div class="w-[2rem]">
+                <div class="flex items-start justify-start gap-2 text-white">
+                  <dt class="mt-[0.25rem] flex h-[1rem] w-[1rem] items-center justify-center rounded-full bg-alphaLight">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      class="h-6 w-6"
+                      width="24"
+                      height="24"
                       viewBox="0 0 24 24"
                     >
                       <path
                         fill="currentColor"
-                        d="M18.9 8.1L9 18l-4.95-4.95l.71-.71L9 16.59l9.19-9.2l.71.71Z"
+                        d="M18.7 7.2c-.4-.4-1-.4-1.4 0l-7.5 7.5l-3.1-3.1c-.4-.4-1-.4-1.4 0c-.4.4-.4 1 0 1.4l3.8 3.8c.2.2.4.3.7.3c.3 0 .5-.1.7-.3l8.2-8.2c.4-.4.4-1 0-1.4z"
                       />
                     </svg>
-                  </div>
-                  <li class="w-full text-alpha">{feature}</li>
+                  </dt>
+                  <dd class="w-full text-base text-alpha">{feature}</dd>
                 </div>
               ))}
-            </ul>
+            </dl>
           </div>
         ))
       }
