@@ -77,7 +77,7 @@ export default function Example() {
         </div>
         <div className="group hidden cursor-pointer gap-2 lg:flex lg:flex-1 lg:justify-end">
           <a
-            href="#"
+            href="#contact"
             className={`${
               isSticky ? 'font-medium text-alpha' : 'text-white'
             } text-md font-regular  transition duration-300 ease-in-out  group-hover:text-bravo `}
@@ -157,7 +157,8 @@ export default function Example() {
               </div>
               <div className="py-6">
                 <a
-                  href="#"
+                  onClick={() => setMobileMenuOpen(false)}
+                  href="#contact"
                   className="font-regular hover:bg-gray-50 -mx-3 block rounded-lg px-3 py-2.5 text-4xl font-bold text-bravo"
                 >
                   Contact Us

@@ -9,6 +9,7 @@ import '../styles/styles.css';
 
 //Component Import
 import Nav from '../components/nav/Nav.jsx';
+import Footer from '../components/Footer.astro';
 ---
 
 <html lang="en">
@@ -30,5 +31,6 @@ import Nav from '../components/nav/Nav.jsx';
   <body class="font-inter">
     <Nav client:idle />
     <slot />
+    <Footer />
   </body>
 </html>

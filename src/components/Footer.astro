@@ -1,0 +1,39 @@
+---
+---
+
+<footer class="text-gray-600 body-font">
+  <div
+    class="container mx-auto flex flex-col items-center px-5 py-8 sm:flex-row"
+  >
+    <a
+      class="title-font text-gray-900 flex items-center justify-center font-medium md:justify-start"
+      href="#"
+    >
+      <img class="h-16 w-auto" src="/imgs/logo.png" alt="" />
+    </a>
+    <p
+      class="text-gray-500 sm:border-gray-200 mt-4 text-sm sm:ml-4 sm:mt-0 sm:border-l-2 sm:py-2 sm:pl-4"
+    >
+      All Rights Reserved. © <span id="yearHolder"></span> Crecé Más
+    </p>
+    <span
+      class="mt-4 inline-flex justify-center sm:ml-auto sm:mt-0 sm:justify-start"
+    >
+      <p class="text-sm">
+        Designed and developed by <a
+          class="text-sm font-semibold text-bravo transition-all hover:cursor-pointer"
+          href="https://franguerrero.dev/"
+          target="_blank"
+          >{`{fg}`}
+        </a>
+      </p>
+    </span>
+  </div>
+</footer>
+
+<script>
+  //Current Year Calculation as a script to be executed on client-side
+  const year = new Date().getFullYear().toString();
+  const yearHolder = document.querySelector('#yearHolder');
+  yearHolder.innerHTML = `${year}`;
+</script>
