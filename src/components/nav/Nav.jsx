@@ -28,11 +28,15 @@ export default function Example() {
   return (
     <section
       className={`${
-        isSticky ? 'bg-white' : ''
-      } cubic-bezier(0.4, 0,  0.2, 1) fixed inset-x-0 top-0 z-50 transition-all duration-300`}
+        isSticky
+          ? 'z-10 bg-white shadow-[0px_4px_30px_0px] shadow-black/20'
+          : ''
+      } cubic-bezier(0.4, 0,  0.2, 1) fixed inset-x-0 top-0 z-50 transition-all duration-75`}
     >
       <nav
-        className="flex max-w-[1700px] items-center justify-between p-6 lg:mx-auto lg:w-[90vw] lg:px-0 "
+        className={`${
+          isSticky ? 'p-4 lg:w-[85vw] ' : 'p-6 lg:w-[80vw]'
+        } flex  items-center justify-between  transition-all duration-500  lg:mx-auto  lg:px-0 `}
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
@@ -57,7 +61,9 @@ export default function Example() {
             <a
               key={item.name}
               href={item.href}
-              className="lg:text-md font-regular relative text-white after:absolute after:-bottom-2 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-bravo after:transition-transform after:duration-300 after:ease-in-out hover:after:origin-bottom-left hover:after:scale-x-100 "
+              className={`${
+                isSticky ? 'font-medium text-alpha' : 'text-white'
+              } lg:text-md font-regular relative after:absolute after:-bottom-2 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-bravo after:transition-transform after:duration-300 after:ease-in-out hover:after:origin-bottom-left hover:after:scale-x-100`}
             >
               {item.name}
             </a>
@@ -66,13 +72,17 @@ export default function Example() {
         <div className="group hidden cursor-pointer gap-2 lg:flex lg:flex-1 lg:justify-end">
           <a
             href="#"
-            className="text-md font-regular text-white  transition duration-200 ease-in-out group-hover:text-bravo "
+            className={`${
+              isSticky ? 'font-medium text-alpha' : 'text-white'
+            } text-md font-regular  transition duration-300 ease-in-out  group-hover:text-bravo `}
           >
             Contact Us
           </a>
           <span
             aria-hidden="true"
-            className="translate-x-0 text-white transition-transform duration-200 ease-in-out group-hover:translate-x-1 group-hover:text-bravo"
+            className={`${
+              isSticky ? 'text-alpha' : 'text-white'
+            } translate-x-0  transition duration-300 ease-in-out group-hover:translate-x-1 group-hover:text-bravo `}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
