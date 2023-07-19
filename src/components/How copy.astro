@@ -1,0 +1,73 @@
+---
+const data = [
+  {
+    title: 'Meeting',
+    description:
+      'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.',
+  },
+  {
+    title: 'Planning',
+    description:
+      'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. ',
+  },
+  {
+    title: 'Development',
+    description:
+      'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.',
+  },
+  {
+    title: 'Delivery',
+    description:
+      'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.',
+  },
+];
+---
+
+<section id="how" class="py-24 sm:py-16 lg:py-44">
+  <div class="bg-charly py-14 lg:py-20">
+    <div class="mx-auto px-6 text-center lg:w-[90vw] lg:px-0 xl:w-[70vw]">
+      <h2 class="text-left text-6xl font-bold leading-tight text-white">
+        How does it work?
+      </h2>
+      <p
+        class="mx-auto mt-4 text-left text-lg leading-relaxed text-white lg:text-2xl"
+      >
+        All our solutions are custom tailored because they are part of the
+        process.
+      </p>
+    </div>
+  </div>
+  <div
+    class="mx-auto mt-12 bg-no-repeat px-6 lg:mt-20 lg:w-[90vw] lg:px-8 xl:w-[70vw]"
+  >
+    <div class="relative">
+      <div
+        class="absolute inset-x-0 top-8 hidden h-[4px] rounded-sm bg-gradient-to-r from-charly/[0.15] to-charly lg:block lg:px-28 xl:px-44"
+      >
+      </div>
+
+      <div
+        class="relative grid grid-cols-1 gap-x-12 gap-y-12 text-center lg:grid-cols-4"
+      >
+        {
+          data.map((item, index) => (
+            <div class="group flex-col items-start first:flex lg:items-center">
+              <div class=" hidden h-16 w-16 items-center justify-center rounded-lg border-2 border-charly  bg-white transition-all lg:mx-auto lg:flex lg:group-hover:bg-charly">
+                <span class="text-4xl font-bold text-charly transition-all lg:group-hover:text-white">
+                  {index + 1}
+                </span>
+              </div>
+              <h3 class="mt-6 text-left text-4xl font-bold leading-tight tracking-wider text-charly md:mt-10 lg:text-center lg:text-3xl">
+                <span class="text-5xl lg:hidden">{index + 1}. </span>
+                {item.title}
+              </h3>
+              <p class="mt-4 text-left text-lg text-charly lg:text-center  lg:text-base">
+                {item.description}
+              </p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

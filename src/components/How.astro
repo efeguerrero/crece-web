@@ -23,51 +23,92 @@ const data = [
 ];
 ---
 
-<section id="how" class="py-24 sm:py-16 lg:py-44">
-  <div class="bg-charly py-14 lg:py-20">
-    <div class="mx-auto px-6 text-center lg:w-[90vw] lg:px-0 xl:w-[70vw]">
-      <h2 class="text-left text-6xl font-bold leading-tight text-white">
+<div
+  id="about"
+  class="w-100vw mb-[-1px] h-[8rem] bg-alpha [clip-path:polygon(0%_30%,100%_0%,100%_100%,0%_100%)] lg:mt-20"
+>
+</div>
+<section
+  class="relative overflow-hidden bg-alpha pb-16 sm:py-16 lg:pb-24 lg:pt-12"
+>
+  <div
+    class="mx-auto flex flex-col items-stretch px-4 sm:px-6 lg:w-[90vw] lg:flex-row lg:gap-20 lg:px-6 lg:py-10 xl:w-[70vw]"
+  >
+    <div
+      class="relative flex max-w-screen-md flex-col justify-center text-left"
+    >
+      <svg
+        class="absolute right-0 top-[5%] ml-auto hidden h-40 w-40 lg:block"
+        viewBox="0 0 152 152"
+        fill="none"
+        ><defs
+          ><clipPath id="clip0"
+            ><path
+              d="M455.809 325.054 576.49 254.584 545.226 201.044 424.545 271.514Z"
+              fill-rule="evenodd"
+              clip-rule="evenodd"></path></clipPath
+          ><clipPath id="clip1"
+            ><path
+              d="M455.809 325.054 576.49 254.584 545.226 201.044 424.545 271.514Z"
+              fill-rule="evenodd"
+              clip-rule="evenodd"></path></clipPath
+          ><clipPath id="clip2"
+            ><path
+              d="M455.809 325.054 576.49 254.584 545.226 201.044 424.545 271.514Z"
+              fill-rule="evenodd"
+              clip-rule="evenodd"></path></clipPath
+          ></defs
+        ><g transform="translate(-424 -201)"
+          ><g clip-path="url(#clip0)"
+            ><g clip-path="url(#clip1)"
+              ><g clip-path="url(#clip2)"
+                ><path
+                  d="M0.447937 18.1614C9.81014 31.5352 18.4347 42.3598 31.519 52.0087 40.0175 58.2759 54.5547 65.2946 64.1291 57.0482 74.8617 47.8042 84.2643 34.1413 91.7659 22.1683 95.8416 15.6632 100.326 9.79988 103.994 3.06629 104.777 1.62775 106.117 0.590713 103.454 1.84721 99.6476 3.64332 95.7206 5.00081 91.7126 6.32044 84.0852 8.83174 82.4146 9.9082 92.4987 7.40962 94.8989 6.81489 101.851 3.59526 104.567 4.38527 107.097 5.12145 106.361 12.9525 106.422 14.9305 106.9 30.442 95.1386 15.7417 88.7647 11.1467"
+                  stroke="#DB0BB2"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  fill="none"
+                  transform="matrix(1.12786 -0.658605 -0.504264 -0.86355 455.809 325.054)"
+                ></path></g
+              ></g
+            ></g
+          ></g
+        ></svg
+      >
+
+      <h2
+        class="mb-4 text-4xl font-extrabold leading-tight tracking-tight text-white lg:text-6xl"
+      >
         How does it work?
       </h2>
-      <p
-        class="mx-auto mt-4 text-left text-lg leading-relaxed text-white lg:text-2xl"
-      >
-        All our solutions are custom tailored because they are part of the
-        process.
+      <p class="text-lg text-alphaLight">
+        Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
+        sint. Velit officia consequat duis.
       </p>
     </div>
-  </div>
-  <div
-    class="mx-auto mt-12 bg-no-repeat px-6 lg:mt-20 lg:w-[90vw] lg:px-8 xl:w-[70vw]"
-  >
-    <div class="relative">
-      <div
-        class="absolute inset-x-0 top-8 hidden h-[4px] rounded-sm bg-gradient-to-r from-charly/[0.15] to-charly lg:block lg:px-28 xl:px-44"
-      >
-      </div>
 
-      <div
-        class="relative grid grid-cols-1 gap-x-12 gap-y-12 text-center lg:grid-cols-4"
-      >
-        {
-          data.map((item, index) => (
-            <div class="group flex-col items-start first:flex lg:items-center">
-              <div class=" hidden h-16 w-16 items-center justify-center rounded-lg border-2 border-charly  bg-white transition-all lg:mx-auto lg:flex lg:group-hover:bg-charly">
-                <span class="text-4xl font-bold text-charly transition-all lg:group-hover:text-white">
+    <ul class="mx-auto mt-16 flex flex-col items-start justify-evenly lg:mt-0">
+      {
+        data.map((item, index) => {
+          const totalItems = data.length;
+          const displayBorder = index == totalItems - 1;
+
+          return (
+            <li class="relative mt-8 flex min-h-[25%] items-start justify-start lg:gap-8 ">
+              <div class="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-lg  bg-bravo">
+                <h2 class="text-3xl font-bold text-white transition-all lg:group-hover:text-white">
                   {index + 1}
-                </span>
+                </h2>
               </div>
-              <h3 class="mt-6 text-left text-4xl font-bold leading-tight tracking-wider text-charly md:mt-10 lg:text-center lg:text-3xl">
-                <span class="text-5xl lg:hidden">{index + 1}. </span>
-                {item.title}
-              </h3>
-              <p class="mt-4 text-left text-lg text-charly lg:text-center  lg:text-base">
-                {item.description}
-              </p>
-            </div>
-          ))
-        }
-      </div>
-    </div>
+
+              <div>
+                <h3 class="text-2xl font-bold text-white">{item.title}</h3>
+                <p class="mt-2 text-base  text-white">{item.description}</p>
+              </div>
+            </li>
+          );
+        })
+      }
+    </ul>
   </div>
 </section>
