@@ -2,8 +2,20 @@
 ---
 
 <header
-  class="relative flex min-h-[100svh] flex-col items-center bg-alphaDark/70 bg-cover bg-center bg-no-repeat pt-[9rem] lg:bg-[url('/imgs/mainHeader.webp')]"
+  class="relative flex min-h-[100svh] flex-col items-center bg-alphaDark/70 bg-cover bg-center bg-no-repeat py-[7rem]"
 >
+  <video
+    class="absolute top-0 -z-10 hidden h-[100svh] w-[100svw] object-cover lg:inline"
+    playsinline
+    autoplay
+    muted
+    loop
+    poster="/vids/videoCoverMobile.jpg"
+    id="bgvid"
+  >
+    <source src="/vids/desktopHeader2.webm" type="video/wemb" />
+    <source src="/vids/desktopHeader2.mp4" type="video/mp4" />
+  </video>
   <video
     class="absolute top-0 -z-10 h-[100svh] w-[100svw] object-cover lg:hidden"
     playsinline
@@ -17,25 +29,33 @@
     <source src="/vids/mobileHeader.mp4" type="video/mp4" />
   </video>
   <section
-    class="center relative mx-auto flex h-full min-h-full grow flex-col justify-center gap-8 px-6 pb-36 sm:gap-0 lg:w-[80vw] lg:max-w-[1500px] lg:justify-between lg:gap-10 lg:px-0 xl:py-10 xl:pt-6 2xl:py-20"
+    class="center relative mx-auto flex h-full min-h-full grow flex-col justify-center gap-8 px-6 pb-0 sm:gap-0 lg:w-[80vw] lg:max-w-[1500px] lg:justify-center lg:gap-8 lg:px-0 lg:pb-0"
   >
     <h2
-      class="2xl:leading[9rem] text-center text-5xl font-bold uppercase leading-[3.1rem] tracking-tight text-white sm:text-[12vw] sm:leading-[14vw] sm:tracking-normal lg:w-[11ch] lg:self-end lg:text-right lg:text-[6rem] lg:leading-[7rem] lg:text-white/90 xl:text-[7rem] xl:leading-[8rem] 2xl:text-[8rem]"
+      class="2xl:leading[9rem] stroke-bravo text-center text-5xl font-extrabold uppercase leading-[3.1rem] tracking-wide text-white sm:text-[12vw] sm:leading-[14vw] sm:tracking-normal lg:w-[11ch] lg:self-start lg:text-left lg:text-[4rem] lg:font-bold lg:leading-[5.5rem] xl:text-[5.5rem] 3xl:text-[7rem] 3xl:leading-[7rem]"
     >
       Expertos en marketing digital
     </h2>
     <h3
-      class="break-normal text-center text-xl text-white opacity-90 before:bottom-0 before:left-0 before:h-full before:w-full before:origin-bottom before:scale-y-[0.35] before:transition-transform before:duration-500 before:ease-in-out hover:before:scale-y-100 sm:w-auto lg:relative lg:ml-auto lg:text-right lg:before:absolute lg:before:bg-bravo"
+      class="break-normal text-center text-[1.05rem] font-light text-white sm:font-normal lg:w-1/2 lg:text-left lg:text-[1.3rem] 3xl:text-2xl"
+    >
+      We are a group of designers, digital marketers and developers with the
+      desire to offer <span class="text-bravo">creative</span> and quality <span
+        class="text-epsilon">solutions</span
+      > which can be adapted to the requirements of each customer.
+    </h3>
+    <!-- <h3
+      class="break-normal text-center text-xl text-white before:bottom-0 before:left-0 before:h-full before:w-full before:origin-bottom before:scale-y-[0.35] before:transition-transform before:duration-500 before:ease-in-out hover:before:scale-y-100 sm:w-auto lg:relative lg:w-max lg:text-left lg:before:absolute lg:before:bg-bravo"
     >
       <span class="relative cursor-default"
         >Transformando tu <span class="text-bravo sm:text-white">visión</span> en
         realidad</span
       >
-    </h3>
+    </h3> -->
     <h4
-      class="absolute bottom-[10%] text-sm font-bold uppercase text-white sm:hidden"
+      class="absolute bottom-[0%] text-sm uppercase text-white lg:bottom-0 lg:right-0"
     >
-      <a class="text-bravo" href="#contact">Contact us,</a>
+      <a class="font-bold text-bravo" href="#contact">Contact us,</a>
       <span> or take a look first</span>
     </h4>
   </section>
