@@ -5,9 +5,9 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 const navigation = [
   { name: 'Services', href: '#services' },
   { name: 'How We Work', href: '#how' },
-  { name: 'About Us', href: '#about' },
-  { name: 'Partners', href: '#partners' },
-  { name: 'Success Stories', href: '#stories' },
+  { name: 'Culture', href: '#culture' },
+  { name: 'Clients', href: '#clients' },
+  { name: 'Projects', href: '#projects' },
 ];
 
 export default function Example() {
@@ -103,7 +103,7 @@ export default function Example() {
                 strokeLinejoin="round"
                 d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
               />
-            </svg>{' '}
+            </svg>
           </span>
         </div>
       </nav>

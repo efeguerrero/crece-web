@@ -44,7 +44,12 @@ export default function Slider() {
                     {item.text}
                   </h3>
                   <h3 className="font-regular relative mb-4 ml-auto  break-normal text-right text-xl text-white opacity-90 before:absolute before:bottom-0 before:left-0 before:h-full before:w-full before:origin-bottom before:scale-y-[0.35] before:bg-bravo before:transition-transform before:duration-500 before:ease-in-out hover:before:scale-y-100 sm:w-auto lg:text-2xl lg:font-bold lg:text-alpha">
-                    <span className="relative cursor-default">Contact Us</span>
+                    <a
+                      href="#contact"
+                      className="relative cursor-default hover:cursor-pointer"
+                    >
+                      Contact Us
+                    </a>
                   </h3>
                 </div>
                 <img

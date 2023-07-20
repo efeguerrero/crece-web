@@ -21,6 +21,7 @@ module.exports = {
     },
     fontFamily: {
       inter: ['Inter', 'sans-serif'],
+      franklin: ['Libre Franklin', 'sans-serif'],
     },
   },
 };
