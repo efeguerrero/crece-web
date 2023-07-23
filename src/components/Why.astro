@@ -1,0 +1,128 @@
+---
+const data = [
+  {
+    name: 'Customer centric',
+    text: 'Plus, our platform is constantly evolving to meet the changing needs.',
+  },
+  {
+    name: 'Digital mindset',
+    text: 'Plus, our platform is constantly evolving to meet the changing needs.',
+  },
+  {
+    name: 'Result driven',
+    text: 'Plus, our platform is constantly evolving to meet the changing needs.',
+  },
+];
+---
+
+<section class="bg-white">
+  <div
+    class="mx-auto items-center px-4 py-24 sm:px-6 lg:w-[90vw] lg:px-6 lg:py-36 xl:w-[70vw]"
+  >
+    <div>
+      <div class="">
+        <p
+          class="mb-8 text-4xl font-extrabold tracking-tight text-alpha lg:w-3/4 lg:text-6xl lg:leading-[4.3rem]"
+        >
+          Top of mind of the companies in need of marketing solutions.
+        </p>
+        <p class="text-lg text-alpha lg:w-3/4 lg:text-xl">
+          We all make mistakes, have struggles, and even regret things in our
+          past. But you are not your mistakes, you are not your struggles, and
+          you are here NOW with the power to shape your day and your future
+        </p>
+      </div>
+    </div>
+    <div class="mx-auto mt-12 w-full text-left">
+      <div
+        class="relative m-auto items-center gap-12 md:order-first lg:inline-flex"
+      >
+        <div class="lg: mx-auto">
+          <ul
+            role="list"
+            class="mt-16 grid list-none grid-cols-1 gap-16 md:grid-cols-3 lg:mt-16 lg:gap-12 lg:px-20"
+          >
+            {
+              data.map((item) => {
+                return (
+                  <li class="flex flex-col items-center justify-center">
+                    <div class="inline-flex h-16 w-16 rotate-90 items-center justify-center rounded-full text-bravo">
+                      <svg
+                        class="h-16 w-16"
+                        viewBox="0 0 62 74"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M8.2998 73.2001V11.6001L61.5998 42.4001L8.2998 73.2001ZM11.3998 17.1001V67.8001L55.2998 42.4001L11.3998 17.1001Z"
+                          fill="#bfbef0"
+                        />
+                        <path
+                          d="M0 61.5V0L53.3 30.8L0 61.5ZM3.09999 5.29999V56L47 30.6L3.09999 5.29999Z"
+                          fill="currentColor"
+                        />
+                        <path
+                          d="M0 61.5V0L53.3 30.8L0 61.5ZM3.09999 5.29999V56L47 30.6L3.09999 5.29999Z"
+                          fill="currentColor"
+                          fill-opacity="0.2"
+                        />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 class="mt-5 text-center text-3xl font-bold leading-6 text-bravo">
+                        {item.name}
+                      </h3>
+                      <p class="text-gray-500 mx-auto mt-2 w-2/3 text-center text-base lg:w-[80%]">
+                        {item.text}
+                      </p>
+                    </div>
+                  </li>
+                );
+              })
+            }
+          </ul>
+          <div
+            class="mx-auto mt-16 grid grid-cols-1 gap-8 text-center sm:gap-x-8 md:grid-cols-3 lg:mt-24 lg:w-2/3"
+          >
+            <div>
+              <h3 class="text-7xl font-bold">
+                <span
+                  class="bg-gradient-to-r from-bravo to-alpha bg-clip-text text-transparent"
+                >
+                  6+
+                </span>
+              </h3>
+              <p class="text-gray-900 mt-4 text-xl font-medium">
+                Years in business
+              </p>
+            </div>
+
+            <div>
+              <h3 class="text-7xl font-bold">
+                <span
+                  class="bg-gradient-to-r from-bravo to-alpha bg-clip-text text-transparent"
+                >
+                  4821
+                </span>
+              </h3>
+              <p class="text-gray-900 mt-4 text-xl font-medium">
+                Projects delivered
+              </p>
+            </div>
+
+            <div>
+              <h3 class="text-7xl font-bold">
+                <span
+                  class="bg-gradient-to-r from-bravo to-alpha bg-clip-text text-transparent"
+                >
+                  37+
+                </span>
+              </h3>
+              <p class="text-gray-900 mt-4 text-xl font-medium">Team members</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
