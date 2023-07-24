@@ -17,12 +17,12 @@ const data = [
 
 <section class="bg-white">
   <div
-    class="mx-auto items-center px-4 py-24 sm:px-6 lg:w-[90vw] lg:px-6 lg:py-36 xl:w-[70vw]"
+    class="mx-auto items-center px-4 py-24 sm:px-6 lg:w-[90vw] lg:px-6 lg:pb-24 lg:pt-36 xl:w-[70vw]"
   >
     <div>
       <div class="">
         <p
-          class="mb-8 text-4xl font-extrabold tracking-tight text-alpha lg:w-3/4 lg:text-6xl lg:leading-[4.3rem]"
+          class="mb-8 text-4xl font-extrabold tracking-tight text-alpha lg:w-full lg:text-6xl lg:leading-[4.3rem] 3xl:w-3/4"
         >
           Top of mind of the companies in need of marketing solutions.
         </p>
@@ -40,7 +40,7 @@ const data = [
         <div class="lg: mx-auto">
           <ul
             role="list"
-            class="mt-16 grid list-none grid-cols-1 gap-16 md:grid-cols-3 lg:mt-16 lg:gap-12 lg:px-20"
+            class="mt-12 grid list-none grid-cols-1 gap-12 md:grid-cols-3 lg:gap-16 lg:px-20 3xl:gap-12"
           >
             {
               data.map((item) => {
@@ -69,10 +69,10 @@ const data = [
                       </svg>
                     </div>
                     <div>
-                      <h3 class="mt-5 text-center text-3xl font-bold leading-6 text-bravo">
+                      <h3 class="mt-2 text-center text-3xl font-bold leading-6 text-bravo lg:mt-4">
                         {item.name}
                       </h3>
-                      <p class="text-gray-500 mx-auto mt-2 w-2/3 text-center text-base lg:w-[80%]">
+                      <p class="text-gray-500 mx-auto mt-4 w-2/3 text-center text-base lg:w-[80%]">
                         {item.text}
                       </p>
                     </div>
@@ -82,7 +82,7 @@ const data = [
             }
           </ul>
           <div
-            class="mx-auto mt-16 grid grid-cols-1 gap-8 text-center sm:gap-x-8 md:grid-cols-3 lg:mt-24 lg:w-2/3"
+            class="mx-auto mt-12 grid grid-cols-1 gap-8 text-center sm:gap-x-8 md:grid-cols-3 lg:mt-24 lg:w-2/3"
           >
             <div>
               <h3 class="text-7xl font-bold">
@@ -92,7 +92,7 @@ const data = [
                   6+
                 </span>
               </h3>
-              <p class="text-gray-900 mt-4 text-xl font-medium">
+              <p class="text-gray-500 mt-4 text-xl font-normal">
                 Years in business
               </p>
             </div>
@@ -105,7 +105,7 @@ const data = [
                   4821
                 </span>
               </h3>
-              <p class="text-gray-900 mt-4 text-xl font-medium">
+              <p class="text-gray-500 mt-4 text-xl font-normal">
                 Projects delivered
               </p>
             </div>
@@ -118,7 +118,7 @@ const data = [
                   37+
                 </span>
               </h3>
-              <p class="text-gray-900 mt-4 text-xl font-medium">Team members</p>
+              <p class="text-gray-500 mt-4 text-xl font-normal">Team members</p>
             </div>
           </div>
         </div>
