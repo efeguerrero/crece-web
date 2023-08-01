@@ -1,4 +1,8 @@
 ---
+interface Props {
+  lang: string;
+}
+const { lang } = Astro.props;
 ---
 
 <footer class="text-gray-600 body-font">
@@ -14,13 +18,23 @@
     <p
       class="text-gray-500 sm:border-gray-200 mt-4 text-sm sm:ml-4 sm:mt-0 sm:border-l-2 sm:py-2 sm:pl-4"
     >
-      All Rights Reserved. © <span id="yearHolder"></span> Crecé Más
+      {
+        lang === 'es'
+          ? 'Todos los derechos reservados. ©'
+          : 'All Rights Reserved. ©'
+      }
+      <span id="yearHolder"></span> Crecé Más
     </p>
     <span
       class="mt-4 inline-flex justify-center sm:ml-auto sm:mt-0 sm:justify-start"
     >
       <p class="text-sm">
-        Designed and developed by <a
+        {
+          lang === 'es'
+            ? 'Diseñado y desarrollado por'
+            : 'Designed and developed by'
+        }
+        <a
           class="text-sm font-semibold text-bravo transition-all hover:cursor-pointer"
           href="https://franguerrero.dev/"
           target="_blank"
