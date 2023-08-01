@@ -81,9 +81,16 @@ const data = {
       class="-mb-10 flex flex-col flex-wrap justify-evenly text-center lg:w-1/2 lg:text-left"
     >
       {
-        data[lang].bullets.map((item) => {
+        data[lang].bullets.map((item, index) => {
+          const animationDelay = (index + 1) * 200;
           return (
-            <div class="mb-10 flex items-start gap-4">
+            <div
+              class="mb-10 flex items-start gap-4"
+              data-aos="fade-left"
+              data-aos-delay={animationDelay}
+              data-aos-duration="700"
+              data-aos-once="true"
+            >
               <div class="flex-grow">
                 <div class="flex items-center justify-start">
                   <div class="mr-2 inline-flex h-12 w-12 items-center justify-center rounded-full text-bravo">
