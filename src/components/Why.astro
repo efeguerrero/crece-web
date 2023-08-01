@@ -1,18 +1,91 @@
 ---
-const data = [
-  {
-    name: 'Customer centric',
-    text: 'Plus, our platform is constantly evolving to meet the changing needs.',
+interface Props {
+  lang: string;
+}
+const { lang } = Astro.props;
+
+// const data = [
+//   {
+//     name: 'Centrados en el cliente',
+//     text: 'Plus, our platform is constantly evolving to meet the changing needs.',
+//   },
+//   {
+//     name: 'Mente Digital',
+//     text: 'Plus, our platform is constantly evolving to meet the changing needs.',
+//   },
+//   {
+//     name: 'Result driven',
+//     text: 'Plus, our platform is constantly evolving to meet the changing needs.',
+//   },
+// ];
+
+const data = {
+  es: {
+    title:
+      'Top of mind de las empresas en necesidad de soluciones de marketing.',
+    text: 'We all make mistakes, have struggles, and even regret things in our past. But you are not your mistakes, you are not your struggles, and you are here NOW with the power to shape your day and your future',
+    bullets: [
+      {
+        name: 'Centrados en el cliente',
+        text: 'Plus, our platform is constantly evolving to meet the changing needs.',
+      },
+      {
+        name: 'Mente Digital',
+        text: 'Plus, our platform is constantly evolving to meet the changing needs.',
+      },
+      {
+        name: 'Result driven',
+        text: 'Plus, our platform is constantly evolving to meet the changing needs.',
+      },
+    ],
+    stats: [
+      {
+        number: '6+',
+        text: 'Años en el negocio',
+      },
+      {
+        number: '4821',
+        text: 'Proyectos entregados',
+      },
+      {
+        number: '37+',
+        text: 'Personas trabajando',
+      },
+    ],
   },
-  {
-    name: 'Digital mindset',
-    text: 'Plus, our platform is constantly evolving to meet the changing needs.',
+  en: {
+    title: 'Top of mind of the companies in need of marketing solutions.',
+    text: 'We all make mistakes, have struggles, and even regret things in our past. But you are not your mistakes, you are not your struggles, and you are here NOW with the power to shape your day and your future',
+    bullets: [
+      {
+        name: 'Customer centric',
+        text: 'Plus, our platform is constantly evolving to meet the changing needs.',
+      },
+      {
+        name: 'Digital mindset',
+        text: 'Plus, our platform is constantly evolving to meet the changing needs.',
+      },
+      {
+        name: 'Result driven',
+        text: 'Plus, our platform is constantly evolving to meet the changing needs.',
+      },
+    ],
+    stats: [
+      {
+        number: '6+',
+        text: 'Years in business',
+      },
+      {
+        number: '4821',
+        text: 'Projects delivered',
+      },
+      {
+        number: '37+',
+        text: 'Team members',
+      },
+    ],
   },
-  {
-    name: 'Result driven',
-    text: 'Plus, our platform is constantly evolving to meet the changing needs.',
-  },
-];
+};
 ---
 
 <section class="bg-white">
@@ -24,12 +97,10 @@ const data = [
         <p
           class="mb-8 text-4xl font-extrabold tracking-tight text-alpha lg:w-full lg:text-6xl lg:leading-[4.3rem] 3xl:w-3/4"
         >
-          Top of mind of the companies in need of marketing solutions.
+          {data[lang].title}
         </p>
         <p class="text-lg text-alpha lg:w-3/4 lg:text-xl">
-          We all make mistakes, have struggles, and even regret things in our
-          past. But you are not your mistakes, you are not your struggles, and
-          you are here NOW with the power to shape your day and your future
+          {data[lang].text}
         </p>
       </div>
     </div>
@@ -43,7 +114,7 @@ const data = [
             class="mt-12 grid list-none grid-cols-1 gap-12 md:grid-cols-3 lg:gap-16 lg:px-20 3xl:gap-12"
           >
             {
-              data.map((item) => {
+              data[lang].bullets.map((item) => {
                 return (
                   <li class="flex flex-col items-center justify-center">
                     <div class="inline-flex h-16 w-16 rotate-90 items-center justify-center rounded-full text-bravo">
@@ -84,42 +155,22 @@ const data = [
           <div
             class="mx-auto mt-12 grid grid-cols-1 gap-8 text-center sm:gap-x-8 md:grid-cols-3 lg:mt-24 lg:w-2/3"
           >
-            <div>
-              <h3 class="text-7xl font-bold">
-                <span
-                  class="bg-gradient-to-r from-bravo to-alpha bg-clip-text text-transparent"
-                >
-                  6+
-                </span>
-              </h3>
-              <p class="text-gray-500 mt-4 text-xl font-normal">
-                Years in business
-              </p>
-            </div>
-
-            <div>
-              <h3 class="text-7xl font-bold">
-                <span
-                  class="bg-gradient-to-r from-bravo to-alpha bg-clip-text text-transparent"
-                >
-                  4821
-                </span>
-              </h3>
-              <p class="text-gray-500 mt-4 text-xl font-normal">
-                Projects delivered
-              </p>
-            </div>
-
-            <div>
-              <h3 class="text-7xl font-bold">
-                <span
-                  class="bg-gradient-to-r from-bravo to-alpha bg-clip-text text-transparent"
-                >
-                  37+
-                </span>
-              </h3>
-              <p class="text-gray-500 mt-4 text-xl font-normal">Team members</p>
-            </div>
+            {
+              data[lang].stats.map((item) => {
+                return (
+                  <div>
+                    <h3 class="text-7xl font-bold">
+                      <span class="bg-gradient-to-r from-bravo to-alpha bg-clip-text text-transparent">
+                        {item.number}
+                      </span>
+                    </h3>
+                    <p class="text-gray-500 mt-4 text-xl font-normal">
+                      {item.text}
+                    </p>
+                  </div>
+                );
+              })
+            }
           </div>
         </div>
       </div>
