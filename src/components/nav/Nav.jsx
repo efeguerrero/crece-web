@@ -2,15 +2,24 @@ import { useState, useEffect } from 'react';
 import { Dialog } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
-const navigation = [
-  { name: 'Services', href: '#services' },
-  { name: 'How We Work', href: '#how' },
-  { name: 'Culture', href: '#culture' },
-  { name: 'Clients', href: '#clients' },
-  { name: 'Contact Us', href: '#contact' },
-];
+const navigation = {
+  en: [
+    { name: 'Services', href: '#services' },
+    { name: 'How We Work', href: '#how' },
+    { name: 'Culture', href: '#culture' },
+    { name: 'Clients', href: '#clients' },
+    { name: 'Contact Us', href: '#contact' },
+  ],
+  es: [
+    { name: 'Servicios', href: '#services' },
+    { name: 'Cómo Trabajamos', href: '#how' },
+    { name: 'Cultura', href: '#culture' },
+    { name: 'Clientes', href: '#clients' },
+    { name: 'Contacto', href: '#contact' },
+  ],
+};
 
-export default function Example() {
+export default function NavBar({ lang }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isSticky, setSticky] = useState(false);
 
@@ -41,7 +50,7 @@ export default function Example() {
       >
         <div className="flex lg:flex-1">
           <a href="#" className="-m-1.5 p-1.5">
-            <span className="sr-only">Your Company</span>
+            <span className="sr-only">Crecé Más</span>
             <img
               className={`${
                 isSticky ? 'h-12 lg:h-16' : 'h-16'
@@ -63,7 +72,7 @@ export default function Example() {
         </div>
 
         <div className="hidden lg:flex lg:gap-x-4 xl:gap-x-8 2xl:gap-x-10">
-          {navigation.map((item) => (
+          {navigation[lang].map((item) => (
             <a
               key={item.name}
               href={item.href}
@@ -77,7 +86,7 @@ export default function Example() {
         </div>
         <div className="hidden cursor-pointer gap-2 lg:flex lg:flex-1 lg:justify-end">
           <a
-            href="#"
+            href="/"
             className={`${
               isSticky ? 'font-medium text-alpha' : 'text-white'
             } text-md font-regular  transition duration-300 ease-in-out  hover:text-bravo `}
@@ -92,34 +101,13 @@ export default function Example() {
             |
           </span>
           <a
-            href="#"
+            href="/en"
             className={`${
               isSticky ? 'font-medium text-alpha' : 'text-white'
             } text-md font-regular  transition duration-300 ease-in-out  hover:text-bravo `}
           >
             EN
           </a>
-          {/* <span
-            aria-hidden="true"
-            className={`${
-              isSticky ? 'text-alpha' : 'text-white'
-            } translate-x-0  transition duration-300 ease-in-out group-hover:translate-x-1 group-hover:text-bravo `}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="h-6 w-6"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
-              />
-            </svg>
-          </span> */}
         </div>
       </nav>
 
@@ -137,7 +125,7 @@ export default function Example() {
         >
           <div className="flex items-center justify-between">
             <a href="#" className="-m-1.5 p-1.5">
-              <span className="sr-only">Your Company</span>
+              <span className="sr-only">Crecé Más</span>
               <img
                 className={`${
                   isSticky ? 'h-12 lg:h-16' : 'h-16'
@@ -159,7 +147,7 @@ export default function Example() {
           <div className="mt-16 flow-root">
             <div className="divide-gray-500/10 -my-6 divide-y">
               <div className="space-y-2 py-6">
-                {navigation.map((item) => (
+                {navigation[lang].map((item) => (
                   <a
                     key={item.name}
                     href={item.href}
@@ -176,13 +164,13 @@ export default function Example() {
                   href="#contact"
                   className="font-regular hover:bg-gray-50 -mx-3 block rounded-lg px-3 py-2.5 text-4xl font-bold text-bravo"
                 >
-                  Contact Us
+                  {lang === 'en' ? 'Contact Us' : 'Contacto'}
                 </a>
               </div>
               <div className="flex gap-2 py-6">
                 <a
                   onClick={() => setMobileMenuOpen(false)}
-                  href="#"
+                  href="/"
                   className="font-regular hover:bg-gray-50 -mx-3 block rounded-lg px-3 py-2.5 text-2xl font-normal text-white"
                 >
                   ES
@@ -192,7 +180,7 @@ export default function Example() {
                 </span>
                 <a
                   onClick={() => setMobileMenuOpen(false)}
-                  href="#"
+                  href="/en"
                   className="font-regular hover:bg-gray-50 -mx-3 block rounded-lg px-3 py-2.5 text-2xl font-normal text-white"
                 >
                   EN

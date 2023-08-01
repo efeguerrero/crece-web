@@ -1,4 +1,31 @@
 ---
+interface Props {
+  lang: string;
+}
+const { lang } = Astro.props;
+
+const data = {
+  es: {
+    title: 'Expertos en Marketing Digital',
+    subtitle: `Somos un grupo de diseñadores, especialistas en marketing digital y
+      desarrolladores con el deseo de ofrecer <span class="text-epsilon">soluciones</span
+      > <span class="text-epsilon">creativas</span> y de calidad que se puedan adaptar a
+      los requerimientos de cada cliente.`,
+
+    contact: `<a class="border-b-2 pb-[0.25rem] font-bold text-bravo" href="#contact"
+        >Contáctanos,</a> <span>o mira primero</span>`,
+  },
+  en: {
+    title: 'Digital Marketing Experts',
+    subtitle: `We are a group of designers, digital marketers and developers with the
+      desire to offer <span class="text-bravo">creative</span> and quality <span
+        class="text-epsilon">solutions</span
+      > which can be adapted to the requirements of each customer.`,
+
+    contact: `<a class="border-b-2 pb-[0.25rem] font-bold text-bravo" href="#contact"
+        >Contact us,</a> <span> or take a look first</span>`,
+  },
+};
 ---
 
 <header
@@ -34,31 +61,17 @@
     <h2
       class="2xl:leading[9rem] stroke-bravo text-center text-5xl font-extrabold uppercase leading-[3.1rem] tracking-wide text-white sm:text-[12vw] sm:leading-[14vw] sm:tracking-normal lg:w-[11ch] lg:self-start lg:text-left lg:text-[4rem] lg:font-bold lg:leading-[5.5rem] xl:text-[5.5rem] 3xl:text-[7rem] 3xl:leading-[7rem]"
     >
-      Expertos en marketing digital
+      {data[lang].title}
     </h2>
     <h3
       class="break-normal text-center text-[1.05rem] font-light text-white sm:font-normal lg:w-1/2 lg:text-left lg:text-[1.3rem] 3xl:text-2xl"
     >
-      We are a group of designers, digital marketers and developers with the
-      desire to offer <span class="text-bravo">creative</span> and quality <span
-        class="text-epsilon">solutions</span
-      > which can be adapted to the requirements of each customer.
+      <Fragment set:html={data[lang].subtitle} />
     </h3>
-    <!-- <h3
-      class="break-normal text-center text-xl text-white before:bottom-0 before:left-0 before:h-full before:w-full before:origin-bottom before:scale-y-[0.35] before:transition-transform before:duration-500 before:ease-in-out hover:before:scale-y-100 sm:w-auto lg:relative lg:w-max lg:text-left lg:before:absolute lg:before:bg-bravo"
-    >
-      <span class="relative cursor-default"
-        >Transformando tu <span class="text-bravo sm:text-white">visión</span> en
-        realidad</span
-      >
-    </h3> -->
     <h4
       class="absolute bottom-[0%] text-sm uppercase text-white lg:bottom-0 lg:right-0"
     >
-      <a class="border-b-2 pb-[0.25rem] font-bold text-bravo" href="#contact"
-        >Contact us,</a
-      >
-      <span> or take a look first</span>
+      <Fragment set:html={data[lang].contact} />
     </h4>
   </section>
 </header>

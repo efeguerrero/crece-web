@@ -1,0 +1,24 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import How from '../../components/How.astro';
+import Services from '../../components/services/Services.astro';
+import About from '../../components/About.astro';
+import Clients from '../../components/clients/Clients.astro';
+import Contact from '../../components/Contact.astro';
+import Why from '../../components/Why.astro';
+
+const lang: string = 'en';
+---
+
+<Layout title="Crecé Más - Digital Marketing" lang={lang}>
+  <Header lang={lang} />
+  <Why />
+  <How />
+  <div class="bg-gray">
+    <Services />
+    <About />
+  </div>
+  <Clients />
+  <Contact />
+</Layout>
