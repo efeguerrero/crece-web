@@ -1,18 +1,47 @@
 ---
-const data = [
-  {
-    title: 'Our Mission',
-    text: 'We want a better world, and we know that digital tools are powerful. We can reach and help people who were previously impossible to reach using marketing solutions.',
+interface Props {
+  lang: string;
+}
+const { lang } = Astro.props;
+
+const data = {
+  es: {
+    title: 'cultura',
+    text: 'Somos expertos y apasionados por publicidad digital. Estamos preparados para ser tu partner estratégico acompañandote y velando por el crecimiento de tu negocio. Nuestros pilares son la transparencia, el trabajo en equipo y el respeto por las personas y las organizaciones.',
+    bullets: [
+      {
+        title: 'Nuestra Misión',
+        text: 'Involucrarnos en los negocios de nuestros clientes con el fin de lograr su crecimiento sostenido. Es por ello que buscaremos trabajar en conjunto para adentrarnos en su negocio e industria, lo cual nos permitirá definir estratégicamente el plan de acción efectivo para los resultados buscados. ',
+      },
+      {
+        title: 'Nuestra Visión',
+        text: 'Brindar un servicio de calidad y transparencia a nuestros clientes bajo un contexto de comunicación efectiva, respeto, confianza, seguridad y orientado a resultados. Orientamos a que nuestro vínculo sea sano y duradero. ',
+      },
+      {
+        title: 'Nuestros Valores',
+        text: 'Trabajo a conciencia, progrsivo, eficiente y orientado a resultados. Valoramos a todos las personas y organizaciones que participen de cada uno de los proyectos en los cuales nos embarcamos.',
+      },
+    ],
   },
-  {
-    title: 'Our Vision',
-    text: 'Be on the top of mind of the companies at the moment of needed marketing solutions.',
+  en: {
+    title: 'culture ',
+    text: 'We are experts and passionate about digital advertising. We are prepared to be your strategic partner accompanying you and ensuring the growth of your business. Our pillars are transparency, teamwork and respect for people and organizations.',
+    bullets: [
+      {
+        title: 'Our Mission',
+        text: `Get involved in our client's businesses in order to achieve their sustained growth. That is why we will seek to work together to delve into your business and industry, which will allow us to strategically define the effective action plan for the results sought.`,
+      },
+      {
+        title: 'Our Vision',
+        text: 'Provide a quality service and transparency to our clients under a context of effective communication, respect, trust, security and results-oriented. We guide our bond to be healthy and lasting. ',
+      },
+      {
+        title: 'Our Values',
+        text: 'I work conscientiously, progressive, efficient and results oriented. We value all the people and organizations that participate in each of the projects in which we embark.',
+      },
+    ],
   },
-  {
-    title: 'Our Values',
-    text: 'You are what you say and what you do. First the client, Second the client and lastly the client. Professionalism, Honesty and Hard Work',
-  },
-];
+};
 ---
 
 <div
@@ -41,12 +70,10 @@ const data = [
         <h2
           class="mb-4 text-5xl font-extrabold uppercase leading-tight tracking-widest text-white"
         >
-          Culture
+          {data[lang].title}
         </h2>
         <p class="text-lg text-alphaLight">
-          We are a group of designers, digital marketers, developers with the
-          desire of offering creative and quality solutions which can be adapted
-          to the requirements of each business.
+          {data[lang].text}
         </p>
       </div>
     </div>
@@ -54,7 +81,7 @@ const data = [
       class="-mb-10 flex flex-col flex-wrap justify-evenly text-center lg:w-1/2 lg:text-left"
     >
       {
-        data.map((item) => {
+        data[lang].bullets.map((item) => {
           return (
             <div class="mb-10 flex items-start gap-4">
               <div class="flex-grow">
