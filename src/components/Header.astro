@@ -28,11 +28,15 @@ const data = {
 };
 ---
 
+<!-- <section
+  id="welcome"
+  class="absolute z-50 min-h-[100svh] min-w-[100svw] bg-alpha transition-opacity duration-500 ease-in"
+> -->
 <header
   class="relative flex min-h-[100svh] flex-col items-center bg-alphaDark/70 bg-cover bg-center bg-no-repeat py-[7rem]"
 >
   <video
-    class="absolute top-0 -z-10 hidden h-[100svh] w-[100svw] object-cover lg:inline"
+    class="absolute top-0 -z-10 hidden h-[100svh] w-[100vw] object-cover lg:inline"
     playsinline
     autoplay
     muted
@@ -79,3 +83,16 @@ const data = {
     </h4>
   </section>
 </header>
+
+<script>
+  const start = document.getElementById('welcome');
+
+  const fadeFunction = () => {
+    start.classList.add('opacity-0');
+    setTimeout(() => {
+      start.classList.add('hidden');
+    }, 500);
+  };
+
+  fadeFunction();
+</script>

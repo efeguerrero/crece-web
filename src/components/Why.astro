@@ -4,21 +4,6 @@ interface Props {
 }
 const { lang } = Astro.props;
 
-// const data = [
-//   {
-//     name: 'Centrados en el cliente',
-//     text: 'Plus, our platform is constantly evolving to meet the changing needs.',
-//   },
-//   {
-//     name: 'Mente Digital',
-//     text: 'Plus, our platform is constantly evolving to meet the changing needs.',
-//   },
-//   {
-//     name: 'Result driven',
-//     text: 'Plus, our platform is constantly evolving to meet the changing needs.',
-//   },
-// ];
-
 const data = {
   es: {
     title:
@@ -117,9 +102,16 @@ const data = {
             data-aos-once="true"
           >
             {
-              data[lang].bullets.map((item) => {
+              data[lang].bullets.map((item, index) => {
+                const animationDelay = (index + 1) * 300;
                 return (
-                  <li class="flex flex-col items-center justify-center">
+                  <li
+                    class="flex flex-col items-center justify-center"
+                    data-aos="fade-up"
+                    data-aos-delay={animationDelay}
+                    data-aos-duration="800"
+                    data-aos-once="true"
+                  >
                     <div class="inline-flex h-16 w-16 rotate-90 items-center justify-center rounded-full text-bravo">
                       <svg
                         class="h-16 w-16"
@@ -157,15 +149,17 @@ const data = {
           </ul>
           <div
             class="mx-auto mt-12 grid grid-cols-1 gap-8 text-center sm:gap-x-8 md:grid-cols-3 lg:mt-24 lg:w-2/3"
-            data-aos="fade-up"
-            data-aos-delay="300"
-            data-aos-duration="800"
-            data-aos-once="true"
           >
             {
-              data[lang].stats.map((item) => {
+              data[lang].stats.map((item, index) => {
+                const animationDelay = (index + 1) * 300;
                 return (
-                  <div>
+                  <div
+                    data-aos="fade-up"
+                    data-aos-delay={animationDelay}
+                    data-aos-duration="800"
+                    data-aos-once="true"
+                  >
                     <h3 class="text-7xl font-bold">
                       <span class="bg-gradient-to-r from-bravo to-alpha bg-clip-text text-transparent">
                         {item.number}
