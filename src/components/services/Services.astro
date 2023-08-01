@@ -1,4 +1,9 @@
 ---
+interface Props {
+  lang: string;
+}
+const { lang } = Astro.props;
+
 //data import
 import data from './data.json';
 
@@ -10,18 +15,17 @@ import Icons from '../utils/Icons.astro';
   <div class="mx-auto px-6 py-8 sm:py-16 lg:w-[90vw] lg:px-6 xl:w-[70vw]">
     <div class="mb-8 max-w-screen-md lg:mb-16">
       <h2 class="mb-4 text-4xl font-extrabold tracking-tight text-alpha">
-        Designed for business teams like yours
+        {data[lang].title}
       </h2>
       <p class="text-alpha sm:text-xl">
-        Here at Flowbite we focus on markets where technology, innovation, and
-        capital can unlock long-term value and drive economic growth.
+        {data[lang].text}
       </p>
     </div>
     <div
       class="space-y-10 md:grid md:grid-cols-2 md:gap-12 md:space-y-0 lg:grid-cols-4"
     >
       {
-        data.map((item) => (
+        data[lang].services.map((item) => (
           <div>
             <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-alphaLight/30  text-alpha lg:h-12 lg:w-12">
               <Icons icon={item.icon} folder="features" />

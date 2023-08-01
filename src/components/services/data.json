@@ -1,67 +1,157 @@
-[
-  {
-    "title": "Branding Campaigns",
-    "features": [
-      "Display (Facebook, Google, Twitter, LinkedIn and Programmatic)",
-      "Video (Facebook, Google, Twitter, LinkedIn and Programmatic)",
-      "Search(Google Ads)"
-    ],
-    "icon": "megaphone"
+{
+  "es": {
+    "title": "Diseñado para equipos de trabajo",
+    "text": "Somos una agencia de marketing digital de servicio completo que ofrece una amplia gama de servicios para ayudar a que su negocio crezca. Lo ayudamos a superar los desafíos y resolver problemas relacionados con maximizar su alcance en línea.",
+    "services": [
+      {
+        "title": "Campañas de marca",
+        "features": [
+          "Display (Facebook, Google, Twitter, LinkedIn y Programático)",
+          "Video (Facebook, Google, Twitter, LinkedIn y Programático)",
+          "Búsqueda (Google Ads)"
+        ],
+        "icon": "megaphone"
+      },
+      {
+        "title": "Campañas de rendimiento",
+        "features": [
+          "Web (Facebook, Google y Programático)",
+          "Campañas de promoción de aplicaciones (Facebook, Google y Programático)"
+        ],
+        "icon": "rocket"
+      },
+      {
+        "title": "Publicidad programática",
+        "features": [
+          "Display & Video",
+          "TV conectada (CTV)",
+          "Audio",
+          "Nativo"
+        ],
+        "icon": "automated"
+      },
+      {
+        "title": "SEM & SEO",
+        "features": [
+          "Creación de palabras clave",
+          "Creación de anuncios de texto"
+        ],
+        "icon": "seo"
+      },
+      {
+        "title": "Campañas de audio",
+        "features": [
+          "Producción de anuncios de audio",
+          "Principales servicios de transmisión (Pandora, iHeartRadio, Tune-In y más)",
+          "Radios online locales",
+          "Campañas geolocalizadas",
+          "Modelo de compra CPM o CPCL"
+        ],
+        "icon": "audio"
+      },
+      {
+        "title": "Desarrollo web y de aplicaciones",
+        "features": ["Sitios institucionales", "Sitio de comercio electrónico"],
+        "icon": "program"
+      },
+      {
+        "title": "Gestión de diseño",
+        "features": [
+          "Concepto de marca",
+          "Creación de logotipos",
+          "Eslogan",
+          "Página de fans",
+          "Tarjetas personalizadas",
+          "Correos electrónicos personalizados"
+        ],
+        "icon": "design"
+      },
+      {
+        "title": "Gestión de la comunidad",
+        "features": [
+          "Creación de anuncios de audio",
+          "Banners de visualización (escritorio y móvil)",
+          "Creación de anuncios de video",
+          "Gestión de la comunidad"
+        ],
+        "icon": "community"
+      }
+    ]
   },
-  {
-    "title": "Performance Campaigns",
-    "features": [
-      "Web (Facebook, Google and Programmatic)",
-      "App promotion Campaigns (Facebook, Google and Programmatic)"
-    ],
-    "icon": "rocket"
-  },
-  {
-    "title": "Programmatic Advertising",
-    "features": ["Display & Video", "Connected TV (CTV)", "Audio", "Native"],
-    "icon": "automated"
-  },
-  {
-    "title": "SEM & SEO",
-    "features": ["Keywords Creation", "Text Ads Creation"],
-    "icon": "seo"
-  },
-  {
-    "title": "Audio Campaigns ",
-    "features": [
-      "Audio Ad Production",
-      "Top Streaming services (Pandora, iHeartRadio, Tune-In and More)",
-      "Local Online Radios",
-      "Geotargeted Campaigns",
-      "CPM or CPCL buying model "
-    ],
-    "icon": "audio"
-  },
-  {
-    "title": "Web & App Development",
-    "features": ["Institutional Sites", "E-Commerce Site"],
-    "icon": "program"
-  },
-  {
-    "title": "Design Management",
-    "features": [
-      "Brand Concept",
-      "Logo creation",
-      "Slogan",
-      "Fan Page",
-      "Personalized Cards",
-      "Personalized Emails"
-    ],
-    "icon": "design"
-  },
-  {
-    "title": "Community Management",
-    "features": [
-      "Audio Ad Creation",
-      "Display Banners (Desktop & Mobile)",
-      "Video Ad Creation",
-      "Community Management"
-    ],
-    "icon": "community"
+  "en": {
+    "title": "Designed for business teams like yours",
+    "text": "We are a full-service digital marketing agency that offers a wide range of services to help your business grow. We help you overcome the challenges and solve problems related to maximizing your online reach.",
+    "services": [
+      {
+        "title": "Branding Campaigns",
+        "features": [
+          "Display (Facebook, Google, Twitter, LinkedIn and Programmatic)",
+          "Video (Facebook, Google, Twitter, LinkedIn and Programmatic)",
+          "Search(Google Ads)"
+        ],
+        "icon": "megaphone"
+      },
+      {
+        "title": "Performance Campaigns",
+        "features": [
+          "Web (Facebook, Google and Programmatic)",
+          "App promotion Campaigns (Facebook, Google and Programmatic)"
+        ],
+        "icon": "rocket"
+      },
+      {
+        "title": "Programmatic Advertising",
+        "features": [
+          "Display & Video",
+          "Connected TV (CTV)",
+          "Audio",
+          "Native"
+        ],
+        "icon": "automated"
+      },
+      {
+        "title": "SEM & SEO",
+        "features": ["Keywords Creation", "Text Ads Creation"],
+        "icon": "seo"
+      },
+      {
+        "title": "Audio Campaigns ",
+        "features": [
+          "Audio Ad Production",
+          "Top Streaming services (Pandora, iHeartRadio, Tune-In and More)",
+          "Local Online Radios",
+          "Geotargeted Campaigns",
+          "CPM or CPCL buying model "
+        ],
+        "icon": "audio"
+      },
+      {
+        "title": "Web & App Development",
+        "features": ["Institutional Sites", "E-Commerce Site"],
+        "icon": "program"
+      },
+      {
+        "title": "Design Management",
+        "features": [
+          "Brand Concept",
+          "Logo creation",
+          "Slogan",
+          "Fan Page",
+          "Personalized Cards",
+          "Personalized Emails"
+        ],
+        "icon": "design"
+      },
+      {
+        "title": "Community Management",
+        "features": [
+          "Audio Ad Creation",
+          "Display Banners (Desktop & Mobile)",
+          "Video Ad Creation",
+          "Community Management"
+        ],
+        "icon": "community"
+      }
+    ]
   }
-]
+}

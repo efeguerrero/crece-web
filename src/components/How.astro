@@ -1,26 +1,63 @@
 ---
-const data = [
-  {
-    title: 'Meeting',
-    description:
-      'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.',
+interface Props {
+  lang: string;
+}
+const { lang } = Astro.props;
+
+const data = {
+  es: {
+    title: '¿Cómo funciona?',
+    text: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis.',
+    bullets: [
+      {
+        title: 'Reunión',
+        description:
+          'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.',
+      },
+      {
+        title: 'Planificación',
+        description:
+          'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. ',
+      },
+      {
+        title: 'Desarrollo',
+        description:
+          'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.',
+      },
+      {
+        title: 'Entrega',
+        description:
+          'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.',
+      },
+    ],
   },
-  {
-    title: 'Planning',
-    description:
-      'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. ',
+  en: {
+    title: 'How Does It Work?',
+    text: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis.',
+    bullets: [
+      {
+        title: 'Meeting',
+        description:
+          'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.',
+      },
+      {
+        title: 'Planning',
+        description:
+          'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. ',
+      },
+      {
+        title: 'Development',
+        description:
+          'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.',
+      },
+      {
+        title: 'Delivery',
+        description:
+          'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.',
+      },
+    ],
   },
-  {
-    title: 'Development',
-    description:
-      'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.',
-  },
-  {
-    title: 'Delivery',
-    description:
-      'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.',
-  },
-];
+};
 ---
 
 <div
@@ -79,17 +116,16 @@ const data = [
       <h2
         class="mb-4 text-4xl font-extrabold leading-tight tracking-tight text-white lg:text-6xl"
       >
-        How does it work?
+        {data[lang].title}
       </h2>
       <p class="text-lg text-alphaLight">
-        Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
-        sint. Velit officia consequat duis.
+        {data[lang].text}
       </p>
     </div>
 
     <ul class="mx-auto mt-8 flex flex-col items-start justify-evenly lg:mt-0">
       {
-        data.map((item, index) => {
+        data[lang].bullets.map((item, index) => {
           return (
             <li class="relative mt-8 flex min-h-[25%] items-start justify-start gap-6 lg:gap-8 ">
               <div class="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-lg  bg-bravo">
