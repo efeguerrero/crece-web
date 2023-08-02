@@ -23,6 +23,8 @@ export default function NavBar({ lang }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isSticky, setSticky] = useState(false);
 
+  console.log(mobileMenuOpen);
+
   const handleScroll = () => {
     setSticky(window.scrollY >= 70);
   };
@@ -112,7 +114,11 @@ export default function NavBar({ lang }) {
         </div>
       </nav>
       <Transition show={mobileMenuOpen}>
-        <Dialog as="div" className="lg:hidden" onClose={setMobileMenuOpen}>
+        <Dialog
+          as="div"
+          className="lg:hidden"
+          onClose={() => setMobileMenuOpen(false)}
+        >
           <div className="fixed inset-0 z-50" />
           <Transition.Child
             enter="transition ease-in-out duration-300 transform"
