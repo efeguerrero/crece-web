@@ -97,13 +97,10 @@ const data = {
           <ul
             role="list"
             class="mt-12 grid list-none grid-cols-1 gap-12 md:grid-cols-3 lg:gap-16 lg:px-20 3xl:gap-12"
-            data-aos="fade-up"
-            data-aos-duration="800"
-            data-aos-once="true"
           >
             {
               data[lang].bullets.map((item, index) => {
-                const animationDelay = (index + 1) * 300;
+                const animationDelay = (index + 1) * 100;
                 return (
                   <li
                     class="flex flex-col items-center justify-center"
@@ -152,7 +149,7 @@ const data = {
           >
             {
               data[lang].stats.map((item, index) => {
-                const animationDelay = (index + 1) * 300;
+                const animationDelay = (index + 1) * 100;
                 return (
                   <div
                     data-aos="fade-up"

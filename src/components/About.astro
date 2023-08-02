@@ -82,7 +82,8 @@ const data = {
     >
       {
         data[lang].bullets.map((item, index) => {
-          const animationDelay = (index + 1) * 200;
+          const animationDelay = (index + 1) * 150;
+          const animationOffset = (index + 1) * -25;
           return (
             <div
               class="mb-10 flex items-start gap-4"
@@ -90,6 +91,7 @@ const data = {
               data-aos-delay={animationDelay}
               data-aos-duration="700"
               data-aos-once="true"
+              data-aos-offset={animationOffset}
             >
               <div class="flex-grow">
                 <div class="flex items-center justify-start">

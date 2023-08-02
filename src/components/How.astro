@@ -129,7 +129,8 @@ const data = {
     <ul class="mx-auto mt-8 flex flex-col items-start justify-evenly lg:mt-0">
       {
         data[lang].bullets.map((item, index) => {
-          const animationDelay = (index + 1) * 200;
+          const animationDelay = (index + 1) * 150;
+          const animationOffset = (index + 1) * -25;
 
           return (
             <li
@@ -138,6 +139,7 @@ const data = {
               data-aos-delay={animationDelay}
               data-aos-duration="700"
               data-aos-once="true"
+              data-aos-offset={animationOffset}
             >
               <div class="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-lg  bg-bravo">
                 <h2 class="text-3xl font-bold text-white transition-all lg:group-hover:text-white">
