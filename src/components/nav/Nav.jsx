@@ -1,4 +1,4 @@
-import { useState, useEffect, Fragment } from 'react';
+import { useState, useEffect, useRef, Fragment } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
@@ -21,15 +21,28 @@ const navigation = {
 
 export default function NavBar({ lang }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const isMobileDialogMounted = useRef(false);
   const [isSticky, setSticky] = useState(false);
 
-  console.log(mobileMenuOpen);
+  console.log('re render');
+  console.log('mobile Menu Open', mobileMenuOpen);
+  console.log('sticky state', isSticky);
 
   const handleScroll = () => {
-    setSticky(window.scrollY >= 70);
+    if (isMobileDialogMounted.current === false) {
+      console.log(
+        'setting sticky',
+        'isMobileDialogMounted',
+        isMobileDialogMounted.current
+      );
+      setSticky(window.scrollY >= 70);
+    }
   };
 
   useEffect(() => {
+    if (window.scrollY >= 70) {
+      setSticky(true);
+    }
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -124,9 +137,17 @@ export default function NavBar({ lang }) {
             enter="transition ease-in-out duration-300 transform"
             enterFrom="-translate-x-full"
             enterTo="translate-x-0"
+            afterEnter={() => {
+              isMobileDialogMounted.current = true;
+              console.log('dialog mounted', isMobileDialogMounted.current);
+            }}
             leave="transition ease-in-out duration-300 transform"
             leaveFrom="translate-x-0"
             leaveTo="-translate-x-full"
+            afterLeave={() => {
+              isMobileDialogMounted.current = false;
+              console.log('dialog unmounted', isMobileDialogMounted.current);
+            }}
             as={Fragment}
           >
             <Dialog.Panel
@@ -135,7 +156,11 @@ export default function NavBar({ lang }) {
               } sm:ring-gray-900/10 fixed inset-y-0 z-50 w-full overflow-y-auto bg-alpha px-6 sm:ring-1`}
             >
               <div className="flex items-center justify-between">
-                <a href="#" className="-m-1.5 p-1.5">
+                <a
+                  href="#"
+                  className="-m-1.5 p-1.5"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
                   <span className="sr-only">Crecé Más</span>
                   <img
                     className={`${
