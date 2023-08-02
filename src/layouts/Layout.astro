@@ -56,7 +56,8 @@ import Footer from '../components/Footer.astro';
       class="fixed left-0 top-0 z-[1000] flex min-h-[100svh] min-w-full flex-col items-center justify-center gap-4 bg-alpha transition-opacity duration-500 ease-in"
     >
       <!-- <img src="/imgs/logo.png" alt="" /> -->
-      <svg
+      <div class="loader">Loading...</div>
+      <!-- <svg
         width="200"
         height="200"
         xmlns="http://www.w3.org/2000/svg"
@@ -113,7 +114,7 @@ import Footer from '../components/Footer.astro';
             begin="0s"
             repeatCount="indefinite"></animate></circle
         ></svg
-      >
+      > -->
     </div>
     <Nav client:load lang={lang} />
     <slot />
@@ -124,16 +125,78 @@ import Footer from '../components/Footer.astro';
     </script>
     <script>
       const preloader = document.getElementById('preloader');
-      const fadeEffect = () => {
-        setTimeout(() => {
-          preloader.style.opacity = '0';
-          setTimeout(() => {
-            preloader.style.display = 'none';
-          }, 500);
-        }, 1000);
-      };
+      // const fadeEffect = () => {
+      //   setTimeout(() => {
+      //     preloader.style.opacity = '0';
+      //     setTimeout(() => {
+      //       preloader.style.display = 'none';
+      //     }, 500);
+      //   }, 1000);
+      // };
 
       window.addEventListener('load', fadeEffect);
     </script>
   </body>
 </html>
+
+<style>
+  .loader,
+  .loader:before,
+  .loader:after {
+    background: #db0bb2;
+    -webkit-animation: load1 1s infinite ease-in-out;
+    animation: load1 1s infinite ease-in-out;
+    width: 1em;
+    height: 4em;
+  }
+  .loader {
+    color: #db0bb2;
+    text-indent: -9999em;
+    margin: 88px auto;
+    position: relative;
+    font-size: 1rem;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-animation-delay: -0.16s;
+    animation-delay: -0.16s;
+  }
+  .loader:before,
+  .loader:after {
+    position: absolute;
+    top: 0;
+    content: '';
+  }
+  .loader:before {
+    left: -1.5em;
+    -webkit-animation-delay: -0.32s;
+    animation-delay: -0.32s;
+  }
+  .loader:after {
+    left: 1.5em;
+  }
+  @-webkit-keyframes load1 {
+    0%,
+    80%,
+    100% {
+      box-shadow: 0 0;
+      height: 4em;
+    }
+    40% {
+      box-shadow: 0 -2em;
+      height: 5em;
+    }
+  }
+  @keyframes load1 {
+    0%,
+    80%,
+    100% {
+      box-shadow: 0 0;
+      height: 4em;
+    }
+    40% {
+      box-shadow: 0 -2em;
+      height: 5em;
+    }
+  }
+</style>
