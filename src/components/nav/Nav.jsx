@@ -21,6 +21,7 @@ const navigation = {
 
 export default function NavBar({ lang }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  //Need to use ref for this check to avoid re render and also because function handleScroll will use old value of state due to closure. With useRef I preserve the value of the variable across renders
   const isMobileDialogMounted = useRef(false);
   const [isSticky, setSticky] = useState(false);
 
