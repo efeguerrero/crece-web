@@ -125,14 +125,14 @@ import Footer from '../components/Footer.astro';
     </script>
     <script>
       const preloader = document.getElementById('preloader');
-      // const fadeEffect = () => {
-      //   setTimeout(() => {
-      //     preloader.style.opacity = '0';
-      //     setTimeout(() => {
-      //       preloader.style.display = 'none';
-      //     }, 500);
-      //   }, 1000);
-      // };
+      const fadeEffect = () => {
+        setTimeout(() => {
+          preloader.style.opacity = '0';
+          setTimeout(() => {
+            preloader.style.display = 'none';
+          }, 500);
+        }, 1000);
+      };
 
       window.addEventListener('load', fadeEffect);
     </script>
