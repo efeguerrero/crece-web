@@ -25,17 +25,8 @@ export default function NavBar({ lang }) {
   const isMobileDialogMounted = useRef(false);
   const [isSticky, setSticky] = useState(false);
 
-  console.log('re render');
-  console.log('mobile Menu Open', mobileMenuOpen);
-  console.log('sticky state', isSticky);
-
   const handleScroll = () => {
     if (isMobileDialogMounted.current === false) {
-      console.log(
-        'setting sticky',
-        'isMobileDialogMounted',
-        isMobileDialogMounted.current
-      );
       setSticky(window.scrollY >= 70);
     }
   };
@@ -140,14 +131,12 @@ export default function NavBar({ lang }) {
             enterTo="translate-x-0"
             afterEnter={() => {
               isMobileDialogMounted.current = true;
-              console.log('dialog mounted', isMobileDialogMounted.current);
             }}
             leave="transition ease-in-out duration-300 transform"
             leaveFrom="translate-x-0"
             leaveTo="-translate-x-full"
             afterLeave={() => {
               isMobileDialogMounted.current = false;
-              console.log('dialog unmounted', isMobileDialogMounted.current);
             }}
             as={Fragment}
           >
