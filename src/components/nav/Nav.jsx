@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { Dialog } from '@headlessui/react';
+import { useState, useEffect, Fragment } from 'react';
+import { Dialog, Transition } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
 const navigation = {
@@ -60,6 +60,7 @@ export default function NavBar({ lang }) {
             />
           </a>
         </div>
+
         <div className="flex lg:hidden">
           <button
             type="button"
@@ -110,86 +111,96 @@ export default function NavBar({ lang }) {
           </a>
         </div>
       </nav>
-
-      <Dialog
-        as="div"
-        className="lg:hidden"
-        open={mobileMenuOpen}
-        onClose={setMobileMenuOpen}
-      >
-        <div className="fixed inset-0 z-50" />
-        <Dialog.Panel
-          className={`${
-            isSticky ? 'py-4' : 'py-6'
-          } sm:ring-gray-900/10 fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-alpha px-6 sm:ring-1`}
-        >
-          <div className="flex items-center justify-between">
-            <a href="#" className="-m-1.5 p-1.5">
-              <span className="sr-only">Crecé Más</span>
-              <img
-                className={`${
-                  isSticky ? 'h-12 lg:h-16' : 'h-16'
-                } w-auto transition-all duration-300`}
-                src="/imgs/logo.png"
-                alt=""
-              />
-            </a>
-
-            <button
-              type="button"
-              className="text-gray-700 -m-2.5 rounded-md p-2.5"
-              onClick={() => setMobileMenuOpen(false)}
+      <Transition show={mobileMenuOpen}>
+        <Dialog as="div" className="lg:hidden" onClose={setMobileMenuOpen}>
+          <div className="fixed inset-0 z-50" />
+          <Transition.Child
+            enter="transition ease-in-out duration-300 transform"
+            enterFrom="-translate-x-full"
+            enterTo="translate-x-0"
+            leave="transition ease-in-out duration-300 transform"
+            leaveFrom="translate-x-0"
+            leaveTo="-translate-x-full"
+            as={Fragment}
+          >
+            <Dialog.Panel
+              className={`${
+                isSticky ? 'py-4' : 'py-6'
+              } sm:ring-gray-900/10 fixed inset-y-0 z-50 w-full overflow-y-auto bg-alpha px-6 sm:ring-1`}
             >
-              <span className="sr-only">Close menu</span>
-              <XMarkIcon className="h-10 w-10 text-bravo" aria-hidden="true" />
-            </button>
-          </div>
-          <div className="mt-16 flow-root">
-            <div className="divide-gray-500/10 -my-6 divide-y">
-              <div className="space-y-2 py-6">
-                {navigation[lang].map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    className="font-regular -mx-3 block rounded-lg px-3 py-2 text-4xl font-bold text-white "
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    {item.name}
-                  </a>
-                ))}
-              </div>
-              <div className="py-6">
-                <a
-                  onClick={() => setMobileMenuOpen(false)}
-                  href="#contact"
-                  className="font-regular hover:bg-gray-50 -mx-3 block rounded-lg px-3 py-2.5 text-4xl font-bold text-bravo"
-                >
-                  {lang === 'en' ? 'Contact Us' : 'Contacto'}
+              <div className="flex items-center justify-between">
+                <a href="#" className="-m-1.5 p-1.5">
+                  <span className="sr-only">Crecé Más</span>
+                  <img
+                    className={`${
+                      isSticky ? 'h-12 lg:h-16' : 'h-16'
+                    } w-auto transition-all duration-300`}
+                    src="/imgs/logo.png"
+                    alt=""
+                  />
                 </a>
-              </div>
-              <div className="flex gap-2 py-6">
-                <a
+
+                <button
+                  type="button"
+                  className="text-gray-700 -m-2.5 rounded-md p-2.5"
                   onClick={() => setMobileMenuOpen(false)}
-                  href="/"
-                  className="font-regular hover:bg-gray-50 -mx-3 block rounded-lg px-3 py-2.5 text-2xl font-normal text-white"
                 >
-                  ES
-                </a>
-                <span className="font-regular hover:bg-gray-50 -mx-3 block rounded-lg px-3 py-2.5 text-2xl font-normal text-white">
-                  |
-                </span>
-                <a
-                  onClick={() => setMobileMenuOpen(false)}
-                  href="/en"
-                  className="font-regular hover:bg-gray-50 -mx-3 block rounded-lg px-3 py-2.5 text-2xl font-normal text-white"
-                >
-                  EN
-                </a>
+                  <span className="sr-only">Close menu</span>
+                  <XMarkIcon
+                    className="h-10 w-10 text-bravo"
+                    aria-hidden="true"
+                  />
+                </button>
               </div>
-            </div>
-          </div>
-        </Dialog.Panel>
-      </Dialog>
+
+              <div className="mt-16 flow-root">
+                <div className="divide-gray-500/10 -my-6 divide-y">
+                  <div className="space-y-2 py-6">
+                    {navigation[lang].map((item) => (
+                      <a
+                        key={item.name}
+                        href={item.href}
+                        className="font-regular -mx-3 block rounded-lg px-3 py-2 text-4xl font-bold text-white "
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {item.name}
+                      </a>
+                    ))}
+                  </div>
+                  <div className="py-6">
+                    <a
+                      onClick={() => setMobileMenuOpen(false)}
+                      href="#contact"
+                      className="font-regular hover:bg-gray-50 -mx-3 block rounded-lg px-3 py-2.5 text-4xl font-bold text-bravo"
+                    >
+                      {lang === 'en' ? 'Contact Us' : 'Contacto'}
+                    </a>
+                  </div>
+                  <div className="flex gap-2 py-6">
+                    <a
+                      onClick={() => setMobileMenuOpen(false)}
+                      href="/"
+                      className="font-regular hover:bg-gray-50 -mx-3 block rounded-lg px-3 py-2.5 text-2xl font-normal text-white"
+                    >
+                      ES
+                    </a>
+                    <span className="font-regular hover:bg-gray-50 -mx-3 block rounded-lg px-3 py-2.5 text-2xl font-normal text-white">
+                      |
+                    </span>
+                    <a
+                      onClick={() => setMobileMenuOpen(false)}
+                      href="/en"
+                      className="font-regular hover:bg-gray-50 -mx-3 block rounded-lg px-3 py-2.5 text-2xl font-normal text-white"
+                    >
+                      EN
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </Dialog.Panel>
+          </Transition.Child>
+        </Dialog>
+      </Transition>
     </section>
   );
 }
