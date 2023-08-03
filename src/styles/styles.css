@@ -5,6 +5,7 @@
 body {
   scrollbar-width: 8px;
   scrollbar-base-color: transparent;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body::-webkit-scrollbar {

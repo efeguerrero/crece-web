@@ -75,7 +75,10 @@ export default function NavBar({ lang }) {
             onClick={() => setMobileMenuOpen(true)}
           >
             <span className="sr-only">Open main menu</span>
-            <Bars3Icon className="h-10 w-10 text-bravo" aria-hidden="true" />
+            <Bars3Icon
+              className="h-10 w-10 text-bravo transition-all duration-300 ease-in-out  active:scale-[1.2]"
+              aria-hidden="true"
+            />
           </button>
         </div>
 
