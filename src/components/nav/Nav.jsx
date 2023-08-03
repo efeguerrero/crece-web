@@ -188,15 +188,6 @@ export default function NavBar({ lang }) {
                       </a>
                     ))}
                   </div>
-                  <div className="py-6">
-                    <a
-                      onClick={() => setMobileMenuOpen(false)}
-                      href="#contact"
-                      className="font-regular hover:bg-gray-50 -mx-3 block rounded-lg px-3 py-2.5 text-4xl font-bold text-bravo"
-                    >
-                      {lang === 'en' ? 'Contact Us' : 'Contacto'}
-                    </a>
-                  </div>
                   <div className="flex gap-2 py-6">
                     <a
                       onClick={() => setMobileMenuOpen(false)}
