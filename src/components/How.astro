@@ -6,13 +6,13 @@ const { lang } = Astro.props;
 
 const data = {
   es: {
-    title: '¿Cómo funciona?',
-    text: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis.',
+    title: '¿Cómo trabajamos?',
+    text: 'Somos una agencia didáctica que buscará que nuestro cliente comprenda cada una de las estrategias y tácticas a desplegar. Somos un equipo y juntos lograremos los resultados.',
     bullets: [
       {
-        title: 'Reunión',
+        title: 'Reunión y Brief',
         description:
-          'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.',
+          'Analizaremos con detalle tus necesidades y objetivos. Nos dispondremos a conocer tu negocio e industria, tu competencia, el historial de las acciones digitales hasta el momento y toda la información necesaria con la finalidad de idear un plan de medios que se ajuste a tus necesidades, posibilidades y objetivos.',
       },
       {
         title: 'Planificación',
@@ -20,9 +20,9 @@ const data = {
           'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. ',
       },
       {
-        title: 'Desarrollo',
+        title: 'Desarrollo y Ejecución',
         description:
-          'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.',
+          'Diseño y presentación del plan de medios tendiente a lograr los objetivos del cliente.   Implementaremos las herramientas de control y gestión tales como Google Analytics, Google Tag Manager y pixeles. Implementaremos las estrategias y tácticas en las plataformas seleccionadas. Optimizaremos la inversión para cumplir eficazmente los resultados.',
       },
       {
         title: 'Entrega',
@@ -33,12 +33,12 @@ const data = {
   },
   en: {
     title: 'How Does It Work?',
-    text: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis.',
+    text: 'We are a didactic agency that will seek for our client to understand each of the strategies and tactics to be deployed. We are a team and together we will achieve results.',
     bullets: [
       {
-        title: 'Meeting',
+        title: 'Meeting & Brief',
         description:
-          'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.',
+          'We will analyze your needs and objectives in detail. We will get to know your business and industry, your competition, the history of digital actions so far and all the necessary information in order to devise a media plan that meets your needs, possibilities and objectives.',
       },
       {
         title: 'Planning',
@@ -47,8 +47,7 @@ const data = {
       },
       {
         title: 'Development',
-        description:
-          'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.',
+        description: `Design and exposure of the media plan tending to achieve the client's objectives. We will implement control and management tools such as Google Analytics, Google Tag Manager and pixels. We will implement the strategies and tactics on the selected platforms. We will optimize the investment to effectively achieve the results.`,
       },
       {
         title: 'Delivery',
@@ -134,7 +133,7 @@ const data = {
 
           return (
             <li
-              class="relative mt-8 flex min-h-[25%] items-start justify-start gap-6 lg:gap-8"
+              class="relative mt-8 flex items-start justify-start gap-6 lg:gap-8"
               data-aos="fade-left"
               data-aos-delay={animationDelay}
               data-aos-duration="700"
