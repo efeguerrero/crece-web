@@ -31,7 +31,7 @@ const clientsImgs = await Astro.glob('./clientsImgs/*.png').then((imgs) => {
         clientsImgs.map((img) => (
           <div class="flex h-24 flex-[0_1_40%] justify-center rounded-lg lg:flex-[0_0_30%]  ">
             <img
-              class=" max-w-20 max-h-20 object-contain brightness-50 grayscale"
+              class=" max-w-20 max-h-20 object-contain"
               src={img}
               alt="Client Logo"
               width="158"
