@@ -6,66 +6,65 @@ const { lang } = Astro.props;
 
 const data = {
   es: {
-    title:
-      'Top of mind de las empresas en necesidad de soluciones de marketing.',
-    text: 'We all make mistakes, have struggles, and even regret things in our past. But you are not your mistakes, you are not your struggles, and you are here NOW with the power to shape your day and your future',
+    title: 'Somos tu mejor aliado en necesidad de soluciones de marketing.',
+    text: 'La publicidad digital no es mágica sin planificación y respaldo, es un puente que debemos construir en conjunto con nuestros clientes desde la primer orilla, transformándonos en un equipo sólido, transparente que nos permita llegar a la segunda orilla con el logro de los objetivos deseados. Los invitamos a trabajar juntos.',
     bullets: [
       {
         name: 'Centrados en el cliente',
-        text: 'Plus, our platform is constantly evolving to meet the changing needs.',
+        text: 'Estamos enfocados en que tu negocio crezca. Es allí donde crecemos todos.',
       },
       {
         name: 'Mente Digital',
-        text: 'Plus, our platform is constantly evolving to meet the changing needs.',
+        text: 'Sin perder de vista lo que sucede fuera de la red, nos concentramos en los canales digitales.',
       },
       {
-        name: 'Result driven',
-        text: 'Plus, our platform is constantly evolving to meet the changing needs.',
+        name: 'Orientado a resultados',
+        text: 'Claros en los objetivos y decididos en los resultados.',
       },
     ],
     stats: [
       {
-        number: '6+',
+        number: '5+',
         text: 'Años en el negocio',
       },
       {
-        number: '4821',
+        number: '575',
         text: 'Proyectos entregados',
       },
       {
-        number: '37+',
+        number: '10+',
         text: 'Personas trabajando',
       },
     ],
   },
   en: {
-    title: 'Top of mind of the companies in need of marketing solutions.',
-    text: 'We all make mistakes, have struggles, and even regret things in our past. But you are not your mistakes, you are not your struggles, and you are here NOW with the power to shape your day and your future',
+    title: 'We are your best ally in need of marketing solutions.',
+    text: 'Digital advertising is not magical without planning and support, it is a bridge that we must build together with our clients from the first shore, transforming ourselves into a solid, transparent team that allows us to reach the second shore with the achievement of the desired objectives. We invite you to work together.',
     bullets: [
       {
         name: 'Customer centric',
-        text: 'Plus, our platform is constantly evolving to meet the changing needs.',
+        text: 'We are focused on growing your business. This is where we all grow.',
       },
       {
         name: 'Digital mindset',
-        text: 'Plus, our platform is constantly evolving to meet the changing needs.',
+        text: 'Without losing sight of what happens outside the network, we focus on digital channels.',
       },
       {
         name: 'Result driven',
-        text: 'Plus, our platform is constantly evolving to meet the changing needs.',
+        text: 'Clear in the objectives and determined in the results.',
       },
     ],
     stats: [
       {
-        number: '6+',
+        number: '5+',
         text: 'Years in business',
       },
       {
-        number: '4821',
+        number: '575',
         text: 'Projects delivered',
       },
       {
-        number: '37+',
+        number: '10+',
         text: 'Team members',
       },
     ],
@@ -103,7 +102,7 @@ const data = {
                 const animationDelay = (index + 1) * 100;
                 return (
                   <li
-                    class="flex flex-col items-center justify-center"
+                    class="flex flex-col items-center justify-start"
                     data-aos="fade-up"
                     data-aos-delay={animationDelay}
                     data-aos-duration="800"
