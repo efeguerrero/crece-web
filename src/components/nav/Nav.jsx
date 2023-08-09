@@ -129,15 +129,15 @@ export default function NavBar({ lang }) {
         >
           <div className="fixed inset-0 z-50" />
           <Transition.Child
-            enter="transition ease-in-out duration-300 transform"
-            enterFrom="-translate-x-full"
-            enterTo="translate-x-0"
+            enter="transition ease-in duration-300 transform"
+            enterFrom="-translate-x-full opacity-0"
+            enterTo="translate-x-0 opacity-100"
             afterEnter={() => {
               isMobileDialogMounted.current = true;
             }}
-            leave="transition ease-in-out duration-300 transform"
-            leaveFrom="translate-x-0"
-            leaveTo="-translate-x-full"
+            leave="transition ease-in duration-300 transform"
+            leaveFrom="translate-x-0 opacity-100"
+            leaveTo="-translate-x-full opacity-0"
             afterLeave={() => {
               isMobileDialogMounted.current = false;
             }}
