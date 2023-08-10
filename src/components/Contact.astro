@@ -155,7 +155,22 @@ const { lang } = Astro.props;
         <div
           class="mx-auto w-full overflow-hidden bg-white px-8 py-10 lg:max-w-xl lg:rounded-xl lg:shadow-2xl"
         >
-          <form class="mt-4 flex flex-col justify-start">
+          <form
+            class="mt-4 flex flex-col justify-start"
+            id="form"
+            method="POST"
+          >
+            <input
+              type="hidden"
+              name="access_key"
+              value="f2a9d543-d16d-41f1-875c-0366c3b63f48"
+            />
+            <input
+              type="hidden"
+              name="subject"
+              value="Crece Mas - Nuevo Contacto"
+            />
+            <input type="hidden" name="from_name" value="crecemas.net" />
             <div class="flex-1">
               <label
                 class="mb-2 block text-lg font-medium tracking-wider text-alpha"
@@ -190,6 +205,7 @@ const { lang } = Astro.props;
                 placeholder="..."></textarea>
             </div>
             <button
+              type="submit"
               class="mt-6 w-[10rem] transform rounded-md bg-alpha px-6 py-3 text-base font-medium capitalize tracking-wide text-white transition-colors duration-300 lg:mx-auto lg:hover:bg-bravo"
             >
               {lang === 'en' ? 'Send' : 'Enviar'}
