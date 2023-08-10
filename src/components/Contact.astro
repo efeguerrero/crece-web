@@ -159,12 +159,11 @@ const { lang } = Astro.props;
             class="mt-4 flex flex-col justify-start"
             id="form"
             method="POST"
-            action="https://api.web3forms.com/submit"
           >
             <input
               type="hidden"
               name="access_key"
-              value="f2a9d543-d16d-41f1-875c-0366c3b63f48"
+              value="690c70b2-b393-4641-9310-9826d33e7afe"
             />
             <input
               type="hidden"
@@ -217,9 +216,55 @@ const { lang } = Astro.props;
             >
               {lang === 'en' ? 'Send' : 'Enviar'}
             </button>
+            <div class="mx-auto mt-2 text-base text-bravo" id="result"></div>
           </form>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<script define:vars={{ lang }}>
+  const form = document.getElementById('form');
+  const result = document.getElementById('result');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+    result.innerHTML = lang === 'en' ? 'Please wait...' : 'Por favor espere...';
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: json,
+    })
+      .then(async (response) => {
+        let json = await response.json();
+        if (response.status == 200) {
+          result.innerHTML =
+            lang === 'en'
+              ? 'Message sent successfully!'
+              : 'Mensaje enviado con éxito!';
+        } else {
+          console.log(response);
+          result.innerHTML = json.message;
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+        result.innerHTML =
+          lang === 'en' ? 'Something went wrong!' : 'Algo salió mal!';
+      })
+      .then(function () {
+        form.reset();
+        setTimeout(() => {
+          result.style.display = 'none';
+        }, 3000);
+      });
+  });
+</script>
