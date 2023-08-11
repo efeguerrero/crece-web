@@ -60,7 +60,7 @@ export default function NavBar({ lang }) {
             <span className="sr-only">Crecé Más</span>
             <img
               className={`${
-                isSticky ? 'h-12 lg:h-16' : 'h-16'
+                isSticky ? 'h-10 lg:h-14' : 'h-14'
               } w-auto transition-all duration-300`}
               src="/imgs/logo.png"
               alt=""
@@ -157,7 +157,7 @@ export default function NavBar({ lang }) {
                   <span className="sr-only">Crecé Más</span>
                   <img
                     className={`${
-                      isSticky ? 'h-12 lg:h-16' : 'h-16'
+                      isSticky ? 'h-10 lg:h-14' : 'h-14'
                     } w-auto transition-all duration-300`}
                     src="/imgs/logo.png"
                     alt=""
