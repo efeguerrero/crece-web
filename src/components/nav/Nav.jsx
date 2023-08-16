@@ -31,6 +31,11 @@ export default function NavBar({ lang }) {
     }
   };
 
+  const handleMenuTrigger = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+    document.documentElement.classList.toggle('scroll-smooth');
+  };
+
   useEffect(() => {
     if (window.scrollY >= 70) {
       setSticky(true);
@@ -72,7 +77,7 @@ export default function NavBar({ lang }) {
           <button
             type="button"
             className="text-gray-700 -m-2.5 inline-flex items-center justify-center rounded-md p-2.5"
-            onClick={() => setMobileMenuOpen(true)}
+            onClick={() => handleMenuTrigger()}
           >
             <span className="sr-only">Open main menu</span>
             <Bars3Icon
@@ -125,7 +130,7 @@ export default function NavBar({ lang }) {
         <Dialog
           as="div"
           className="lg:hidden"
-          onClose={() => setMobileMenuOpen(false)}
+          onClose={() => handleMenuTrigger()}
         >
           <div className="fixed inset-0 z-50" />
           <Transition.Child
@@ -152,7 +157,7 @@ export default function NavBar({ lang }) {
                 <a
                   href="#"
                   className="-m-1.5 p-1.5"
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={() => handleMenuTrigger()}
                 >
                   <span className="sr-only">Crecé Más</span>
                   <img
@@ -167,7 +172,7 @@ export default function NavBar({ lang }) {
                 <button
                   type="button"
                   className="text-gray-700 -m-2.5 rounded-md p-2.5"
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={() => handleMenuTrigger()}
                 >
                   <span className="sr-only">Close menu</span>
                   <XMarkIcon
@@ -185,7 +190,7 @@ export default function NavBar({ lang }) {
                         key={item.name}
                         href={item.href}
                         className="font-regular -mx-3 block rounded-lg px-3 py-2 text-4xl font-bold text-white "
-                        onClick={() => setMobileMenuOpen(false)}
+                        onClick={() => handleMenuTrigger()}
                       >
                         {item.name}
                       </a>
@@ -193,7 +198,7 @@ export default function NavBar({ lang }) {
                   </div>
                   <div className="flex gap-2 py-6">
                     <a
-                      onClick={() => setMobileMenuOpen(false)}
+                      onClick={() => handleMenuTrigger()}
                       href="/"
                       className="font-regular hover:bg-gray-50 -mx-3 block rounded-lg px-3 py-2.5 text-2xl font-normal text-white"
                     >
@@ -203,7 +208,7 @@ export default function NavBar({ lang }) {
                       |
                     </span>
                     <a
-                      onClick={() => setMobileMenuOpen(false)}
+                      onClick={() => handleMenuTrigger()}
                       href="/en"
                       className="font-regular hover:bg-gray-50 -mx-3 block rounded-lg px-3 py-2.5 text-2xl font-normal text-white"
                     >
