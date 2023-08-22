@@ -3,7 +3,7 @@ const CaseCard = ({ title, summary, img, url, date }) => {
 
   return (
     <a className="cursor-pointer">
-      <div className="group relative h-[30rem] w-full overflow-hidden rounded-2xl xl:h-[30rem] 3xl:h-[38rem]  ">
+      <div className="group relative h-[30rem] w-full overflow-hidden rounded-2xl xl:h-[36rem] 3xl:h-[40rem]  ">
         <div
           id="imgContainer"
           className=" absolute left-0 top-0 h-full w-full bg-[url(https://images.pexels.com/photos/18024337/pexels-photo-18024337/free-photo-of-a-man-with-fire-in-blue-hour.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)] bg-cover bg-center transition-all duration-500 ease-in-out group-hover:scale-[1.2]"
