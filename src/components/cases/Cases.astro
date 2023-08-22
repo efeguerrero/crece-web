@@ -15,11 +15,21 @@ interface Props {
 const { show, lang, filters } = Astro.props;
 ---
 
-<section class="text-gray-600 body-font wrapper mt-20">
-  <h2 class="text-alpha-700 mb-2 text-center text-6xl font-extrabold">
-    Nuestros Casos
-  </h2>
-  <div class="container mx-auto px-5 py-16">
-    <CaseList client:idle show={show} postsData={postsData} filters={filters} />
+<section class="mt-20">
+  <div
+    id="casos"
+    class="mx-auto items-center px-4 py-10 sm:px-6 lg:w-[90vw] lg:px-6 lg:pb-24 lg:pt-24 xl:w-[70vw]"
+  >
+    <h2 class="mb-2 py-6 text-left text-6xl font-extrabold text-alpha">
+      Nuestros Casos
+    </h2>
+    <div class="mx-auto py-16">
+      <CaseList
+        client:idle
+        show={show}
+        postsData={postsData}
+        filters={filters}
+      />
+    </div>
   </div>
 </section>

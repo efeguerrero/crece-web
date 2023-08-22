@@ -40,7 +40,7 @@ const ArticleList = ({ postsData, show, filters }) => {
           </form>
         </div>
       ) : null}
-      <div className="-m-4 flex flex-wrap">
+      <div className="grid grid-cols-1 gap-8 md:px-16 lg:grid-cols-3 lg:px-0">
         {displayedPosts.map((post, index) => (
           <CaseCard
             key={index}

@@ -2,22 +2,25 @@ const CaseCard = ({ title, summary, img, url, date }) => {
   const formattedDate = date.toDateString();
 
   return (
-    <div className="p-4 md:w-1/3">
-      <div className="border-gray-200 h-full overflow-hidden rounded-lg border-2 border-opacity-60">
-        <img
-          className="w-full object-cover object-center md:h-36 lg:h-48"
-          src={`${import.meta.env.BASE_URL}${img}`}
-          alt="blog"
+    <a className="cursor-pointer">
+      <div className="group relative h-[30rem] w-full overflow-hidden rounded-2xl xl:h-[30rem] 3xl:h-[38rem]  ">
+        <div
+          id="imgContainer"
+          className=" absolute left-0 top-0 h-full w-full bg-[url(https://images.pexels.com/photos/18024337/pexels-photo-18024337/free-photo-of-a-man-with-fire-in-blue-hour.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)] bg-cover bg-center transition-all duration-500 ease-in-out group-hover:scale-[1.2]"
         />
-        <div className="p-6">
-          <h2 className="title-font text-gray-900 mb-3 text-2xl font-medium">
+        <div
+          id="darkCover"
+          className=" absolute left-0 top-0 h-full w-full bg-gradient-to-b from-alpha/0 to-alpha/40"
+        />
+        <div className="z-10 flex h-full flex-col justify-end p-6">
+          <h2 className="z-10 mb-3 text-3xl font-bold uppercase text-white">
             {title}
           </h2>
-          <h2 className="title-font mb-2 w-fit bg-indigo-700 p-1 text-sm font-normal text-slate-200">
+          {/* <h2 className="title-font mb-2 w-fit bg-indigo-700 p-1 text-sm font-normal text-slate-200">
             {formattedDate}
-          </h2>
-          <p className="mb-3 leading-relaxed">{summary}</p>
-          <div className="flex flex-wrap items-center">
+          </h2> */}
+          <p className="z-10 text-white lg:text-sm">{summary}</p>
+          {/* <div className="flex flex-wrap items-center">
             <a
               href={`${import.meta.env.BASE_URL}${url}`}
               className="inline-flex items-center font-bold text-indigo-500 md:mb-2 lg:mb-0"
@@ -36,10 +39,10 @@ const CaseCard = ({ title, summary, img, url, date }) => {
                 <path d="M12 5l7 7-7 7"></path>
               </svg>
             </a>
-          </div>
+          </div> */}
         </div>
       </div>
-    </div>
+    </a>
   );
 };
 
