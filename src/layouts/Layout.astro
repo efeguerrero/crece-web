@@ -2,8 +2,9 @@
 export interface Props {
   title: string;
   lang: string;
+  alternateNav: boolean;
 }
-const { title, lang } = Astro.props;
+const { title, lang, alternateNav } = Astro.props;
 
 //Global Css Imports
 import '../styles/styles.css';
@@ -50,7 +51,7 @@ import Loader from '../components/Loader.astro';
   </head>
   <body class="font-franklin">
     <!-- <Loader /> -->
-    <Nav client:load lang={lang} />
+    <Nav client:load lang={lang} alternateNav={alternateNav} />
     <slot />
     <Footer lang={lang} />
     <script is:inline src="https://unpkg.com/aos@next/dist/aos.js"></script>

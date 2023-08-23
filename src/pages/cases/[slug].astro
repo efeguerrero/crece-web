@@ -15,7 +15,7 @@ const { caseEntry } = Astro.props;
 const { Content } = await caseEntry.render();
 ---
 
-<Layout title={caseEntry.data.title} lang="en">
+<Layout title={caseEntry.data.title} lang="en" alternateNav={true}>
   <BlogLayout>
     <Content />
   </BlogLayout>

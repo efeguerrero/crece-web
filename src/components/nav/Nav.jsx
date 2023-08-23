@@ -21,13 +21,13 @@ const navigation = {
     { name: 'Servicios', href: '/#services' },
     { name: 'Cómo Trabajamos', href: '/#how' },
     { name: 'Cultura', href: '/#culture' },
-    { name: 'Casos', href: '/#casos' },
+    { name: 'Casos', href: '/#cases' },
     { name: 'Clientes', href: '/#clients' },
     { name: 'Contacto', href: '/#contact' },
   ],
 };
 
-export default function NavBar({ lang }) {
+export default function NavBar({ lang, alternateNav }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const [isSticky, setSticky] = useState(false);
@@ -184,7 +184,9 @@ export default function NavBar({ lang }) {
               key={item.name}
               href={item.href}
               className={`${
-                isSticky ? 'font-medium text-alpha' : 'text-white'
+                isSticky || alternateNav
+                  ? 'font-medium text-alpha'
+                  : 'text-white'
               } lg:text-md font-regular relative after:absolute after:-bottom-2 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-bravo after:transition-transform after:duration-300 after:ease-in-out hover:after:origin-bottom-left hover:after:scale-x-100`}
             >
               {item.name}
@@ -195,14 +197,14 @@ export default function NavBar({ lang }) {
           <a
             href="/"
             className={`${
-              isSticky ? 'font-medium text-alpha' : 'text-white'
+              isSticky || alternateNav ? 'font-medium text-alpha' : 'text-white'
             } text-md font-regular  transition duration-300 ease-in-out  hover:text-bravo `}
           >
             ES
           </a>
           <span
             className={`${
-              isSticky ? 'font-medium text-alpha' : 'text-white'
+              isSticky || alternateNav ? 'font-medium text-alpha' : 'text-white'
             } text-md font-regular  transition duration-300 ease-in-out `}
           >
             |
@@ -210,7 +212,7 @@ export default function NavBar({ lang }) {
           <a
             href="/en"
             className={`${
-              isSticky ? 'font-medium text-alpha' : 'text-white'
+              isSticky || alternateNav ? 'font-medium text-alpha' : 'text-white'
             } text-md font-regular  transition duration-300 ease-in-out  hover:text-bravo `}
           >
             EN
