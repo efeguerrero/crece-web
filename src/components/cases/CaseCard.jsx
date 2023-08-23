@@ -2,7 +2,7 @@ const CaseCard = ({ title, summary, img, url, date }) => {
   const formattedDate = date.toDateString();
 
   return (
-    <a className="cursor-pointer">
+    <a className="cursor-pointer" href={url}>
       <div className="group relative h-[30rem] w-full overflow-hidden rounded-2xl xl:h-[36rem] 3xl:h-[40rem]  ">
         <div
           id="imgContainer"
