@@ -1,0 +1,22 @@
+---
+import { getCollection } from 'astro:content';
+import BlogLayout from '../../layouts/BlogLayout.astro';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const caseEntries = await getCollection('cases');
+  return caseEntries.map((caseEntry) => ({
+    params: { slug: caseEntry.slug },
+    props: { caseEntry },
+  }));
+}
+
+const { caseEntry } = Astro.props;
+const { Content } = await caseEntry.render();
+---
+
+<Layout title={caseEntry.data.title} lang="en">
+  <BlogLayout>
+    <Content />
+  </BlogLayout>
+</Layout>
