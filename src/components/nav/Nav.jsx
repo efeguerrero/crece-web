@@ -80,9 +80,8 @@ export default function NavBar({ lang, alternateNav }) {
                 className="text-gray-700 -m-2.5 inline-flex items-center justify-center rounded-md p-2.5"
                 onClick={() => setMobileMenuOpen(true)}
               >
-                <span className="sr-only">Open main menu</span>
                 <Bars3Icon
-                  className="h-10 w-10 text-bravo transition-all duration-300 ease-in-out  active:scale-[1.2]"
+                  className="h-10 w-10 text-bravo transition-all duration-300 ease-in-out active:scale-[1.2] lg:hidden"
                   aria-hidden="true"
                 />
               </button>
