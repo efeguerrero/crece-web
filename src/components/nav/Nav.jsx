@@ -10,20 +10,20 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const navigation = {
   en: [
-    { name: 'Services', href: '#services' },
-    { name: 'How We Work', href: '#how' },
-    { name: 'Culture', href: '#culture' },
-    { name: 'Cases', href: '#cases' },
-    { name: 'Clients', href: '#clients' },
-    { name: 'Contact Us', href: '#contact' },
+    { name: 'Services', href: '/#services' },
+    { name: 'How We Work', href: '/#how' },
+    { name: 'Culture', href: '/#culture' },
+    { name: 'Cases', href: '/#cases' },
+    { name: 'Clients', href: '/#clients' },
+    { name: 'Contact Us', href: '/#contact' },
   ],
   es: [
-    { name: 'Servicios', href: '#services' },
-    { name: 'Cómo Trabajamos', href: '#how' },
-    { name: 'Cultura', href: '#culture' },
-    { name: 'Casos', href: '#casos' },
-    { name: 'Clientes', href: '#clients' },
-    { name: 'Contacto', href: '#contact' },
+    { name: 'Servicios', href: '/#services' },
+    { name: 'Cómo Trabajamos', href: '/#how' },
+    { name: 'Cultura', href: '/#culture' },
+    { name: 'Casos', href: '/#casos' },
+    { name: 'Clientes', href: '/#clients' },
+    { name: 'Contacto', href: '/#contact' },
   ],
 };
 
@@ -61,7 +61,7 @@ export default function NavBar({ lang }) {
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
-          <a href="#" className="-m-1.5 p-1.5">
+          <a href="/#" className="-m-1.5 p-1.5">
             <span className="sr-only">Crecé Más</span>
             <img
               className={`${
@@ -109,7 +109,7 @@ export default function NavBar({ lang }) {
                     >
                       <div className="flex items-center justify-between">
                         <Dialog.Close asChild>
-                          <a href="#" className="-m-1.5 p-1.5">
+                          <a href="/#" className="-m-1.5 p-1.5">
                             <span className="sr-only">Crecé Más</span>
                             <img
                               className={`${

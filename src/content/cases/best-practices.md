@@ -4,7 +4,7 @@ dateCreated: 2023-05-10T00:00:00.000Z
 summary: >-
   Flowbite is an open-source library of UI components built with the
   utility-first classes from Tailwind CSS.
-image: https://www.pexels.com/photo/a-man-with-fire-in-blue-hour-18024337
+image: https://images.pexels.com/photos/18024337/pexels-photo-18024337/free-photo-of-a-man-with-fire-in-blue-hour.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
 ---
 
 # Best practices for successful prototypes
@@ -15,7 +15,7 @@ Before going digital, you might benefit from scribbling down some ideas in a ske
 
 But then I found a [component library based on Tailwind CSS called Flowbite](https://flowbite.com/). It comes with the most commonly used UI components, such as buttons, navigation bars, cards, form elements, and more which are conveniently built with the utility classes from Tailwind CSS.
 
-![](/posts/assets/linkedin_banner.png)
+![caseImage](https://images.pexels.com/photos/18024337/pexels-photo-18024337/free-photo-of-a-man-with-fire-in-blue-hour.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)
 
 ## Getting started with Flowbite
 
