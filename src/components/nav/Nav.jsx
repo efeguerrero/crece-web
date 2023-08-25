@@ -98,7 +98,7 @@ export default function NavBar({ lang }) {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className="fixed inset-0 z-50 h-[100svh] w-full bg-alpha"
+                    className="fixed inset-0 z-50 h-[100dvh] w-full bg-alpha"
                   >
                     <div
                       className={`${
