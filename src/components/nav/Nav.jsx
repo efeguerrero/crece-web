@@ -71,7 +71,7 @@ export default function NavBar({ lang }) {
           </a>
         </div>
         <Dialog.Root open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
-          <Dialog.Trigger>
+          <Dialog.Trigger asChild>
             <div className="flex lg:hidden">
               <button
                 type="button"
