@@ -40,7 +40,7 @@ const ArticleList = ({ postsData, show, filters }) => {
           </form>
         </div>
       ) : null}
-      <div className="grid grid-cols-1 gap-8 md:px-16 lg:grid-cols-3 lg:px-0">
+      <div className="grid grid-cols-1 justify-items-center gap-8 sm:grid-cols-2 md:px-16 lg:grid-cols-3 lg:px-0">
         {displayedPosts.map((post, index) => (
           <CaseCard
             key={index}
