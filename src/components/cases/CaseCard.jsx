@@ -1,10 +1,17 @@
-const CaseCard = ({ title, summary, img, url, date }) => {
+const CaseCard = ({ caseData }) => {
+  const { title, description, tags, caseImage } = caseData.fields;
+
+  const bgImg = caseImage.fields.file.url;
+
+  const url = 'http://localhost:3000/';
+
   return (
     <a className="cursor-pointer" href={url}>
       <div className="group relative flex aspect-[3/5] w-full max-w-sm items-end overflow-hidden rounded-2xl  ">
         <div
+          style={{ '--image-url': `url(${bgImg})` }}
           id="imgContainer"
-          className=" absolute left-0 top-0 h-full w-full bg-[url(https://images.pexels.com/photos/8944067/pexels-photo-8944067.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)] bg-cover bg-center transition-all duration-500 ease-in-out group-hover:scale-[1.08]"
+          className=" absolute left-0 top-0 h-full w-full bg-[image:var(--image-url)] bg-cover bg-center transition-all duration-500 ease-in-out group-hover:scale-[1.08]"
         />
         <div
           id="darkCover"
@@ -14,14 +21,13 @@ const CaseCard = ({ title, summary, img, url, date }) => {
           <h2 className="z-10 mb-3 text-3xl font-bold uppercase text-white">
             {title}
           </h2>
-          <p className="z-10 mb-4 text-sm text-white">{summary}</p>
+          <p className="z-10 mb-4 text-sm text-white">{description}</p>
           <div id="tagContainer" className="flex flex-wrap gap-2">
-            <div className="w-max rounded-md border-[1px] border-white px-2 py-1">
-              <p className="text-[0.6rem] uppercase text-white">Website</p>
-            </div>
-            <div className="w-max rounded-md border-[1px] border-white px-2 py-1">
-              <p className="text-[0.6rem] uppercase text-white">Campaign</p>
-            </div>
+            {tags?.map((tag) => (
+              <div className="w-max rounded-md border-[1px] border-white px-2 py-1">
+                <p className="text-[0.6rem] uppercase text-white">{tag}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>

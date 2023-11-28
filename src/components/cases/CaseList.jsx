@@ -43,16 +43,9 @@ const ArticleList = ({ cases, show, filters }) => {
         </div>
       ) : null}
       <div className="grid grid-cols-1 justify-items-center gap-8 sm:grid-cols-2 md:px-16 lg:grid-cols-3 lg:px-0">
-        {/* {cases.map((case, index) => (
-          <CaseCard
-            key={index}
-            title={post.data.title}
-            summary={post.data.summary}
-            img={post.data.image}
-            url={'/cases/' + post.slug}
-            date={post.data.dateCreated}
-          />
-        ))} */}
+        {cases.items.map((caseData, index) => (
+          <CaseCard key={index} caseData={caseData} />
+        ))}
       </div>
     </>
   );
