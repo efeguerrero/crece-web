@@ -1,7 +1,7 @@
 const CaseCard = ({ title, summary, img, url, date }) => {
   return (
     <a className="cursor-pointer" href={url}>
-      <div className="group relative flex h-[30rem] w-full max-w-sm items-end overflow-hidden rounded-2xl xl:h-[36rem] 3xl:h-[40rem]  ">
+      <div className="group relative flex aspect-[3/5] w-full max-w-sm items-end overflow-hidden rounded-2xl  ">
         <div
           id="imgContainer"
           className=" absolute left-0 top-0 h-full w-full bg-[url(https://images.pexels.com/photos/8944067/pexels-photo-8944067.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)] bg-cover bg-center transition-all duration-500 ease-in-out group-hover:scale-[1.08]"
