@@ -4,24 +4,26 @@ import { useState, useRef } from 'react';
 import CaseCard from './CaseCard.jsx';
 
 //Functions Import
-import postSort from './postSort.js';
+//import postSort from './postSort.js';
 
-const ArticleList = ({ postsData, show, filters }) => {
-  const [featuredPosts, setFeaturedPosts] = useState(postSort(postsData, show));
-  const [displayedPosts, setDisplayedPosts] = useState(featuredPosts);
-  const refInput = useRef(null);
+const ArticleList = ({ cases, show, filters }) => {
+  //const [featuredPosts, setFeaturedPosts] = useState(postSort(cases, show));
+  //const [displayedPosts, setDisplayedPosts] = useState(featuredPosts);
+  //const refInput = useRef(null);
 
-  const handleSearch = (e) => {
-    e.preventDefault();
+  // const handleSearch = (e) => {
+  //   e.preventDefault();
 
-    const filteredPosts = featuredPosts.filter((post) => {
-      return post.data.title
-        .toLowerCase()
-        .includes(refInput.current.value.toLowerCase());
-    });
+  //   const filteredPosts = featuredPosts.filter((post) => {
+  //     return post.data.title
+  //       .toLowerCase()
+  //       .includes(refInput.current.value.toLowerCase());
+  //   });
 
-    setDisplayedPosts(filteredPosts);
-  };
+  //   setDisplayedPosts(filteredPosts);
+  // };
+
+  console.log(cases);
 
   return (
     <>
@@ -41,7 +43,7 @@ const ArticleList = ({ postsData, show, filters }) => {
         </div>
       ) : null}
       <div className="grid grid-cols-1 justify-items-center gap-8 sm:grid-cols-2 md:px-16 lg:grid-cols-3 lg:px-0">
-        {displayedPosts.map((post, index) => (
+        {/* {cases.map((case, index) => (
           <CaseCard
             key={index}
             title={post.data.title}
@@ -50,7 +52,7 @@ const ArticleList = ({ postsData, show, filters }) => {
             url={'/cases/' + post.slug}
             date={post.data.dateCreated}
           />
-        ))}
+        ))} */}
       </div>
     </>
   );

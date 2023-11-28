@@ -1,16 +1,24 @@
 ---
+import { contentfulClient } from '../../lib/contentful';
+import type { EntryFieldTypes } from 'contentful';
+
 //Component Imports
 import CaseList from './CaseList.jsx';
 
-//Posts Import
-import { getCollection } from 'astro:content';
-const postsData = await getCollection('cases');
-
-interface Props {
-  lang: string;
-  show: number;
-  filters: boolean;
+interface Case {
+  contentTypeId: 'caso';
+  fields: {
+    title: EntryFieldTypes.Text;
+    description: EntryFieldTypes.Text;
+    caseImage: EntryFieldTypes.AssetLink;
+    Tags: EntryFieldTypes.Text;
+  };
 }
+
+//Cases Imports
+const cases = await contentfulClient.getEntries<Case>({
+  content_type: 'caso',
+});
 
 const { show, lang, filters } = Astro.props;
 ---
@@ -24,12 +32,7 @@ const { show, lang, filters } = Astro.props;
       Nuestros Casos
     </h2>
     <div class="mx-auto py-16">
-      <CaseList
-        client:idle
-        show={show}
-        postsData={postsData}
-        filters={filters}
-      />
+      <CaseList client:idle show={show} cases={cases} filters={filters} />
     </div>
   </div>
 </section>
