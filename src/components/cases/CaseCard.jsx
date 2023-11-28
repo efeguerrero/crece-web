@@ -6,8 +6,11 @@ const CaseCard = ({ caseData }) => {
   const url = 'http://localhost:3000/';
 
   return (
-    <a className="cursor-pointer" href={url}>
-      <div className="group relative flex aspect-[3/5] w-full max-w-sm items-end overflow-hidden rounded-2xl  ">
+    <a
+      className=" flex-[0_1_384px] cursor-pointer lg:flex-[1_0_25%]"
+      href={url}
+    >
+      <div className="group relative flex aspect-[3/5] items-end overflow-hidden rounded-2xl  ">
         <div
           style={{ '--image-url': `url(${bgImg})` }}
           id="imgContainer"
@@ -17,7 +20,7 @@ const CaseCard = ({ caseData }) => {
           id="darkCover"
           className=" absolute left-0 top-0 h-full w-full bg-gradient-to-b from-alpha/0 to-alpha/20 "
         />
-        <div className="z-10 flex h-[50%] flex-col justify-end bg-gradient-to-b from-alpha/0 to-alpha/[90] p-6">
+        <div className="z-10 flex h-[50%] w-full flex-col justify-end bg-gradient-to-b from-alpha/0 to-alpha/[90] p-6">
           <h2 className="z-10 mb-3 text-3xl font-bold uppercase text-white">
             {title}
           </h2>

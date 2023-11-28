@@ -42,7 +42,7 @@ const ArticleList = ({ cases, show, filters }) => {
           </form>
         </div>
       ) : null}
-      <div className="grid grid-cols-1 justify-items-center gap-8 sm:grid-cols-2 md:px-16 lg:grid-cols-3 lg:px-0">
+      <div className="flex flex-wrap justify-center gap-8 md:px-16 lg:px-0">
         {cases.items.map((caseData, index) => (
           <CaseCard key={index} caseData={caseData} />
         ))}
