@@ -61,7 +61,7 @@ export default function CasePost({ caseEntry }) {
       <div className="sticky top-40 w-[300px]">
         <div className="mb-6 flex flex-col gap-6 rounded-lg border border-bravo/30 bg-white p-6 shadow-sm">
           <h3 className="text-lg font-semibold leading-none tracking-tight text-bravo">
-            Features Highlighted
+            Platforms
           </h3>
 
           <div className="">
@@ -77,7 +77,7 @@ export default function CasePost({ caseEntry }) {
         </div>
         <div className="mb-6 flex flex-col gap-6 rounded-lg border border-bravo/30 bg-white p-6 shadow-sm">
           <h3 className="text-lg font-semibold leading-none tracking-tight text-bravo">
-            Performance
+            Results
           </h3>
 
           <div className="flex flex-col gap-4">
