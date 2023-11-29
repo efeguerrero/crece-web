@@ -1,138 +1,16 @@
 ---
-import type { CollectionEntry } from 'astro:content';
-interface Props {
-  caseEntry: CollectionEntry<'cases'>;
-}
-
-const { caseEntry } = Astro.props;
-const formattedDate = caseEntry.data.dateCreated.toDateString();
-const headerImg = caseEntry.data.image;
 ---
 
-<section class="overflow-hidden">
-  <div
-    id="imageContainer"
-    style={{ '--headerImg': `url(${headerImg})` }}
-    class="h-[60svh] w-full bg-[image:var(--headerImg)] bg-cover bg-center lg:bg-fixed"
-  >
-    <div
-      id="darkCover"
-      class="flex h-full w-full flex-col items-center justify-center gap-6 bg-gradient-to-t from-alpha/20 from-0% to-alphaDark/90 to-100% p-2"
-    >
-      <h2
-        class="container text-center text-6xl font-extrabold text-white md:text-8xl"
-      >
-        {caseEntry.data.title}
-      </h2>
-      <h3
-        class="container text-center text-2xl text-white md:text-3xl lg:max-w-5xl"
-      >
-        {caseEntry.data.summary}
-      </h3>
-    </div>
-  </div>
-
-  <div class="blogpost py-16">
+<section class="mx-auto max-w-5xl pb-16 pt-40">
+  <div>
     <slot />
   </div>
-  <div class="flex w-full justify-center bg-alpha py-12">
+  <!-- <div class="flex w-full justify-center bg-alpha py-12">
     <a
       href="/#"
       class="rounded-xl bg-white px-4 py-2 font-bold text-alpha transition-all hover:text-bravo"
     >
       See more cases
     </a>
-  </div>
-
-  <script is:inline define:vars={headerImg}>
-    console.log(headerImg);
-  </script>
-
-  <style>
-    .blogpost {
-      max-width: 1024px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    .blogpost :global(p) {
-      font-size: 1rem;
-      font-weight: normal;
-      line-height: 1.8rem;
-    }
-
-    .blogpost :global(h6) {
-      font-size: 1.2rem;
-      font-weight: normal;
-    }
-
-    .blogpost :global(h5) {
-      font-size: 1.3rem;
-      font-weight: normal;
-      line-height: 2rem;
-      margin: 1.2rem 0;
-    }
-
-    .blogpost :global(h4) {
-      font-size: 1.4rem;
-      font-weight: normal;
-      line-height: 2rem;
-      margin: 1.5rem 0;
-    }
-
-    .blogpost :global(h3) {
-      font-size: 2rem;
-      font-weight: bold;
-      line-height: 2rem;
-      margin: 1.5rem 0;
-      color: #2a25cc;
-    }
-
-    .blogpost :global(h2) {
-      font-size: 2.5rem;
-      font-weight: bold;
-      line-height: 2.5rem;
-      margin: 1.5rem 0;
-      color: #2a25cc;
-    }
-
-    .blogpost :global(h1) {
-      font-size: 3rem;
-      font-weight: bold;
-      line-height: 3rem;
-      margin: 2rem 0;
-      color: #2a25cc;
-    }
-
-    .blogpost :global(ul) {
-      list-style-type: disc;
-      padding-left: 4rem;
-      margin: 1rem 0;
-    }
-
-    .blogpost :global(li) {
-      margin: 1rem 0;
-    }
-
-    .blogpost :global(ol) {
-      list-style-type: decimal;
-      padding-left: 4rem;
-      margin: 1rem 0;
-    }
-
-    .blogpost :global(img) {
-      width: 100%;
-      object-fit: cover;
-      border-radius: 1rem;
-      margin: 3rem auto;
-      aspect-ratio: 1.4;
-    }
-
-    .blogpost :global(a) {
-      color: #db0bb2;
-      cursor: pointer;
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-  </style>
+  </div> -->
 </section>

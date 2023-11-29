@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BlogLayout from '../../layouts/BlogLayout.astro';
 import Layout from '../../layouts/Layout.astro';
+import CasePost from '../../components/cases/caseContent/CasePost.astro';
 
 export async function getStaticPaths() {
   const caseEntries = await getCollection('cases');
@@ -16,7 +17,7 @@ const { Content } = await caseEntry.render();
 ---
 
 <Layout title={caseEntry.data.title} lang="en" alternateNav={true}>
-  <BlogLayout caseEntry={caseEntry}>
-    <Content />
+  <BlogLayout>
+    <CasePost />
   </BlogLayout>
 </Layout>
