@@ -1,18 +1,18 @@
 //Contentful Imports
-import { BLOCKS } from '@contentful/rich-text-types';
+import { BLOCKS, INLINES } from '@contentful/rich-text-types';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 export default function CasePost({ caseEntry }) {
   const options = {
     renderNode: {
       [BLOCKS.HEADING_1]: (node, children) => (
-        <h1 className="mb-6 text-4xl font-bold text-alpha">{children}</h1>
+        <h2 className="mb-6 text-4xl font-bold text-alpha">{children}</h2>
       ),
       [BLOCKS.HEADING_2]: (node, children) => (
-        <h2 className="my-6 text-2xl font-bold text-alpha">{children}</h2>
+        <h3 className="my-6 text-2xl font-bold text-alpha">{children}</h3>
       ),
       [BLOCKS.HEADING_3]: (node, children) => (
-        <h3 className="my-6 text-lg font-bold text-alpha">{children}</h3>
+        <h4 className="my-6 text-lg font-bold text-alpha">{children}</h4>
       ),
       [BLOCKS.PARAGRAPH]: (node, children) => (
         <p className="my-5">{children}</p>
@@ -23,6 +23,18 @@ export default function CasePost({ caseEntry }) {
       [BLOCKS.LIST_ITEM]: (node, children) => (
         <li className="ml-8 list-disc">{children}</li>
       ),
+      [INLINES.HYPERLINK]: (node, children) => {
+        const { uri } = node.data;
+        return (
+          <a
+            href={uri}
+            target="_blank"
+            className="my-5 cursor-pointer text-bravo underline underline-offset-2 transition-all hover:text-alpha"
+          >
+            {children}
+          </a>
+        );
+      },
       [BLOCKS.EMBEDDED_ASSET]: (node) => {
         const { url } = node.data.target.fields.file;
         const { title } = node.data.target.fields;
@@ -45,49 +57,6 @@ export default function CasePost({ caseEntry }) {
     <div className="flex items-start gap-12">
       <div className="flex-1 ">
         {caseBody ? documentToReactComponents(caseBody, options) : null}
-        {/* <h1 className="mb-6 text-4xl font-bold text-alpha">
-          Developing at the speed of sound: How Sonos amplified their DevEx
-        </h1>
-        <p className=" my-5">
-          Learn how Sonos improved build times, saved developer time, and
-          optimized their digital presence by migrating to Next.js and Vercel.
-        </p>
-        <img
-          src="https://images.pexels.com/photos/18110319/pexels-photo-18110319/free-photo-of-birds-on-wire-in-evening.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          alt="Case Image"
-          className="my-10 w-full rounded-lg object-cover"
-        />
-        <h2 className="my-6 text-2xl font-bold text-alpha">
-          Effortless listening
-        </h2>
-        <p className="my-5">
-          As the world's leading sound experience company with a 20-year legacy
-          of innovation and over 3,000 patents, Sonos understands the importance
-          of a robust digital presence that reflects the brand's cutting-edge
-          ethos.
-        </p>
-        <p className="my-5">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices
-          mauris sit amet quam iaculis venenatis. Donec elit turpis, luctus et
-          congue in, luctus quis lorem. Ut luctus, mauris a.
-        </p>
-        <h3 className="my-6 text-lg font-bold text-alpha">Case subtitle</h3>
-        <p className="my-5">
-          As the world's leading sound experience company with a 20-year legacy
-          of innovation and over 3,000 patents, Sonos understands the importance
-          of a robust digital presence that reflects the brand's cutting-edge
-          ethos.
-        </p>
-        <p className="my-5">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices
-          mauris sit amet quam iaculis venenatis. Donec elit turpis, luctus et
-          congue in, luctus quis lorem. Ut luctus, mauris a.
-        </p>
-        <img
-          src="https://images.pexels.com/photos/15469650/pexels-photo-15469650/free-photo-of-monochroom-winterlandschap.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          alt="Case Image"
-          className="my-10 w-full rounded-lg object-cover"
-        /> */}
       </div>
       <div className="sticky top-40 w-[300px]">
         <div className="mb-6 flex flex-col gap-6 rounded-lg border border-bravo/30 bg-white p-6 shadow-sm">
@@ -103,7 +72,6 @@ export default function CasePost({ caseEntry }) {
               <li>Comments</li>
               <li>Preview Deployments</li>
               <li>Web Analytics</li>
-              <li>ISR</li>
             </ul>
           </div>
         </div>
