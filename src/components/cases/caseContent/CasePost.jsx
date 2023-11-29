@@ -2,7 +2,7 @@ export default function CasePost() {
   return (
     <div className="flex gap-12">
       <div className="flex-1">
-        <h1 className="my-6 text-4xl font-bold text-alpha">
+        <h1 className="mb-6 text-4xl font-bold text-alpha">
           Developing at the speed of sound: How Sonos amplified their DevEx
         </h1>
         <p className="my-5">
