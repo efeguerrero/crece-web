@@ -1,11 +1,11 @@
 export default function CasePost() {
   return (
-    <div className="flex gap-12">
-      <div className="flex-1">
+    <div className="flex items-start gap-12">
+      <div className="flex-1 ">
         <h1 className="mb-6 text-4xl font-bold text-alpha">
           Developing at the speed of sound: How Sonos amplified their DevEx
         </h1>
-        <p className="my-5">
+        <p className=" my-5">
           Learn how Sonos improved build times, saved developer time, and
           optimized their digital presence by migrating to Next.js and Vercel.
         </p>
@@ -46,7 +46,7 @@ export default function CasePost() {
           className="my-10 w-full rounded-lg object-cover"
         />
       </div>
-      <div className="w-[300px]">
+      <div className="sticky top-40 w-[300px]">
         <div className="mb-6 flex flex-col gap-6 rounded-lg border border-bravo/30 bg-white p-6 shadow-sm">
           <h3 className="text-lg font-semibold leading-none tracking-tight text-bravo">
             Features Highlighted
