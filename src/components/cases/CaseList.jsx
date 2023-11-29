@@ -23,8 +23,6 @@ const ArticleList = ({ cases, show, filters }) => {
   //   setDisplayedPosts(filteredPosts);
   // };
 
-  console.log(cases);
-
   return (
     <>
       {/* Search box and other filters are only displayed if required */}

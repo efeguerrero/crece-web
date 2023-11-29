@@ -1,14 +1,16 @@
 const CaseCard = ({ caseData }) => {
-  const { title, description, tags, caseImage } = caseData.fields;
+  const { title, description, tags, caseImage, slug } = caseData.fields;
+
+  console.log(caseData);
 
   const bgImg = caseImage.fields.file.url;
 
-  const url = 'http://localhost:3000/';
+  const caseUrl = import.meta.env.HOME_URL + `/cases/${slug}`;
 
   return (
     <a
-      className=" flex-[0_1_384px] cursor-pointer lg:flex-[1_0_25%]"
-      href={url}
+      className=" flex-[0_1_384px] cursor-pointer lg:max-w-sm lg:flex-[1_0_25%]"
+      href={caseUrl}
     >
       <div className="group relative flex aspect-[3/5] items-end overflow-hidden rounded-2xl  ">
         <div
@@ -26,8 +28,11 @@ const CaseCard = ({ caseData }) => {
           </h2>
           <p className="z-10 mb-4 text-sm text-white">{description}</p>
           <div id="tagContainer" className="flex flex-wrap gap-2">
-            {tags?.map((tag) => (
-              <div className="w-max rounded-md border-[1px] border-white px-2 py-1">
+            {tags?.map((tag, index) => (
+              <div
+                key={index}
+                className="w-max rounded-md border-[1px] border-white px-2 py-1"
+              >
                 <p className="text-[0.6rem] uppercase text-white">{tag}</p>
               </div>
             ))}

@@ -1,19 +1,8 @@
 ---
 import { contentfulClient } from '../../lib/contentful';
-import type { EntryFieldTypes } from 'contentful';
-
+import type { Case } from '../../lib/contentful';
 //Component Imports
 import CaseList from './CaseList.jsx';
-
-interface Case {
-  contentTypeId: 'caso';
-  fields: {
-    title: EntryFieldTypes.Text;
-    description: EntryFieldTypes.Text;
-    caseImage: EntryFieldTypes.AssetLink;
-    Tags: EntryFieldTypes.Text;
-  };
-}
 
 //Cases Imports
 const cases = await contentfulClient.getEntries<Case>({

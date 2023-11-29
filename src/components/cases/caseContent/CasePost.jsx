@@ -1,8 +1,51 @@
-export default function CasePost() {
+//Contentful Imports
+import { BLOCKS } from '@contentful/rich-text-types';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+
+export default function CasePost({ caseEntry }) {
+  const options = {
+    renderNode: {
+      [BLOCKS.HEADING_1]: (node, children) => (
+        <h1 className="mb-6 text-4xl font-bold text-alpha">{children}</h1>
+      ),
+      [BLOCKS.HEADING_2]: (node, children) => (
+        <h2 className="my-6 text-2xl font-bold text-alpha">{children}</h2>
+      ),
+      [BLOCKS.HEADING_3]: (node, children) => (
+        <h3 className="my-6 text-lg font-bold text-alpha">{children}</h3>
+      ),
+      [BLOCKS.PARAGRAPH]: (node, children) => (
+        <p className="my-5">{children}</p>
+      ),
+      [BLOCKS.UL_LIST]: (node, children) => (
+        <ul className="mb-10">{children}</ul>
+      ),
+      [BLOCKS.LIST_ITEM]: (node, children) => (
+        <li className="ml-8 list-disc">{children}</li>
+      ),
+      [BLOCKS.EMBEDDED_ASSET]: (node) => {
+        const { url } = node.data.target.fields.file;
+        const { title } = node.data.target.fields;
+        return (
+          <img
+            src={url}
+            alt={title + 'Image'}
+            className="my-10 w-full rounded-lg object-cover"
+          />
+        );
+      },
+    },
+  };
+
+  const caseBody = caseEntry.fields.caseBody;
+
+  console.log(caseBody);
+
   return (
     <div className="flex items-start gap-12">
       <div className="flex-1 ">
-        <h1 className="mb-6 text-4xl font-bold text-alpha">
+        {caseBody ? documentToReactComponents(caseBody, options) : null}
+        {/* <h1 className="mb-6 text-4xl font-bold text-alpha">
           Developing at the speed of sound: How Sonos amplified their DevEx
         </h1>
         <p className=" my-5">
@@ -44,7 +87,7 @@ export default function CasePost() {
           src="https://images.pexels.com/photos/15469650/pexels-photo-15469650/free-photo-of-monochroom-winterlandschap.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
           alt="Case Image"
           className="my-10 w-full rounded-lg object-cover"
-        />
+        /> */}
       </div>
       <div className="sticky top-40 w-[300px]">
         <div className="mb-6 flex flex-col gap-6 rounded-lg border border-bravo/30 bg-white p-6 shadow-sm">
