@@ -54,7 +54,7 @@ export default function NavBar({ lang, alternateNav }) {
           : ''
       } cubic-bezier(0.4, 0,  0.2, 1) fixed inset-x-0 top-0 z-50 transition-all duration-75`}
     >
-      <main className="mx-auto max-w-7xl px-8 xl:px-4">
+      <main className="mx-auto max-w-7xl px-4 md:px-8">
         <nav
           className={`${
             isSticky ? 'py-4 ' : ' py-6'
