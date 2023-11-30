@@ -7,12 +7,6 @@ const ArticleList = ({ cases, show }) => {
       {cases.items.map((caseData, index) => (
         <CaseCard key={index} caseData={caseData} />
       ))}
-      {cases.items.map((caseData, index) => (
-        <CaseCard key={index} caseData={caseData} />
-      ))}
-      {cases.items.map((caseData, index) => (
-        <CaseCard key={index} caseData={caseData} />
-      ))}
     </div>
   );
 };
