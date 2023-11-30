@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default function Contact() {
   return (
     <div className="mb-6 flex flex-col gap-6 rounded-lg border border-bravo/30 bg-white p-6 shadow-sm">
