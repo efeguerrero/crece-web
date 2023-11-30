@@ -2,7 +2,12 @@
 import { BLOCKS, INLINES } from '@contentful/rich-text-types';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
+import Platforms from './side-panel/Platforms';
+import Results from './side-panel/Results';
+import Contact from './side-panel/Contact';
+
 export default function CasePost({ caseEntry }) {
+  console.log(caseEntry);
   const options = {
     renderNode: {
       [BLOCKS.HEADING_1]: (node, children) => (
@@ -51,56 +56,15 @@ export default function CasePost({ caseEntry }) {
 
   const caseBody = caseEntry.fields.caseBody;
 
-  console.log(caseBody);
-
   return (
     <div className="flex items-start gap-12">
       <div className="flex-1 ">
         {caseBody ? documentToReactComponents(caseBody, options) : null}
       </div>
       <div className="sticky top-40 w-[300px]">
-        <div className="mb-6 flex flex-col gap-6 rounded-lg border border-bravo/30 bg-white p-6 shadow-sm">
-          <h3 className="text-lg font-semibold leading-none tracking-tight text-bravo">
-            Platforms
-          </h3>
-
-          <div className="">
-            <ul className="list-inside list-disc space-y-2 text-sm">
-              <li>Next.js</li>
-              <li>Edge Middleware</li>
-              <li>Monitoring</li>
-              <li>Comments</li>
-              <li>Preview Deployments</li>
-              <li>Web Analytics</li>
-            </ul>
-          </div>
-        </div>
-        <div className="mb-6 flex flex-col gap-6 rounded-lg border border-bravo/30 bg-white p-6 shadow-sm">
-          <h3 className="text-lg font-semibold leading-none tracking-tight text-bravo">
-            Results
-          </h3>
-
-          <div className="flex flex-col gap-4">
-            <div className="">
-              <p className="text-xl font-extrabold text-bravo">75%</p>
-              <p className="text-sm">Improvement in build times</p>
-            </div>
-            <div>
-              <p className="text-xl font-extrabold text-bravo">15%</p>
-              <p className="text-sm">Improvement in performance scores</p>
-            </div>
-          </div>
-        </div>
-        <div className="mb-6 flex flex-col gap-6 rounded-lg border border-bravo/30 bg-white p-6 shadow-sm">
-          <h3 className="text-lg font-semibold leading-none tracking-tight text-bravo">
-            Need to talk?
-          </h3>
-          <a href="/#contact">
-            <button className="w-max transform rounded-md bg-alpha px-6 py-3 text-sm font-medium capitalize tracking-wide text-white transition-colors duration-300 lg:hover:bg-alphaDark">
-              Contact Us
-            </button>
-          </a>
-        </div>
+        <Platforms platforms={caseEntry.fields.platforms} />
+        <Results results={caseEntry.fields.results} />
+        <Contact />
       </div>
     </div>
   );
