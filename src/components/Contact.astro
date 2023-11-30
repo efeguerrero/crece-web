@@ -10,10 +10,10 @@ const { lang } = Astro.props;
   class="bg-gradient-to-br from-alpha from-60% to-alphaDark lg:min-h-[svh] lg:pb-12"
 >
   <div
-    class="mx-auto flex flex-col pt-12 lg:min-h-[svh] lg:w-[90vw] lg:py-12 xl:w-[70vw]"
+    class="l mx-auto flex max-w-7xl flex-col px-4 py-12 md:px-8 lg:min-h-[svh] lg:py-12"
   >
     <div class="flex-1 lg:-mx-6 lg:flex lg:items-center lg:justify-center">
-      <div class="px-6 text-white lg:mx-6">
+      <div class="text-white lg:mx-6">
         <h1 class="text-4xl font-extrabold capitalize lg:text-5xl">
           {lang === 'en' ? 'Contact Us!' : '¡Contactanos!'}
         </h1>
@@ -153,7 +153,7 @@ const { lang } = Astro.props;
 
       <div class="mt-8 lg:mx-6 lg:w-1/2">
         <div
-          class="mx-auto w-full overflow-hidden bg-white px-8 py-10 lg:max-w-xl lg:rounded-xl lg:shadow-2xl"
+          class="mx-auto w-full overflow-hidden rounded-xl bg-white px-8 py-10 shadow-2xl lg:max-w-xl"
         >
           <form
             class="mt-4 flex flex-col justify-start"
