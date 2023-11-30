@@ -10,7 +10,7 @@ const cases = await contentfulClient.getEntries<Case>({
 ---
 
 <section class="pt-40">
-  <div class="mx-auto px-6 lg:w-[90vw] lg:px-6 xl:w-[70vw]">
+  <div class="mx-auto max-w-7xl px-6 lg:px-6">
     <h5 class="text-sm uppercase">our projects</h5>
     <h2 class="my-2 text-left text-6xl font-extrabold text-alpha">
       Take a look at our work
@@ -21,8 +21,8 @@ const cases = await contentfulClient.getEntries<Case>({
         href="/#contact">Contact us!</a
       >
     </h6>
-  </div>
-  <div class="mx-auto py-16">
-    <CaseList client:idle cases={cases} show="all" />
+    <div class="mx-auto py-16">
+      <CaseList client:idle cases={cases} show="all" />
+    </div>
   </div>
 </section>

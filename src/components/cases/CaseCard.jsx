@@ -8,10 +8,7 @@ const CaseCard = ({ caseData }) => {
   const caseUrl = `/cases/${slug}`;
 
   return (
-    <a
-      className=" flex-[0_1_384px] cursor-pointer lg:max-w-sm lg:flex-[1_0_25%]"
-      href={caseUrl}
-    >
+    <a className="cursor-pointer " href={caseUrl}>
       <div className="group relative flex aspect-[3/5] items-end overflow-hidden rounded-2xl  ">
         <div
           style={{ '--image-url': `url(${bgImg})` }}
