@@ -58,7 +58,7 @@ export default function NavBar({ lang, alternateNav }) {
         <nav
           className={`${
             isSticky ? 'py-4 ' : ' py-6'
-          }   flex items-center   justify-between transition-all  duration-500  `}
+          }   flex items-center justify-between transition-all  duration-500  `}
           aria-label="Global"
         >
           <div className="flex lg:flex-1">
@@ -100,7 +100,7 @@ export default function NavBar({ lang, alternateNav }) {
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
-                      className="fixed inset-0 z-50 h-[100svh] w-full bg-alpha"
+                      className="fixed inset-0 z-50 h-[100dvh] w-full bg-alpha"
                     >
                       <div
                         className={`${
