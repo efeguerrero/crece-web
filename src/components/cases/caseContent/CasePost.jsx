@@ -2,9 +2,8 @@
 import { BLOCKS, INLINES } from '@contentful/rich-text-types';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
-import Platforms from './side-panel/Platforms';
-import Results from './side-panel/Results';
-import Contact from './side-panel/Contact';
+import Summary from './summary';
+import Contact from './Contact';
 
 export default function CasePost({ caseEntry }) {
   console.log(caseEntry);
@@ -60,10 +59,21 @@ export default function CasePost({ caseEntry }) {
     <div className="flex items-start gap-12">
       <div className="flex-1 ">
         {caseBody ? documentToReactComponents(caseBody, options) : null}
+        <div className="lg:hidden ">
+          <Summary
+            results={caseEntry.fields.results}
+            platforms={caseEntry.fields.platforms}
+          />
+        </div>
+        <div className="lg:hidden">
+          <Contact />
+        </div>
       </div>
-      <div className="sticky top-40 w-[300px]">
-        <Platforms platforms={caseEntry.fields.platforms} />
-        <Results results={caseEntry.fields.results} />
+      <div className="sticky top-40 hidden w-[300px] lg:block">
+        <Summary
+          results={caseEntry.fields.results}
+          platforms={caseEntry.fields.platforms}
+        />
         <Contact />
       </div>
     </div>
