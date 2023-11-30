@@ -26,7 +26,7 @@ const data = {
 ---
 
 <header
-  class="relative flex min-h-[100svh] flex-col items-center bg-alphaDark/70 bg-cover bg-center bg-no-repeat py-[7rem]"
+  class="relative flex min-h-[100svh] items-stretch bg-alphaDark/70 bg-cover bg-center bg-no-repeat py-[7rem]"
 >
   <video
     class="absolute top-0 -z-10 hidden h-[100svh] w-[100vw] object-cover lg:inline"
@@ -52,27 +52,29 @@ const data = {
     <source src="/vids/mobileHeader.webm" type="video/wemb" />
     <source src="/vids/mobileHeader.mp4" type="video/mp4" />
   </video>
-  <section
-    class="center relative mx-auto flex h-full min-h-full grow flex-col justify-center gap-8 px-6 pb-0 sm:gap-0 lg:w-[80vw] lg:max-w-[1500px] lg:justify-center lg:gap-8 lg:px-0 lg:pb-0"
-  >
-    <h2
-      class="2xl:leading[9rem] stroke-bravo text-center text-5xl font-extrabold uppercase leading-[3.1rem] tracking-wide text-white sm:text-[12vw] sm:leading-[14vw] sm:tracking-normal lg:w-[11ch] lg:self-start lg:text-left lg:text-[4rem] lg:font-bold lg:leading-[5.5rem] xl:text-[5.5rem] 3xl:text-[7rem] 3xl:leading-[7rem]"
+  <main class="mx-auto max-w-7xl grow px-8 xl:px-4">
+    <section
+      class="relative mx-auto flex h-full min-h-full flex-col justify-center gap-8 lg:justify-center lg:gap-8"
     >
-      {data[lang].title}
-    </h2>
-    <h3
-      class="break-normal text-center text-[1.05rem] font-light text-white sm:font-normal lg:w-1/2 lg:text-left lg:text-[1.3rem] 3xl:text-2xl"
-    >
-      <Fragment set:html={data[lang].subtitle} />
-    </h3>
-    <h4
-      class="absolute bottom-[0%] text-sm uppercase text-white lg:bottom-0 lg:right-0"
-      data-aos="fade-left"
-      data-aos-delay="400"
-      data-aos-duration="700"
-      data-aos-once="true"
-    >
-      <Fragment set:html={data[lang].contact} />
-    </h4>
-  </section>
+      <h2
+        class="break-words text-center text-4xl font-extrabold uppercase tracking-wide text-white md:text-6xl lg:w-[11ch] lg:text-left lg:text-7xl 3xl:text-8xl"
+      >
+        {data[lang].title}
+      </h2>
+      <h3
+        class="mx:mx-auto break-words text-center text-[1.05rem] font-light text-white sm:font-normal lg:w-1/2 lg:text-left 3xl:text-2xl"
+      >
+        <Fragment set:html={data[lang].subtitle} />
+      </h3>
+      <h4
+        class="absolute bottom-[0%] text-sm uppercase text-white lg:bottom-0 lg:right-0"
+        data-aos="fade-left"
+        data-aos-delay="400"
+        data-aos-duration="700"
+        data-aos-once="true"
+      >
+        <Fragment set:html={data[lang].contact} />
+      </h4>
+    </section>
+  </main>
 </header>
