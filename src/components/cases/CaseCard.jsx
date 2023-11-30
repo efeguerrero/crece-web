@@ -5,7 +5,7 @@ const CaseCard = ({ caseData }) => {
 
   const bgImg = caseImage.fields.file.url;
 
-  const caseUrl = import.meta.env.HOME_URL + `/cases/${slug}`;
+  const caseUrl = `/cases/${slug}`;
 
   return (
     <a
