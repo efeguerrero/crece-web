@@ -21,7 +21,7 @@ const cases = await contentfulClient.getEntries<Case>({
         href="/#contact">Contact us!</a
       >
     </h6>
-    <div class="mx-auto py-16">
+    <div class="mx-auto grid place-items-center py-16">
       <CaseList client:idle cases={cases} />
     </div>
   </div>
