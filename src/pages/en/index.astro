@@ -7,14 +7,16 @@ import About from '../../components/About.astro';
 import Clients from '../../components/clients/Clients.astro';
 import Contact from '../../components/Contact.astro';
 import Why from '../../components/Why.astro';
+import CasesHomeGrid from '../../components/cases/CasesHomeGrid.astro';
 
 const lang: string = 'en';
 ---
 
-<Layout title="Crecé Más - Digital Marketing" lang={lang}>
+<Layout title="Crecé Más - Digital Marketing" lang={lang} alternateNav={false}>
   <Header lang={lang} />
   <Why lang={lang} />
   <How lang={lang} />
+  <CasesHomeGrid lang={lang} show={3} filters={false} />
   <div class="bg-gray">
     <Services lang={lang} />
     <About lang={lang} />

@@ -11,6 +11,17 @@ const cases = await contentfulClient.getEntries<Case>({
   content_type: 'caso',
   limit: show,
 });
+
+const textContent = {
+  es: {
+    title: 'nuestros casos',
+    buttonText: 'ver más casos',
+  },
+  en: {
+    title: 'our projects',
+    buttonText: 'see more cases',
+  },
+};
 ---
 
 <section class="mt-20">
@@ -19,9 +30,9 @@ const cases = await contentfulClient.getEntries<Case>({
     class="mx-auto flex max-w-7xl flex-col px-4 py-10 md:px-8 lg:pb-24 lg:pt-24"
   >
     <h2
-      class="mb-4 text-4xl font-extrabold leading-tight tracking-tight text-alpha lg:text-6xl"
+      class="mb-4 text-4xl font-extrabold capitalize leading-tight tracking-tight text-alpha lg:text-6xl"
     >
-      Nuestros Casos
+      {textContent[lang].title}
     </h2>
     <div class="mx-auto py-16">
       <CaseList client:idle cases={cases} />
@@ -30,7 +41,7 @@ const cases = await contentfulClient.getEntries<Case>({
       <button
         class="w-max rounded-md border-[1px] bg-bravo px-6 py-3 text-sm font-medium capitalize tracking-wide text-white transition-colors duration-300 lg:hover:border-bravo lg:hover:bg-transparent lg:hover:text-bravo"
       >
-        See more cases
+        {textContent[lang].buttonText}
       </button>
     </a>
   </div>
