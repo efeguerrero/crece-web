@@ -4,12 +4,13 @@ import type { Case } from '../../lib/contentful';
 //Component Imports
 import CaseList from './CaseList.jsx';
 
+const { show, lang } = Astro.props;
+
 //Cases Imports
 const cases = await contentfulClient.getEntries<Case>({
   content_type: 'caso',
+  limit: show,
 });
-
-const { show, lang } = Astro.props;
 ---
 
 <section class="mt-20">
@@ -23,7 +24,7 @@ const { show, lang } = Astro.props;
       Nuestros Casos
     </h2>
     <div class="mx-auto py-16">
-      <CaseList client:idle show={show} cases={cases} />
+      <CaseList client:idle cases={cases} />
     </div>
     <a class="mx-auto mt-8" href="/cases">
       <button

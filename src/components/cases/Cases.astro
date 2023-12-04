@@ -22,7 +22,7 @@ const cases = await contentfulClient.getEntries<Case>({
       >
     </h6>
     <div class="mx-auto py-16">
-      <CaseList client:idle cases={cases} show="all" />
+      <CaseList client:idle cases={cases} />
     </div>
   </div>
 </section>
