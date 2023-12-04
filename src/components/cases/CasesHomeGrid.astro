@@ -15,7 +15,7 @@ const { show, lang } = Astro.props;
 <section class="mt-20">
   <div
     id="cases"
-    class="mx-auto max-w-7xl items-center px-4 py-10 md:px-8 lg:pb-24 lg:pt-24"
+    class="mx-auto flex max-w-7xl flex-col px-4 py-10 md:px-8 lg:pb-24 lg:pt-24"
   >
     <h2
       class="mb-4 text-4xl font-extrabold leading-tight tracking-tight text-alpha lg:text-6xl"
@@ -25,5 +25,12 @@ const { show, lang } = Astro.props;
     <div class="mx-auto py-16">
       <CaseList client:idle show={show} cases={cases} />
     </div>
+    <a class="mx-auto mt-8" href="/cases">
+      <button
+        class="w-max rounded-md border-[1px] bg-bravo px-6 py-3 text-sm font-medium capitalize tracking-wide text-white transition-colors duration-300 lg:hover:border-bravo lg:hover:bg-transparent lg:hover:text-bravo"
+      >
+        See more cases
+      </button>
+    </a>
   </div>
 </section>
