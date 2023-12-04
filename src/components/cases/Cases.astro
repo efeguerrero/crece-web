@@ -3,26 +3,45 @@ import { contentfulClient } from '../../lib/contentful';
 import type { Case } from '../../lib/contentful';
 import CaseList from './CaseList';
 
+const { lang } = Astro.props;
+
 //Cases Imports
 const cases = await contentfulClient.getEntries<Case>({
   content_type: 'caso',
 });
+
+const textContent = {
+  es: {
+    upperTitle: 'nuestros proyectos',
+    title: 'Una muestra de nuestro trabajo',
+    cta: '¿Algún proyecto en mente?',
+    linkText: '¡Contactanos!',
+  },
+  en: {
+    upperTitle: 'our projects',
+    title: 'Take a look at our work',
+    cta: 'Got something on your mind?',
+    linkText: 'Contact us!',
+  },
+};
 ---
 
 <section class="pt-40">
   <div class="mx-auto max-w-7xl px-4 md:px-8">
-    <h5 class="text-sm uppercase">our projects</h5>
+    <h5 class="text-sm uppercase">{textContent[lang].upperTitle}</h5>
     <h2 class="my-2 text-left text-6xl font-extrabold text-alpha">
-      Take a look at our work
+      {textContent[lang].title}
     </h2>
     <h6 class="my-2 text-xl text-alpha">
-      Got something on your mind? <a
+      {textContent[lang].cta}
+      <a
         class="text-alpha underline underline-offset-4 transition-all lg:hover:text-bravo"
-        href="/#contact">Contact us!</a
+        href={lang === 'es' ? '/#contact' : '/en#contact'}
+        >{textContent[lang].linkText}</a
       >
     </h6>
     <div class="mx-auto grid place-items-center py-16">
-      <CaseList client:idle cases={cases} />
+      <CaseList client:idle cases={cases} lang={lang} />
     </div>
   </div>
 </section>

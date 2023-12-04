@@ -10,12 +10,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const navigation = {
   en: [
-    { name: 'Services', href: '/#services' },
-    { name: 'How We Work', href: '/#how' },
-    { name: 'Culture', href: '/#culture' },
-    { name: 'Cases', href: '/cases' },
-    { name: 'Clients', href: '/#clients' },
-    { name: 'Contact Us', href: '/#contact' },
+    { name: 'Services', href: '/en#services' },
+    { name: 'How We Work', href: '/en#how' },
+    { name: 'Culture', href: '/en#culture' },
+    { name: 'Cases', href: '/en/cases' },
+    { name: 'Clients', href: '/en#clients' },
+    { name: 'Contact Us', href: '/en#contact' },
   ],
   es: [
     { name: 'Servicios', href: '/#services' },
@@ -62,7 +62,7 @@ export default function NavBar({ lang, alternateNav }) {
           aria-label="Global"
         >
           <div className="flex lg:flex-1">
-            <a href="/#" className="-m-1.5 p-1.5">
+            <a href={lang === 'es' ? '/#' : '/en#'} className="-m-1.5 p-1.5">
               <span className="sr-only">Crecé Más</span>
               <img
                 className={`${
