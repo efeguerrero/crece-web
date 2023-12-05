@@ -22,6 +22,6 @@ const { caseEntry } = Astro.props;
 
 <Layout title={caseEntry.fields.title} lang="en" alternateNav={true}>
   <BlogLayout lang="en">
-    <CasePost client:load caseEntry={caseEntry} />
+    <CasePost client:load caseEntry={caseEntry} lang="en" />
   </BlogLayout>
 </Layout>

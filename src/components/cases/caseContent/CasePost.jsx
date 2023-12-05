@@ -5,8 +5,7 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Summary from './summary';
 import Contact from './Contact';
 
-export default function CasePost({ caseEntry }) {
-  console.log(caseEntry);
+export default function CasePost({ caseEntry, lang }) {
   const options = {
     renderNode: {
       [BLOCKS.HEADING_1]: (node, children) => (
@@ -63,18 +62,20 @@ export default function CasePost({ caseEntry }) {
           <Summary
             results={caseEntry.fields.results}
             platforms={caseEntry.fields.platforms}
+            lang={lang}
           />
         </div>
         <div className="lg:hidden">
-          <Contact />
+          <Contact lang={lang} />
         </div>
       </div>
       <div className="sticky top-40 hidden w-[300px] lg:block">
         <Summary
           results={caseEntry.fields.results}
           platforms={caseEntry.fields.platforms}
+          lang={lang}
         />
-        <Contact />
+        <Contact lang={lang} />
       </div>
     </div>
   );
