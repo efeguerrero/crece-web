@@ -8,6 +8,7 @@ import CasePost from '../../../components/cases/caseContent/CasePost.jsx';
 export async function getStaticPaths() {
   const cases = await contentfulClient.getEntries<Case>({
     content_type: 'caso',
+    locale: 'en-US',
   });
 
   return cases.items.map((caseEntry) => ({

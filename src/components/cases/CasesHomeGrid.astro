@@ -6,10 +6,13 @@ import CaseList from './CaseList.jsx';
 
 const { show, lang } = Astro.props;
 
+const locale = lang === 'es' ? 'es-AR' : 'en-US';
+
 //Cases Imports
 const cases = await contentfulClient.getEntries<Case>({
   content_type: 'caso',
   limit: show,
+  locale: locale,
 });
 
 const textContent = {
@@ -35,7 +38,7 @@ const textContent = {
       {textContent[lang].title}
     </h2>
     <div class="mx-auto py-16">
-      <CaseList client:idle cases={cases} />
+      <CaseList client:idle cases={cases} lang={lang} />
     </div>
     <a class="mx-auto mt-8" href="/cases">
       <button

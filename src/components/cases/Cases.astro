@@ -5,9 +5,12 @@ import CaseList from './CaseList';
 
 const { lang } = Astro.props;
 
+const locale = lang === 'es' ? 'es-AR' : 'en-US';
+
 //Cases Imports
 const cases = await contentfulClient.getEntries<Case>({
   content_type: 'caso',
+  locale: locale,
 });
 
 const textContent = {
