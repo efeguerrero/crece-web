@@ -4,7 +4,7 @@ export default function Contact({ lang }) {
       <h3 className="text-lg font-semibold leading-none tracking-tight text-bravo">
         {lang === 'es' ? '¿Necesitas hablar?' : 'Need to talk?'}
       </h3>
-      <a href="/#contact">
+      <a href={lang === 'es' ? '/#contact' : '/en#contact'}>
         <button className="w-max transform rounded-md bg-alpha px-6 py-3 text-sm font-medium capitalize tracking-wide text-white transition-colors duration-300 lg:hover:bg-alphaDark">
           {lang === 'es' ? 'Contactanos' : ' Contact Us'}
         </button>
