@@ -7,7 +7,7 @@ const CaseCard = ({ caseData, lang }) => {
 
   return (
     <a className="cursor-pointer " href={caseUrl}>
-      <div className="group relative flex aspect-[3/5] items-end overflow-hidden rounded-2xl  ">
+      <div className="group relative flex aspect-[3/4] items-end overflow-hidden rounded-2xl ">
         <div
           style={{ '--image-url': `url(${bgImg})` }}
           id="imgContainer"
