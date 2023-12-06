@@ -6,7 +6,10 @@ const backText = lang === 'es' ? 'Volver a Casos' : 'Back to Cases';
 
 <section class="mx-auto px-6 pb-16 pt-40 lg:max-w-3xl lg:px-2 xl:max-w-5xl">
   <div class="mb-8">
-    <a href="/cases" class="flex items-center gap-2 text-black/70">
+    <a
+      href={lang === 'es' ? '/cases' : '/en/cases'}
+      class="flex items-center gap-2 text-black/70"
+    >
       <span
         ><svg
           xmlns="http://www.w3.org/2000/svg"

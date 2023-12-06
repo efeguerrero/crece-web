@@ -4,16 +4,16 @@ interface Props {
 }
 const { lang } = Astro.props;
 
-const partnerImgs = await Astro.glob('./partnersImgs/*.png').then((imgs) => {
-  return imgs.map((img) => img.default);
-});
+// const partnerImgs = await Astro.glob('./partnersImgs/*.png').then((imgs) => {
+//   return imgs.map((img) => img.default);
+// });
 
 const clientsImgs = await Astro.glob('./clientsImgs/*.png').then((imgs) => {
   return imgs.map((img) => img.default);
 });
 ---
 
-<section id="clients" class="bg-white py-24 sm:pb-24 sm:pt-32">
+<section id="clients" class="scroll-m-20 bg-white py-24 sm:pb-24 sm:pt-32">
   <div class="mx-auto max-w-7xl px-4 md:px-8">
     <h2
       class="mb-20 text-left text-5xl font-extrabold tracking-tight text-bravo md:mb-14 md:text-5xl lg:mb-16"
