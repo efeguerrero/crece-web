@@ -251,12 +251,12 @@ const { lang } = Astro.props;
               ? 'Message sent successfully!'
               : 'Mensaje enviado con éxito!';
         } else {
-          console.log(response);
+          //console.log(response);
           result.innerHTML = json.message;
         }
       })
       .catch((error) => {
-        console.log(error);
+        //console.log(error);
         result.innerHTML =
           lang === 'en' ? 'Something went wrong!' : 'Algo salió mal!';
       })
