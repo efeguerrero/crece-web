@@ -69,7 +69,7 @@ export default function CasePost({ caseEntry, lang }) {
           <Contact lang={lang} />
         </div>
       </div>
-      <div className="sticky top-40 hidden w-[300px] lg:block">
+      <div className="top-40 hidden w-[300px] lg:block 3xl:sticky">
         <Summary
           results={caseEntry.fields.results}
           platforms={caseEntry.fields.platforms}
