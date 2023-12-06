@@ -38,7 +38,7 @@ export default function NavBar({ lang, alternateNav }) {
 
   useEffect(() => {
     if (window.scrollY >= 70) {
-      // setSticky(true);
+      setSticky(true);
     }
     window.addEventListener('scroll', handleScroll);
     return () => {
