@@ -23,6 +23,9 @@ export default function CasePost({ caseEntry, lang }) {
       [BLOCKS.UL_LIST]: (node, children) => (
         <ul className="mb-10">{children}</ul>
       ),
+      [BLOCKS.OL_LIST]: (node, children) => (
+        <ol className="mb-10">{children}</ol>
+      ),
       [BLOCKS.LIST_ITEM]: (node, children) => (
         <li className="ml-8 list-disc">{children}</li>
       ),
