@@ -21,7 +21,6 @@
     "astro": "^2.8.1",
     "contentful": "^10.6.12",
     "framer-motion": "^10.16.0",
-    "nanostores": "^0.9.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "swiper": "^10.0.4",
