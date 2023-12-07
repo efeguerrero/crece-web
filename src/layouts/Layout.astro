@@ -12,7 +12,6 @@ import '../styles/styles.css';
 //Component Import
 import Nav from '../components/nav/Nav.jsx';
 import Footer from '../components/Footer.astro';
-import Loader from '../components/Loader.astro';
 ---
 
 <html lang="es" class="select-none">
@@ -50,7 +49,6 @@ import Loader from '../components/Loader.astro';
     <title>{title}</title>
   </head>
   <body class="font-franklin">
-    <Loader />
     <Nav client:load lang={lang} alternateNav={alternateNav} />
     <slot />
     <Footer lang={lang} />

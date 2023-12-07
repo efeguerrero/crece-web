@@ -8,11 +8,13 @@ import Clients from '../components/clients/Clients.astro';
 import Contact from '../components/Contact.astro';
 import Why from '../components/Why.astro';
 import CasesHomeGrid from '../components/cases/CasesHomeGrid.astro';
+import Loader from '../components/Loader.astro';
 
 const lang: string = 'es';
 ---
 
 <Layout title="Crecé Más - Marketing Digital" lang={lang} alternateNav={false}>
+  <Loader />
   <Header lang={lang} />
   <Why lang={lang} />
   <How lang={lang} />
