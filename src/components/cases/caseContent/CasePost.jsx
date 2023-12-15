@@ -21,13 +21,13 @@ export default function CasePost({ caseEntry, lang }) {
         <p className="my-5">{children}</p>
       ),
       [BLOCKS.UL_LIST]: (node, children) => (
-        <ul className="mb-10">{children}</ul>
+        <ul className="mb-10 [&>*]:list-disc">{children}</ul>
       ),
       [BLOCKS.OL_LIST]: (node, children) => (
-        <ol className="mb-10">{children}</ol>
+        <ol className="mb-10 [&>*]:list-decimal">{children}</ol>
       ),
       [BLOCKS.LIST_ITEM]: (node, children) => (
-        <li className="ml-8 list-disc">{children}</li>
+        <li className="ml-8">{children}</li>
       ),
       [INLINES.HYPERLINK]: (node, children) => {
         const { uri } = node.data;
