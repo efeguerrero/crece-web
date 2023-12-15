@@ -48,7 +48,7 @@ export default function CasePost({ caseEntry, lang }) {
           <img
             src={url}
             alt={title + 'Image'}
-            className="my-10 w-full rounded-lg object-cover"
+            className="my-10 rounded-lg object-cover"
           />
         );
       },

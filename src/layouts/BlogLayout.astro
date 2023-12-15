@@ -1,13 +1,13 @@
 ---
 const { lang } = Astro.props;
 
-const backText = lang === 'es' ? 'Volver a Casos' : 'Back to Cases';
+const backText = lang === 'es' ? 'Volver a Proyectos' : 'Back to Projects';
 ---
 
 <section class="mx-auto px-6 pb-16 pt-40 lg:max-w-3xl lg:px-2 xl:max-w-5xl">
   <div class="mb-8">
     <a
-      href={lang === 'es' ? '/cases' : '/en/cases'}
+      href={lang === 'es' ? '/projects' : '/en/projects'}
       class="group flex w-max items-center gap-2 text-black/70 transition-all lg:hover:text-black"
     >
       <span

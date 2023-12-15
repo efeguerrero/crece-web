@@ -3,7 +3,7 @@ const CaseCard = ({ caseData, lang }) => {
 
   const bgImg = caseImage.fields.file.url;
 
-  const caseUrl = lang === 'es' ? `/cases/${slug}` : `/en/cases/${slug}`;
+  const caseUrl = lang === 'es' ? `/projects/${slug}` : `/en/projects/${slug}`;
 
   return (
     <a className="cursor-pointer " href={caseUrl}>
