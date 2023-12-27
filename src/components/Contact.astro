@@ -173,11 +173,13 @@ const { lang } = Astro.props;
             <input type="hidden" name="from_name" value="crecemas.net" />
             <div class="flex-1">
               <label
+                for="name"
                 class="mb-2 block text-lg font-medium tracking-wider text-alpha"
               >
                 {lang === 'en' ? 'Full Name' : 'Nombre Completo'}
               </label>
               <input
+                id="name"
                 name="name"
                 required
                 type="text"
@@ -187,12 +189,14 @@ const { lang } = Astro.props;
 
             <div class="mt-6 flex-1">
               <label
+                for="email"
                 class="mb-2 block text-lg font-medium tracking-wider text-alpha"
               >
                 {lang === 'en' ? 'Email address' : 'Email'}
               </label>
             </div>
             <input
+              id="email"
               name="email"
               required
               type="email"
@@ -200,11 +204,13 @@ const { lang } = Astro.props;
             />
             <div class="mt-6 w-full">
               <label
+                for="message"
                 class="mb-2 block text-lg font-medium tracking-wider text-alpha"
               >
                 {lang === 'en' ? 'Message' : 'Mensaje'}
               </label>
               <textarea
+                id="message"
                 name="message"
                 required
                 class="mt-2 block h-32 w-full resize-none rounded-md border border-alphaLight bg-transparent px-5 py-3 text-alpha focus:border-alpha focus:outline-none focus:ring focus:ring-alphaLight focus:ring-opacity-50 md:h-48"
