@@ -10,12 +10,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const navigation = {
   en: [
-    { name: 'Services', href: '/en#services' },
-    { name: 'How We Work', href: '/en#how' },
-    { name: 'Culture', href: '/en#culture' },
+    { name: 'Services', href: '/en/#services' },
+    { name: 'How We Work', href: '/en/#how' },
+    { name: 'Culture', href: '/en/#culture' },
     { name: 'Projects', href: '/en/projects' },
-    { name: 'Clients', href: '/en#clients' },
-    { name: 'Contact Us', href: '/en#contact' },
+    { name: 'Clients', href: '/en/#clients' },
+    { name: 'Contact Us', href: '/en/#contact' },
   ],
   es: [
     { name: 'Servicios', href: '/#services' },
