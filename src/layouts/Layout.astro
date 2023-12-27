@@ -2,8 +2,9 @@
 export interface Props {
   title: string;
   lang: string;
+  alternateNav: boolean;
 }
-const { title, lang } = Astro.props;
+const { title, lang, alternateNav } = Astro.props;
 
 //Global Css Imports
 import '../styles/styles.css';
@@ -11,10 +12,9 @@ import '../styles/styles.css';
 //Component Import
 import Nav from '../components/nav/Nav.jsx';
 import Footer from '../components/Footer.astro';
-import Loader from '../components/Loader.astro';
 ---
 
-<html lang="es" class="select-none scroll-smooth">
+<html lang="es" class="select-none">
   <head>
     <!-- Google Tag Manager -->
     <script>
@@ -72,8 +72,7 @@ import Loader from '../components/Loader.astro';
         style="display:none;visibility:hidden"></iframe></noscript
     >
     <!-- End Google Tag Manager (noscript) -->
-    <Loader />
-    <Nav client:load lang={lang} />
+    <Nav client:load lang={lang} alternateNav={alternateNav} />
     <slot />
     <Footer lang={lang} />
     <script is:inline src="https://unpkg.com/aos@next/dist/aos.js"></script>

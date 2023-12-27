@@ -6,6 +6,13 @@ module.exports = {
       screens: {
         '3xl': '1800px',
       },
+      container: {
+        // you can configure the container to be centered
+        center: true,
+
+        // or have default horizontal padding
+        padding: '2rem',
+      },
       colors: {
         transparent: 'transparent',
         current: 'currentColor',

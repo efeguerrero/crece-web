@@ -1,0 +1,51 @@
+---
+import { contentfulClient } from '../../lib/contentful';
+import type { Case } from '../../lib/contentful';
+//Component Imports
+import CaseList from './CaseList.jsx';
+
+const { show, lang } = Astro.props;
+
+const locale = lang === 'es' ? 'es-AR' : 'en-US';
+
+//Cases Imports
+const cases = await contentfulClient.getEntries<Case>({
+  content_type: 'caso',
+  limit: show,
+  locale: locale,
+});
+
+const textContent = {
+  es: {
+    title: 'nuestros proyectos',
+    buttonText: 'ver más proyectos',
+  },
+  en: {
+    title: 'our projects',
+    buttonText: 'see more projects',
+  },
+};
+---
+
+<section class="mt-20">
+  <div
+    id="cases"
+    class="mx-auto flex max-w-7xl flex-col px-4 py-10 md:px-8 lg:pb-24 lg:pt-24"
+  >
+    <h2
+      class="mb-4 text-4xl font-extrabold capitalize leading-tight tracking-tight text-alpha lg:text-6xl"
+    >
+      {textContent[lang].title}
+    </h2>
+    <div class="mx-auto py-16">
+      <CaseList client:idle cases={cases} lang={lang} />
+    </div>
+    <a class="mx-auto mt-8" href={lang === 'es' ? '/projects' : '/en/projects'}>
+      <button
+        class="w-max rounded-md border-[1px] bg-bravo px-6 py-3 text-sm font-medium capitalize tracking-wide text-white transition-colors duration-300 lg:hover:border-bravo lg:hover:bg-transparent lg:hover:text-bravo"
+      >
+        {textContent[lang].buttonText}
+      </button>
+    </a>
+  </div>
+</section>

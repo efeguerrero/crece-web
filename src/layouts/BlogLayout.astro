@@ -1,0 +1,30 @@
+---
+const { lang } = Astro.props;
+
+const backText = lang === 'es' ? 'Volver a Proyectos' : 'Back to Projects';
+---
+
+<section class="mx-auto px-6 pb-16 pt-40 lg:max-w-3xl lg:px-2 xl:max-w-5xl">
+  <div class="mb-8">
+    <a
+      href={lang === 'es' ? '/projects' : '/en/projects'}
+      class="group flex w-max items-center gap-2 text-black/70 transition-all lg:hover:text-black"
+    >
+      <span
+        ><svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4 text-black/70 transition-all group-hover:text-black"
+          fill="currentColor"
+          viewBox="0 0 24 24"
+          ><path
+            d="M7.82843 10.9999H20V12.9999H7.82843L13.1924 18.3638L11.7782 19.778L4 11.9999L11.7782 4.22168L13.1924 5.63589L7.82843 10.9999Z"
+          ></path></svg
+        ></span
+      >
+      {backText}</a
+    >
+  </div>
+  <div>
+    <slot />
+  </div>
+</section>

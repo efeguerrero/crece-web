@@ -1,0 +1,27 @@
+---
+import { contentfulClient } from '../../lib/contentful';
+import type { Case } from '../../lib/contentful';
+import BlogLayout from '../../layouts/BlogLayout.astro';
+import Layout from '../../layouts/Layout.astro';
+import CasePost from '../../components/cases/caseContent/CasePost.jsx';
+
+export async function getStaticPaths() {
+  const cases = await contentfulClient.getEntries<Case>({
+    content_type: 'caso',
+    locale: 'es-AR',
+  });
+
+  return cases.items.map((caseEntry) => ({
+    params: { slug: caseEntry.fields.slug },
+    props: { caseEntry },
+  }));
+}
+
+const { caseEntry } = Astro.props;
+---
+
+<Layout title={caseEntry.fields.title} lang="es" alternateNav={true}>
+  <BlogLayout lang="es">
+    <CasePost client:load caseEntry={caseEntry} lang="es" />
+  </BlogLayout>
+</Layout>

@@ -1,45 +1,40 @@
-const CaseCard = ({ title, summary, img, url, date }) => {
-  const formattedDate = date.toDateString();
+const CaseCard = ({ caseData, lang }) => {
+  const { title, description, tags, caseImage, slug } = caseData.fields;
+
+  const bgImg = caseImage.fields.file.url;
+
+  const caseUrl = lang === 'es' ? `/projects/${slug}` : `/en/projects/${slug}`;
 
   return (
-    <div className="p-4 md:w-1/3">
-      <div className="border-gray-200 h-full overflow-hidden rounded-lg border-2 border-opacity-60">
-        <img
-          className="w-full object-cover object-center md:h-36 lg:h-48"
-          src={`${import.meta.env.BASE_URL}${img}`}
-          alt="blog"
+    <a className="cursor-pointer " href={caseUrl}>
+      <div className="group relative flex aspect-[3/4] items-end overflow-hidden rounded-2xl ">
+        <div
+          style={{ '--image-url': `url(${bgImg})` }}
+          id="imgContainer"
+          className=" absolute left-0 top-0 h-full w-full bg-[image:var(--image-url)] bg-cover bg-center transition-all duration-500 ease-in-out group-hover:scale-[1.08]"
         />
-        <div className="p-6">
-          <h2 className="title-font text-gray-900 mb-3 text-2xl font-medium">
+        <div
+          id="darkCover"
+          className=" absolute left-0 top-0 h-full w-full bg-gradient-to-b from-alpha/0 to-alpha/20 "
+        />
+        <div className="z-10 flex h-[50%] w-full flex-col justify-end bg-gradient-to-b from-alpha/0 to-alpha/[90] p-6">
+          <h2 className="z-10 mb-3 text-3xl font-bold uppercase text-white">
             {title}
           </h2>
-          <h2 className="title-font mb-2 w-fit bg-indigo-700 p-1 text-sm font-normal text-slate-200">
-            {formattedDate}
-          </h2>
-          <p className="mb-3 leading-relaxed">{summary}</p>
-          <div className="flex flex-wrap items-center">
-            <a
-              href={`${import.meta.env.BASE_URL}${url}`}
-              className="inline-flex items-center font-bold text-indigo-500 md:mb-2 lg:mb-0"
-            >
-              Learn More
-              <svg
-                className="ml-2 h-4 w-4"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth="2"
-                fill="none"
-                strokeLinecap="round"
-                strokeLinejoin="round"
+          <p className="z-10 mb-4 text-sm text-white">{description}</p>
+          <div id="tagContainer" className="flex flex-wrap gap-2">
+            {tags?.map((tag, index) => (
+              <div
+                key={index}
+                className="w-max rounded-md border-[1px] border-white px-2 py-1"
               >
-                <path d="M5 12h14"></path>
-                <path d="M12 5l7 7-7 7"></path>
-              </svg>
-            </a>
+                <p className="text-[0.6rem] uppercase text-white">{tag}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
-    </div>
+    </a>
   );
 };
 
