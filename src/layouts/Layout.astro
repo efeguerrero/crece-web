@@ -49,6 +49,15 @@ import Footer from '../components/Footer.astro';
     <title>{title}</title>
   </head>
   <body class="font-franklin">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-TWKK3HK"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"></iframe></noscript
+    >
+    <!-- End Google Tag Manager (noscript) -->
     <Nav client:load lang={lang} alternateNav={alternateNav} />
     <slot />
     <Footer lang={lang} />
