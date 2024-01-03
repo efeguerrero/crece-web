@@ -10,7 +10,7 @@ const { lang } = Astro.props;
   class="scroll-m-20 bg-gradient-to-br from-alpha from-60% to-alphaDark lg:min-h-[svh] lg:pb-12"
 >
   <div
-    class="l mx-auto flex max-w-7xl flex-col px-4 py-12 md:px-8 lg:min-h-[svh] lg:py-12"
+    class="mx-auto flex max-w-7xl flex-col px-4 py-12 md:px-8 lg:min-h-[svh] lg:py-12"
   >
     <div class="flex-1 lg:-mx-6 lg:flex lg:items-center lg:justify-center">
       <div class="text-white lg:mx-6">
@@ -66,31 +66,9 @@ const { lang } = Astro.props;
             <span class="mx-2 w-72 truncate text-white">lucas@crecemas.net</span
             >
           </p>
-          <p class="-mx-2 flex items-start">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="mx-2 h-6 w-6 text-white"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-              ></path>
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-            </svg>
-
-            <span class="mx-2 w-72 text-white"> Buenos Aires, Argentina.</span>
-          </p>
         </div>
 
-        <div class="my-12 md:mt-8">
+        <div class="my-10 md:my-10">
           <div class="-mx-1.5 mt-4 flex">
             <a
               class="mx-1.5 transform text-white transition-colors duration-300 lg:hover:text-bravo"
@@ -148,6 +126,25 @@ const { lang } = Astro.props;
               </svg>
             </a>
           </div>
+        </div>
+
+        <div
+          class="relative hidden min-w-0 items-center gap-4 p-4 before:absolute before:bottom-0 before:right-0 before:h-[1.8rem] before:w-[1.8rem] before:border-b-[2px] before:border-r-[2px] before:border-bravo before:bg-transparent after:absolute after:left-0 after:top-0 after:h-[1.8rem] after:w-[1.8rem] after:border-l-[2px] after:border-t-[2px] after:border-bravo after:bg-transparent sm:inline-flex md:justify-start"
+        >
+          <p class="text-center text-sm">Buenos Aires<br />Argentina</p>
+          <div class="h-[2px] w-4 rotate-90 bg-alphaLight"></div>
+          <p class="text-center text-sm">Montevideo <br />Uruguay</p>
+          <div class="h-[2px] w-4 rotate-90 bg-alphaLight"></div>
+          <p class="text-center text-sm">Asunción<br />Paraguay</p>
+        </div>
+        <div
+          class="flex flex-col items-start gap-6 border-l-[3px] border-bravo p-3 sm:hidden"
+        >
+          <p class="text-center text-base tracking-wide">
+            Buenos Aires, Argentina
+          </p>
+          <p class="text-center text-base tracking-wide">Montevideo, Uruguay</p>
+          <p class="text-center text-base tracking-wide">Asunción, Paraguay</p>
         </div>
       </div>
 
