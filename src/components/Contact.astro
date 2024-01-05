@@ -160,7 +160,7 @@ const { lang } = Astro.props;
             <input
               type="hidden"
               name="access_key"
-              value="f2a9d543-d16d-41f1-875c-0366c3b63f48"
+              value="f2a9d543-d16d-41f1-875c-0366c3b63f4"
             />
             <input
               type="hidden"
@@ -258,13 +258,17 @@ const { lang } = Astro.props;
         } else {
           //console.log(json.message);
           result.innerHTML =
-            lang === 'en' ? 'Something went wrong!' : 'Algo salió mal!';
+            lang === 'en'
+              ? 'Something went wrong! Please try again later.'
+              : '¡Algo salió mal! Por favor intentalo luego.';
         }
       })
       .catch((error) => {
         //console.log(error);
         result.innerHTML =
-          lang === 'en' ? 'Something went wrong!' : 'Algo salió mal!';
+          lang === 'en'
+            ? 'Something went wrong! Please try again later.'
+            : '¡Algo salió mal! Por favor intentalo luego.';
       })
       .then(function () {
         form.reset();
