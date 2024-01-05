@@ -260,7 +260,7 @@ const { lang } = Astro.props;
           result.innerHTML =
             lang === 'en'
               ? 'Something went wrong! Please try again later.'
-              : '¡Algo salió mal! Por favor intentalo luego.';
+              : '¡Algo salió mal! Por favor intentelo luego.';
         }
       })
       .catch((error) => {
@@ -268,7 +268,7 @@ const { lang } = Astro.props;
         result.innerHTML =
           lang === 'en'
             ? 'Something went wrong! Please try again later.'
-            : '¡Algo salió mal! Por favor intentalo luego.';
+            : '¡Algo salió mal! Por favor intentelo luego.';
       })
       .then(function () {
         form.reset();
