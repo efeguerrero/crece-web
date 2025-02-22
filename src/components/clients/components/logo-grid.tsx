@@ -30,15 +30,11 @@ export default function LogoGrid({ clientsImgs, lang }: LogoGridProps) {
           {visibleLogos.map((img, index) => (
             <div
               key={index}
-              className={`flex items-center justify-center transition-all duration-300 ease-in-out ${
-                isMobile && index >= 10 && !showAll
-                  ? 'translate-y-4 opacity-0'
-                  : 'translate-y-0 opacity-100'
-              }`}
+              className="flex items-center justify-center transition-all duration-300 ease-in-out"
             >
               <img
                 className="max-h-[50px] max-w-[130px] object-contain"
-                src={img || '/placeholder.svg'}
+                src={img}
                 alt={`Client Logo ${index + 1}`}
                 width="130"
                 height="50"
