@@ -28,6 +28,6 @@ const clientsImgs = await Astro.glob(
           : 'Nuestros principales clientes '
       }
     </h2>
-    <LogoGrid clientsImgs={clientsImgs} client:load lang={lang} />
+    <LogoGrid clientsImgs={clientsImgs} client:only="react" lang={lang} />
   </div>
 </section>

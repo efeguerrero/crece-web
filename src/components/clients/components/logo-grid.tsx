@@ -9,8 +9,14 @@ export default function LogoGrid({ clientsImgs, lang }: LogoGridProps) {
   const [showAll, setShowAll] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
+  const logosToShow = 10;
+
   useEffect(() => {
+    // Problem here is that resize is triggered also on viewport height, so the chrome bar triggers this event all the time.
+    console.log('use effect ran');
     const checkMobile = () => {
+      console.log('checkMobile running', showAll);
+      console.log('innerWidth', window.innerWidth);
       setIsMobile(window.innerWidth < 768);
       setShowAll(window.innerWidth >= 768);
     };
@@ -21,23 +27,24 @@ export default function LogoGrid({ clientsImgs, lang }: LogoGridProps) {
   }, []);
 
   const visibleLogos =
-    isMobile && !showAll ? clientsImgs.slice(0, 10) : clientsImgs;
+    isMobile && !showAll ? clientsImgs.slice(0, logosToShow) : clientsImgs;
 
   return (
     <section className="flex flex-col">
       <div className="relative p-8">
-        <div className="grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-3 lg:grid-cols-4">
+        <div className="flex flex-wrap justify-center gap-x-6 gap-y-12">
           {visibleLogos.map((img, index) => (
             <div
               key={index}
-              className="flex items-center justify-center transition-all duration-300 ease-in-out"
+              style={{
+                animationDelay: `calc((${index}/${logosToShow}) * var(--base-animation-delay))`,
+              }}
+              className="flex w-[calc(50%-12px)] animate-fade-in items-center justify-center transition-all duration-300 ease-in-out md:w-[calc(33.333%-16px)] md:animate-[none] lg:w-[calc(25%-18px)]"
             >
               <img
-                className="max-h-[50px] max-w-[130px] object-contain"
+                className="max-h-[40px] max-w-[120px] object-contain md:max-h-[50px] md:max-w-[130px]"
                 src={img}
                 alt={`Client Logo ${index + 1}`}
-                width="130"
-                height="50"
               />
             </div>
           ))}
