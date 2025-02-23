@@ -20,6 +20,13 @@ export default function LogoGrid({ clientsImgs, lang }: LogoGridProps) {
     Math.ceil(logosToShowMobile / 2) * 40 +
     Math.ceil(logosToShowMobile / 2 - 1) * 48;
 
+  const logoGridInitialHeight =
+    isMobile && !showAll
+      ? `${logoGridMinHeight}px`
+      : isMobile && showAll
+      ? `${logoGridMaxHeight}px`
+      : 'auto';
+
   console.log('max', logoGridMaxHeight);
   console.log('min', logoGridMinHeight);
 
@@ -38,11 +45,13 @@ export default function LogoGrid({ clientsImgs, lang }: LogoGridProps) {
   const handleToggle = (e: React.MouseEvent<HTMLButtonElement>) => {
     const logoGrid = document.getElementById('logo-container');
     if (!showAll) {
-      logoGrid.style.minHeight = `${logoGridMaxHeight}px`;
+      logoGrid.style.height = `${logoGridMaxHeight}px`;
       setShowAll(true);
     } else {
-      logoGrid.style.minHeight = `${logoGridMinHeight}px`;
-      setShowAll(false);
+      logoGrid.style.height = `${logoGridMinHeight}px`;
+      setTimeout(() => {
+        setShowAll(false);
+      }, 1000);
     }
   };
 
@@ -57,9 +66,9 @@ export default function LogoGrid({ clientsImgs, lang }: LogoGridProps) {
         <div
           id="logo-container"
           style={{
-            minHeight: isMobile ? `${logoGridMinHeight}px` : 'auto',
+            height: logoGridInitialHeight,
           }}
-          className="flex flex-wrap justify-center gap-x-6 gap-y-12 transition-all"
+          className="flex flex-wrap justify-center gap-x-6 gap-y-12 overflow-hidden transition-all duration-1000"
         >
           {visibleLogos.map((img, index) => (
             <div
@@ -87,7 +96,7 @@ export default function LogoGrid({ clientsImgs, lang }: LogoGridProps) {
       {isMobile && clientsImgs.length > 10 && (
         <button
           id="toggle-button"
-          className="mx-auto mt-16 w-max rounded-md border-[1px] bg-bravo px-6 py-3 text-sm font-medium capitalize tracking-wide text-white transition-colors  lg:hover:border-bravo lg:hover:bg-transparent lg:hover:text-bravo"
+          className="mx-auto mt-16 w-32 rounded-md border-[1px] bg-bravo px-6 py-3 text-sm font-medium capitalize tracking-wide text-white transition-colors  lg:hover:border-bravo lg:hover:bg-transparent lg:hover:text-bravo"
           onClick={(e) => handleToggle(e)}
         >
           {showAll
