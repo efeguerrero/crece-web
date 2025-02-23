@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 interface LogoGridProps {
   clientsImgs: string[];
@@ -6,43 +6,71 @@ interface LogoGridProps {
 }
 
 export default function LogoGrid({ clientsImgs, lang }: LogoGridProps) {
-  const [showAll, setShowAll] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  const [showAll, setShowAll] = useState(window.innerWidth >= 768);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const refWidth = useRef(window.innerWidth);
 
-  const logosToShow = 10;
+  const logosToShowMobile = 10;
+  const totalLogos = clientsImgs.length;
+
+  // Here we do the number of rows (only 2 logos per row as max) * (logo height (defined below) + Gap between rows * # of spaces between rows
+  const logoGridMaxHeight =
+    Math.ceil(totalLogos / 2) * 40 + Math.ceil(totalLogos / 2 - 1) * 48;
+  const logoGridMinHeight =
+    Math.ceil(logosToShowMobile / 2) * 40 +
+    Math.ceil(logosToShowMobile / 2 - 1) * 48;
+
+  console.log('max', logoGridMaxHeight);
+  console.log('min', logoGridMinHeight);
+
+  const handleResize = () => {
+    if (window.innerWidth != refWidth.current) {
+      setIsMobile(window.innerWidth < 768);
+      refWidth.current = window.innerWidth;
+    }
+  };
 
   useEffect(() => {
-    // Problem here is that resize is triggered also on viewport height, so the chrome bar triggers this event all the time.
-    console.log('use effect ran');
-    const checkMobile = () => {
-      console.log('checkMobile running', showAll);
-      console.log('innerWidth', window.innerWidth);
-      setIsMobile(window.innerWidth < 768);
-      setShowAll(window.innerWidth >= 768);
-    };
-
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  const handleToggle = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const logoGrid = document.getElementById('logo-container');
+    if (!showAll) {
+      logoGrid.style.minHeight = `${logoGridMaxHeight}px`;
+      setShowAll(true);
+    } else {
+      logoGrid.style.minHeight = `${logoGridMinHeight}px`;
+      setShowAll(false);
+    }
+  };
+
   const visibleLogos =
-    isMobile && !showAll ? clientsImgs.slice(0, logosToShow) : clientsImgs;
+    isMobile && !showAll
+      ? clientsImgs.slice(0, logosToShowMobile)
+      : clientsImgs;
 
   return (
     <section className="flex flex-col">
       <div className="relative p-8">
-        <div className="flex flex-wrap justify-center gap-x-6 gap-y-12">
+        <div
+          id="logo-container"
+          style={{
+            minHeight: isMobile ? `${logoGridMinHeight}px` : 'auto',
+          }}
+          className="flex flex-wrap justify-center gap-x-6 gap-y-12 transition-all"
+        >
           {visibleLogos.map((img, index) => (
             <div
               key={index}
               style={{
-                animationDelay: `calc((${index}/${logosToShow}) * var(--base-animation-delay))`,
+                animationDelay: `calc((${index}/${logosToShowMobile}) * var(--base-animation-delay))`,
               }}
               className="flex w-[calc(50%-12px)] animate-fade-in items-center justify-center transition-all duration-300 ease-in-out md:w-[calc(33.333%-16px)] md:animate-[none] lg:w-[calc(25%-18px)]"
             >
               <img
-                className="max-h-[40px] max-w-[120px] object-contain md:max-h-[50px] md:max-w-[130px]"
+                className="h-[40px] max-w-[120px] object-contain md:h-[50px] md:max-w-[130px]"
                 src={img}
                 alt={`Client Logo ${index + 1}`}
               />
@@ -51,12 +79,16 @@ export default function LogoGrid({ clientsImgs, lang }: LogoGridProps) {
         </div>
 
         <div className="absolute right-0 top-0 h-28 w-28 border-r-2 border-t-2 border-bravo"></div>
-        <div className="absolute bottom-0 left-0 h-28 w-28 border-b-2 border-l-2 border-bravo"></div>
+        <div
+          id="animated-divider"
+          className="absolute bottom-0 left-0 h-28 w-28 border-b-2 border-l-2 border-bravo transition-opacity"
+        ></div>
       </div>
       {isMobile && clientsImgs.length > 10 && (
         <button
-          className="mx-auto mt-16 w-max rounded-md border-[1px] bg-bravo px-6 py-3 text-sm font-medium capitalize tracking-wide text-white transition-colors duration-300 lg:hover:border-bravo lg:hover:bg-transparent lg:hover:text-bravo"
-          onClick={() => setShowAll(!showAll)}
+          id="toggle-button"
+          className="mx-auto mt-16 w-max rounded-md border-[1px] bg-bravo px-6 py-3 text-sm font-medium capitalize tracking-wide text-white transition-colors  lg:hover:border-bravo lg:hover:bg-transparent lg:hover:text-bravo"
+          onClick={(e) => handleToggle(e)}
         >
           {showAll
             ? lang === 'en'

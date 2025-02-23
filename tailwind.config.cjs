@@ -28,25 +28,25 @@ module.exports = {
         delta: '#1E7DE3',
         epsilon: '#1CD9D9',
       },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        toggle: {
+          '0%': { opacity: '1' },
+          '50%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+      },
+      animation: {
+        'fade-in': 'fadeIn 400ms ease-in both',
+        toggle: 'toggle 1s ease-in both',
+      },
     },
     fontFamily: {
       inter: ['Inter', 'sans-serif'],
       franklin: ['Libre Franklin', 'sans-serif'],
-    },
-    keyframes: {
-      fadeIn: {
-        '0%': { opacity: '0' },
-        '100%': { opacity: '1' },
-      },
-      toggle: {
-        '0%': { opacity: '1' },
-        '50%': { opacity: '0' },
-        '100%': { opacity: '1' },
-      },
-    },
-    animation: {
-      'fade-in': 'fadeIn 400ms ease-in both',
-      toggle: 'toggle 1s ease-in both',
     },
   },
 };
