@@ -1,7 +1,3 @@
-:root {
-  --base-animation-delay: 100ms;
-}
-
 body {
   scrollbar-width: 8px;
   scrollbar-base-color: transparent;
