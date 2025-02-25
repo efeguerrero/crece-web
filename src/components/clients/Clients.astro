@@ -11,7 +11,7 @@ const { lang } = Astro.props;
 // });
 
 const clientsImgs = await Astro.glob(
-  './clientsImgs/*.{png,jpg,jpeg,svg,webp}'
+  './clientsImgs/*.{png,jpg,jpeg,svg,webp,avif}'
 ).then((imgs) => {
   return imgs.map((img) => img.default);
 });

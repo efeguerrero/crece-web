@@ -79,7 +79,7 @@ export default function LogoGrid({ clientsImgs, lang }: LogoGridProps) {
               className="flex w-[calc(50%-12px)] animate-fade-in items-center justify-center transition-all duration-300 ease-in-out md:w-[calc(33.333%-16px)] md:animate-[none] lg:w-[calc(25%-18px)]"
             >
               <img
-                className="h-[40px] max-w-[120px] object-contain md:h-[50px] md:max-w-[130px]"
+                className="h-[40px] max-w-[120px] object-contain grayscale transition-all md:h-[50px] md:max-w-[130px] md:hover:grayscale-0"
                 src={img}
                 alt={`Client Logo ${index + 1}`}
               />
