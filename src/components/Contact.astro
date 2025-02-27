@@ -133,6 +133,11 @@ const { lang } = Astro.props;
         >
           <p class="text-center text-sm">Buenos Aires<br />Argentina</p>
           <div class="h-[2px] w-4 rotate-90 bg-alphaLight"></div>
+          <p class="text-center text-sm">
+            Miami<br />
+            {lang === 'en' ? 'United States' : 'Estados Unidos'}
+          </p>
+          <div class="h-[2px] w-4 rotate-90 bg-alphaLight"></div>
           <p class="text-center text-sm">Montevideo <br />Uruguay</p>
           <div class="h-[2px] w-4 rotate-90 bg-alphaLight"></div>
           <p class="text-center text-sm">Asunción<br />Paraguay</p>
@@ -142,6 +147,9 @@ const { lang } = Astro.props;
         >
           <p class="text-center text-base tracking-wide">
             Buenos Aires, Argentina
+          </p>
+          <p class="text-center text-base tracking-wide">
+            {lang === 'en' ? 'United States' : 'Estados Unidos'}
           </p>
           <p class="text-center text-base tracking-wide">Montevideo, Uruguay</p>
           <p class="text-center text-base tracking-wide">Asunción, Paraguay</p>
