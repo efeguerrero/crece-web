@@ -24,8 +24,8 @@ const clientsImgs = await Astro.glob(
     >
       {
         lang === 'en'
-          ? 'Meet our most loved clients'
-          : 'Nuestros principales clientes '
+          ? 'Brands that trust us'
+          : 'Marcas que confían en nosotros'
       }
     </h2>
     <LogoGrid clientsImgs={clientsImgs} client:only="react" lang={lang} />
