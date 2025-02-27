@@ -1,4 +1,6 @@
 ---
+import LogoGrid from './components/logo-grid';
+
 interface Props {
   lang: string;
 }
@@ -8,7 +10,9 @@ const { lang } = Astro.props;
 //   return imgs.map((img) => img.default);
 // });
 
-const clientsImgs = await Astro.glob('./clientsImgs/*.png').then((imgs) => {
+const clientsImgs = await Astro.glob(
+  './clientsImgs/*.{png,jpg,jpeg,svg,webp,avif}'
+).then((imgs) => {
   return imgs.map((img) => img.default);
 });
 ---
@@ -20,26 +24,10 @@ const clientsImgs = await Astro.glob('./clientsImgs/*.png').then((imgs) => {
     >
       {
         lang === 'en'
-          ? 'Meet our most loved clients'
-          : 'Nuestros principales clientes '
+          ? 'Brands that trust us'
+          : 'Marcas que confían en nosotros'
       }
     </h2>
-    <div
-      class="relative mx-auto flex flex-wrap justify-between gap-x-4 gap-y-6 p-8 before:absolute before:right-0 before:top-0 before:h-[10rem] before:w-[10rem] before:border-r-[3px] before:border-t-[3px] before:border-bravo before:bg-transparent after:absolute after:bottom-0 after:left-0 after:h-[10rem] after:w-[10rem] after:border-b-[3px] after:border-l-[3px] after:border-bravo after:bg-transparent md:justify-center md:gap-y-6 lg:w-[80vw] lg:gap-x-0 xl:w-[60vw]"
-    >
-      {
-        clientsImgs.map((img) => (
-          <div class="flex h-24 flex-[0_1_40%] justify-center rounded-lg lg:flex-[0_0_30%]  ">
-            <img
-              class=" max-w-20 max-h-20 object-contain"
-              src={img}
-              alt="Client Logo"
-              width="158"
-              height="48"
-            />
-          </div>
-        ))
-      }
-    </div>
+    <LogoGrid clientsImgs={clientsImgs} client:only="react" lang={lang} />
   </div>
 </section>
