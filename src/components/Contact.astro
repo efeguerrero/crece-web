@@ -180,6 +180,7 @@ const { lang } = Astro.props;
               name="subject"
               value="Crece Mas - Nuevo Contacto"
               /> 
+            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
             <input type="hidden" name="from_name" value="crecemas.net" />
             <div class="flex-1">
               <label
@@ -233,7 +234,7 @@ const { lang } = Astro.props;
               {lang === 'en' ? 'Send' : 'Enviar'}
             </button>
             <div class="mx-auto mt-2 text-base text-bravo" id="result"></div>
-            <div class="h-captcha mt-8" data-lang={lang} data-captcha="true"></div>
+            <div id="captcha" class="h-captcha mt-8" data-lang={lang} data-captcha="true"></div>
           </form>
         </div>
       </div>
@@ -245,6 +246,12 @@ const { lang } = Astro.props;
   const form = document.getElementById('form');
   const result = document.getElementById('result');
 
+  // captcha size logic
+  const captcha = document.getElementById("captcha")
+  const captchaSize = window.innerWidth >= 640 ? "normal" : "compact"
+  captcha.setAttribute("data-size", captchaSize);
+
+
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     const formData = new FormData(form);
@@ -254,7 +261,7 @@ const { lang } = Astro.props;
     const hCaptcha = form.querySelector('textarea[name=h-captcha-response]').value;
 
     if(!hCaptcha){
-      result.innerHTML = lang === "en" ? "Please verify you are human before submitting" : "Por favor verificar que eres humano antes de enviar"
+      result.innerHTML = lang === "en" ? "Please verify you are human before submitting." : "Por favor verificar que eres humano antes de enviar."
       return
     }
 
