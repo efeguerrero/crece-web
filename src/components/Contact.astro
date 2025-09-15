@@ -174,7 +174,8 @@ const { lang } = Astro.props;
               type="hidden"
               name="subject"
               value="Crece Mas - Nuevo Contacto"
-            />
+              /> 
+            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
             <input type="hidden" name="from_name" value="crecemas.net" />
             <div class="flex-1">
               <label
@@ -228,6 +229,7 @@ const { lang } = Astro.props;
               {lang === 'en' ? 'Send' : 'Enviar'}
             </button>
             <div class="mx-auto mt-2 text-base text-bravo" id="result"></div>
+            <div id="captcha" class="h-captcha mt-8" data-lang={lang} data-captcha="true"></div>
           </form>
         </div>
       </div>
@@ -239,12 +241,24 @@ const { lang } = Astro.props;
   const form = document.getElementById('form');
   const result = document.getElementById('result');
 
+  // captcha size logic
+  const captcha = document.getElementById("captcha")
+  const captchaSize = window.innerWidth >= 640 ? "normal" : "compact"
+  captcha.setAttribute("data-size", captchaSize);
+
+
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     const formData = new FormData(form);
     const object = Object.fromEntries(formData);
     const json = JSON.stringify(object);
     result.innerHTML = lang === 'en' ? 'Please wait...' : 'Por favor espere...';
+    const hCaptcha = form.querySelector('textarea[name=h-captcha-response]').value;
+
+    if(!hCaptcha){
+      result.innerHTML = lang === "en" ? "Please verify you are human before submitting." : "Por favor verificar que eres humano antes de enviar."
+      return
+    }
 
     fetch('https://api.web3forms.com/submit', {
       method: 'POST',
@@ -256,15 +270,14 @@ const { lang } = Astro.props;
     })
       .then(async (response) => {
         let json = await response.json();
+        console.log(response.status)
         if (response.status == 200) {
-          //console.log('form sent successfully');
           if (lang === 'es') {
             window.location.href = '/thankyou';
           } else {
             window.location.href = '/en/thankyou';
           }
         } else {
-          //console.log(json.message);
           result.innerHTML =
             lang === 'en'
               ? 'Something went wrong! Please try again later.'
@@ -272,7 +285,6 @@ const { lang } = Astro.props;
         }
       })
       .catch((error) => {
-        //console.log(error);
         result.innerHTML =
           lang === 'en'
             ? 'Something went wrong! Please try again later.'

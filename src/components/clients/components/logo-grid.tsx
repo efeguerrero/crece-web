@@ -27,8 +27,6 @@ export default function LogoGrid({ clientsImgs, lang }: LogoGridProps) {
       ? `${logoGridMaxHeight}px`
       : 'auto';
 
-  console.log('max', logoGridMaxHeight);
-  console.log('min', logoGridMinHeight);
 
   const handleResize = () => {
     if (window.innerWidth != refWidth.current) {
